@@ -10,9 +10,9 @@ Some text
 
 <<<
 
-== Analyse de la V0
+== Analyse de l'existant
 
-Some text
+Dans la V0, les opérations possibles sont encore très limitées, il n'est pas possible de créer de nouveau compte ni de créditer un compte.
 
 <<<
 
