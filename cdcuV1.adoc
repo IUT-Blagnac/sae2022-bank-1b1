@@ -12,6 +12,10 @@ Notre projet s’intitule Daily Bank App, il s’agit d’une application JAVA-O
 
 == Analyse de l'existant
 
+Digramme de cas d'utilisation de la V0
+
+image::assets/ucv0.png[]
+
 Dans la V0, les opérations possibles sont encore très limitées, il n'est pas possible de créer de nouveau compte ni de créditer un compte.
 
 <<<
@@ -50,14 +54,6 @@ Some text
 
 <<<
 
-== Solution apportée
-
-Some text
-
 == Définition de la procédure de mise en oeuvre
 
 Some text
-
-== Annexes
-
-images
