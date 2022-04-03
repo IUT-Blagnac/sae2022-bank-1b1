@@ -23,5 +23,5 @@ G --> Clôturer
 
 CA --> Gérer
 
-G <- CA
+G <|- CA
 @enduml
