@@ -14,7 +14,7 @@ Notre projet s’intitule Daily Bank App, il s’agit d’une application JAVA-O
 
 == Analyse de l'existant
 
-image::assets/ucv0.png[]
+image::assets/ucv0.png[uc V0]
 
 Dans la V0, les opérations possibles sont encore très limitées, il n'est pas possible de créer de nouveau compte ni de créditer un compte.
 
@@ -48,14 +48,11 @@ Le chef d'agence doit avoir la possibilité de gérer les employés de son agenc
 
 === Contraintes techniques
 
-Some text
+Les nouvelles versions devront être programmées en Java, en couple avec le système de gestion de base de données Oracle. Ce dernier devra stocker toutes les procédures effectuées sur les comptes.
 
 === Contraintes organisationnelles
 
-Some text
+La V1 devra être produite des semaines 19 à 22, avec la participation de tous les membres du groupe.
+L'organisation du développement de l'application se fera par Git, chaque fonctionnalité développée aura sa propre branche.
 
-<<<
-
-== Définition de la procédure de mise en oeuvre
-
-Some text
+Finalement, nous effectuerons un merge de toutes les branches par l'intermédiaire de pull requests.
