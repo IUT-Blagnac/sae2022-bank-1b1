@@ -13,7 +13,7 @@ __Membres du groupe :__
 |===
 | Date    | Nom         |  Lien                             | Retour
 | 03/04   | Gantt V1    |                              | Il manque les tâches de développement, tout doit apparaître dans le GANTT. Attention à l'échelle : en jour ce n'est pas adapté, ou alors indiquer une conversion ex 1jour=1h. Essayer d'avoir un affichage sur une page, quitte à faire un GANTT par version plutôt que des récap par semaine.
-|         | CdC V1      |                                   |  Revoir les éléments de correction du CDCU :  il manque des information dans votre entête/page de garde. Pour le contexte, il faut dabord présenter le contexte général du projet :  pourquoi cette application pour la banque ? (contexte economique, concurrentiel cf. S1).  
+|         | CdC V1      |                                   |  Revoir les éléments de correction du CDCU :  il manque des informations dans votre entête/page de garde. Pour le contexte, il faut dabord présenter le contexte général du projet :  pourquoi cette application pour la banque ? (contexte economique, concurrentiel cf. S1).  Dans la présentation de l'existant préciser le rôle des 2 utilisateurs, expliquer l'héritage dans le UC.   V1 : Attention erreur typo dans le titre
 |         | Suivi Projet |                                   |   Projet correctement géré avec issues assignées. Attention toutefois à l'arborescence de votre repository à organiser par version.           
 | 22/04  | CdC V2/V3 final|                                     |  
 |         | Gantt V2    |                               |     
