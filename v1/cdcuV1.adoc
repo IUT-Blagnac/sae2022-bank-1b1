@@ -1,5 +1,6 @@
-= CDCU V1
+= CDCU V1 Daily Bank App
 XU Anton - GAYRARD Loan - ROBERT Matthieu
+v1.0, 19/04/2022 - Equipe 1b1
 :toc:
 :toc-title: Sommaire
 :nofooter:
@@ -14,7 +15,7 @@ Notre projet s’intitule Daily Bank App, il s’agit d’une application JAVA-O
 
 == Analyse de l'existant
 
-image::assets/ucv0.png[uc V0]
+image::../assets/ucv0.png[uc V0]
 
 Dans la V0, les opérations possibles sont encore très limitées, il n'est pas possible de créer de nouveau compte ni de créditer un compte.
 
@@ -26,7 +27,7 @@ Les seuls 5 cas d'utilisation ne permettent pas encore à l'application existant
 
 Digramme de cas d'utilisation de la V1
 
-image::assets/ucv1.png[uc V1, 500]
+image::../assets/ucv1.png[uc V1, 500]
 
 Le guichetier doit avoir la possibilité de créditer un compte d'un client avec un montant donné, afin d'ajouter de l'argent sur son compte.
 
