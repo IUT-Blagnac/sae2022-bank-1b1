@@ -9,7 +9,7 @@ v1.0, 19/04/2022 - Equipe 1b1
 
 == Présentation du sujet
 
-Notre projet s’intitule Daily Bank App, il s’agit d’une application JAVA-Oracle de gestion des comptes clients pour une banque nommée Daily Bank. Cette célèbre banque possède déjà une application, mais elle est incomplète et il lui manque de nombreuses fonctionnalités. Elle souhaite proposer à ses clients une application rapide et simple d’utilisation, qui leur permettra d’interagir avec leur compte bancaire de manière instantanée. Cette application devra donc simplifier les actions bancaires des utilisateurs, mais elle devra aussi aider les employés de l’entreprise en leur permettant de gérer les comptes des clients en ligne et de manière immédiate. Pour ce projet, nous sommes une équipe de 3 développeurs, et grâce à nos compétences en informatique nous allons nous organiser pour proposer et implémenter de meilleures versions de l’application Daily Bank App qui, au fur et à mesure des versions, vont simplifier les relations entre les clients et les employés.
+Dans le contxte actuel avec l'arrivée des néobanques, il est important pour les banques historique de se digitaliser et d'utiliser de plus en plus d'outils informatiques pour éffectuer différente opérations autant pour les employés d'agence bancaire que pour les clients, c'est ainsi que notre projet Daily Bank App s'inscrit dans la modernisation de la banque Daily Bank. Daily Bank App est d’une application JAVA-Oracle de gestion des comptes clients pour une banque nommée Daily Bank. Cette célèbre banque possède déjà une application, mais elle est incomplète et il lui manque de nombreuses fonctionnalités. Elle souhaite proposer à ses clients une application rapide et simple d’utilisation, qui leur permettra d’interagir avec leur compte bancaire de manière instantanée. Cette application devra donc simplifier les actions bancaires des utilisateurs, mais elle devra aussi aider les employés de l’entreprise en leur permettant de gérer les comptes des clients en ligne et de manière immédiate. Pour ce projet, nous sommes une équipe de 3 développeurs, et grâce à nos compétences en informatique nous allons nous organiser pour proposer et implémenter de meilleures versions de l’application Daily Bank App qui, au fur et à mesure des versions, vont simplifier les relations entre les clients et les employés.
 
 <<<
 
@@ -18,6 +18,8 @@ Notre projet s’intitule Daily Bank App, il s’agit d’une application JAVA-O
 image::../assets/ucv0.png[uc V0]
 
 Dans la V0, les opérations possibles sont encore très limitées, il n'est pas possible de créer de nouveau compte ni de créditer un compte.
+
+Cependant, il existe quand même différent profils d'utilisateurs qui sont les Guichetier et le Chef d'agence. Le guichetier peut créer et gérer les client. Le Chef d'agence est un guichetier qui peut rendre inactif un client.
 
 Les seuls 5 cas d'utilisation ne permettent pas encore à l'application existante d'être utilisée telle quelle.
 
@@ -53,7 +55,13 @@ Les nouvelles versions devront être programmées en Java, en couple avec le sys
 
 === Contraintes organisationnelles
 
-La V1 devra être produite durant les semaines 19 à 22, avec la participation de tous les membres du groupe.
+La V1 devra être produite durant les semaines 19 à 22, et devra être livré le 3 juin 2022, avec la participation de tous les membres du groupe.
 L'organisation du développement de l'application se fera par Git, chaque fonctionnalité développée aura sa propre branche.
 
 Finalement, nous effectuerons un merge de toutes les branches par l'intermédiaire de pull requests.
+
+Lors de ce projet, Microsoft Project sera utilisé pour réalisation du Gantt, Asciidoc sera utilisé pour la rédaction du cahier des charges, de la documentation utilisateur et de la documentation technique.
+
+Le suivi de l'avancé du projet, se fera à l'aide des issues sur Github.
+
+=== Contraintes juridique
