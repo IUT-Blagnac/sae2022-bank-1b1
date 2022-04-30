@@ -9,7 +9,7 @@ v2.0, 20/04/2022 - Equipe 1b1
 
 == Présentation du sujet
 
-Dans le contxte actuel avec l'arrivée des néobanques, il est important pour les banques historique de se digitaliser et d'utiliser de plus en plus d'outils informatiques pour éffectuer différente opérations autant pour les employés d'agence bancaire que pour les clients, c'est ainsi que notre projet Daily Bank App s'inscrit dans la modernisation de la banque Daily Bank. Daily Bank App est d’une application JAVA-Oracle de gestion des comptes clients pour une banque nommée Daily Bank. Cette célèbre banque possède déjà une application, mais elle est incomplète et il lui manque de nombreuses fonctionnalités. Elle souhaite proposer à ses clients une application rapide et simple d’utilisation, qui leur permettra d’interagir avec leur compte bancaire de manière instantanée. Cette application devra donc simplifier les actions bancaires des utilisateurs, mais elle devra aussi aider les employés de l’entreprise en leur permettant de gérer les comptes des clients en ligne et de manière immédiate. Pour ce projet, nous sommes une équipe de 3 développeurs, et grâce à nos compétences en informatique nous allons nous organiser pour proposer et implémenter de meilleures versions de l’application Daily Bank App qui, au fur et à mesure des versions, vont simplifier les relations entre les clients et les employés.
+Dans le contexte actuel des banques françaises avec l’arrivée des néobanques, il est important pour les banques historiques de se digitaliser et d’utiliser de plus en plus d’outils informatiques. Ceux-ci permettront d’effectuer en temps réel et rendre accessibles les différentes opérations bancaires, autant pour les employés d’agence bancaire que pour les clients. En effet, la robotisation et le développement digital des services bancaires permettront de satisfaire les exigences d’instantanéité et d’efficacité des clients. C’est ainsi que notre projet Daily Bank App s’inscrit dans la modernisation de la banque Daily Bank. Daily Bank App est une application JAVA-Oracle de gestion des comptes clients pour une banque nommée Daily Bank. Cette célèbre banque possède déjà une application, mais elle est incomplète et il lui manque de nombreuses fonctionnalités. Elle souhaite proposer à ses clients une application rapide et simple d’utilisation, qui leur permettra d’interagir avec leur compte bancaire de manière instantanée. Cette application devra donc simplifier les actions bancaires des utilisateurs, mais elle devra aussi aider les employés de l’entreprise en leur permettant de gérer les comptes des clients en ligne et de manière immédiate. Pour ce projet, nous sommes une équipe de 3 développeurs, et grâce à nos compétences en informatique nous allons nous organiser pour proposer et implémenter de meilleures versions de l’application Daily Bank App qui, au fur et à mesure des versions, vont simplifier les relations entre les clients et les employés.
 
 <<<
 
@@ -25,7 +25,7 @@ image::../assets/uc_existant_v2.png[uc existant V2]
 
 == Analyse des besoins de la V1
 
-Digramme de cas d'utilisation de la V1
+Diagramme de cas d'utilisation de la V1
 
 image::../assets/ucv1.png[uc V1, 500]
 
@@ -53,11 +53,11 @@ Le guichetier doit avoir la possibilité de générer un relevé mensuel d'un co
 
 Le guichetier doit avoir la possibilité de gérer les prélèvements automatiques.
 
-Le chef d'agence doit avoir la possibilié d'éffectuer un débit exceptionnel.
+Le chef d'agence doit avoir la possibilié d'effectuer un débit exceptionnel.
 
 Le chef d'agence doit avoir la possibilité de simuler un emprunt à l'aide des informations d'un client.
 
-Le chef d'agence doit avoir la possibilité de simulet une assurance d'emprunt à l'aide des différentes informations d'un client.
+Le chef d'agence doit avoir la possibilité de simuler une assurance d'emprunt à l'aide des différentes informations d'un client.
 
 <<<
 
@@ -69,13 +69,13 @@ Les nouvelles versions devront être programmées en Java, en couple avec le sys
 
 === Contraintes organisationnelles
 
-La V1 devra être produite durant les semaines 19 à 22, et devra être livré le 3 juin 2022, avec la participation de tous les membres du groupe.
+La V2 devra être produite durant les semaines 22 à 23, et devra être livrée le 3 juin 2022, avec la participation de tous les membres du groupe.
 L'organisation du développement de l'application se fera par Git, chaque fonctionnalité développée aura sa propre branche.
 
 Finalement, nous effectuerons un merge de toutes les branches par l'intermédiaire de pull requests.
 
 Lors de ce projet, Microsoft Project sera utilisé pour réalisation du Gantt, Asciidoc sera utilisé pour la rédaction du cahier des charges, de la documentation utilisateur et de la documentation technique.
 
-Le suivi de l'avancé du projet, se fera à l'aide des issues sur Github.
+Le suivi de l'avancée du projet se fera à l'aide des issues sur Github.
 
-=== Contraintes juridique
+=== Contraintes juridiques
