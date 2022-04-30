@@ -55,7 +55,7 @@ Les nouvelles versions devront être programmées en Java, en couple avec le sys
 
 === Contraintes organisationnelles
 
-La V1 devra être produite durant les semaines 19 à 22, et devra être livré le 3 juin 2022, avec la participation de tous les membres du groupe.
+La V1 devra être produite durant les semaines 19 à 22, et devra être livrée le 3 juin 2022, avec la participation de tous les membres du groupe.
 L'organisation du développement de l'application se fera par Git, chaque fonctionnalité développée aura sa propre branche.
 
 Finalement, nous effectuerons un merge de toutes les branches par l'intermédiaire de pull requests.
