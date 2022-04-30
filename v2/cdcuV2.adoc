@@ -70,12 +70,21 @@ Les nouvelles versions devront être programmées en Java, en couple avec le sys
 === Contraintes organisationnelles
 
 La V2 devra être produite durant les semaines 22 à 23, et devra être livrée le 3 juin 2022, avec la participation de tous les membres du groupe.
+
 L'organisation du développement de l'application se fera par Git, chaque fonctionnalité développée aura sa propre branche.
 
 Finalement, nous effectuerons un merge de toutes les branches par l'intermédiaire de pull requests.
 
-Lors de ce projet, Microsoft Project sera utilisé pour réalisation du Gantt, Asciidoc sera utilisé pour la rédaction du cahier des charges, de la documentation utilisateur et de la documentation technique.
+Lors de ce projet, Project Libre sera utilisé pour réalisation du Gantt, Asciidoc sera utilisé pour la rédaction du cahier des charges, de la documentation utilisateur et de la documentation technique.
 
 Le suivi de l'avancée du projet se fera à l'aide des issues sur Github.
 
 === Contraintes juridiques
+
+Tout d'abord, notre application devra respecter les contraintes juridiques de protection de données des utilisateurs.
+
+Les données sensibles des clients de la banque, comme les numéros de carte bancaire ou bien les données personnelles, devront être stockés de manière sécurisée afin d'éviter toute fuite de données.
+
+De plus, notre application devra être éthique et modifier les données des clients seulement si ces derniers le souhaitent (numéro de carte bleu, propriétaire du comtpe...) et modifier le solde des comptes bancaires seulement lorsqu'un achat est effectué.
+
+Notre application devra donc rester sécurisée et fiable afin de respecter les lois en vigueur mais aussi de rassurer les futurs clients de cette dernière.
