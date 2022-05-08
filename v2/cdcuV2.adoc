@@ -19,29 +19,11 @@ Diagramme de cas d'utilisation de la V0 et la V1
 
 image::../assets/uc_existant_v2.png[uc existant V2]
 
+Dans la V1, nous avons deux profils d'utilisateurs qui sont le Guichetier et le Chef d'agence. Le Guichetier peut créer et gérer les clients, il peut également créer des comptes, les créditer, le débiter, faire des virements de comptes à comptes et également les clôturer. Le chef d'agence est un Guichetier qui, en plus, peut rendre inactif un client et gérer les différents employés de l'agence.
 
+Ces différents cas d'utilisation, sont suffisants pour une version minimale de l'application, même s'il manque encore quelques fonctionnalités. 
 
 <<<
-
-== Analyse des besoins de la V1
-
-Diagramme de cas d'utilisation de la V1
-
-image::../assets/ucv1.png[uc V1, 500]
-
-Le guichetier doit avoir la possibilité de créditer un compte d'un client avec un montant donné, afin d'ajouter de l'argent sur son compte.
-
-Le guichetier doit avoir la possibilité de débiter un compte d'un client avec un montant donné, afin de retirer de l'argent sur son compte.
-
-Le guichetier doit avoir la possibilité de créer un compte pour un client, et de l'ajouter à la base de donnée des comptes.
-
-Le guichetier doit avoir la possibilité d'effectuer des virements de compte à compte, avec un montant donné.
-
-Le guichetier doit avoir la possibilité de clôturer un compte d'un client, afin de le rendre inactif.
-
-Le chef d'agence doit avoir la possibilité d'effectuer les mêmes opérations que le guichetier, mais avec plus de contrôle.
-
-Le chef d'agence doit avoir la possibilité de gérer les employés de son agence.
 
 == Analyse des besoins de la V2
 
