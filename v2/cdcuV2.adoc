@@ -1,4 +1,4 @@
-= CDCU V1 Daily Bank App
+= CDCU V2 Daily Bank App
 XU Anton - GAYRARD Loan - ROBERT Matthieu
 v2.0, 20/04/2022 - Equipe 1b1
 :toc:
