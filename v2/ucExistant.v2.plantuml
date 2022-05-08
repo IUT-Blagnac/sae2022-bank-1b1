@@ -1,0 +1,35 @@
+@startuml v1
+skinparam actorStyle awesome
+left to right direction
+
+actor :Guichetier: as G
+actor :Chef d'Agence: as CA
+
+usecase "Modifier infos client" as Info
+usecase "Créer un nouveau client" as Nouveau
+usecase "Consulter un compte" as Consulter
+usecase "Créditer un compte" as Crédit
+usecase "Débiter un compte" as Débit
+usecase "Créer un compte" as Créer
+usecase "Effectuer un virement de compte à compte" as Virement
+usecase "Clôturer un compte" as Clôturer
+
+usecase "Rendre inactif un client" as Inactif
+usecase "Gérer les employés" as Gérer
+
+
+
+G --> Info
+G --> Nouveau
+G --> Consulter 
+G --> Crédit
+G --> Débit
+G --> Créer
+G --> Virement
+G --> Clôturer
+
+CA --> Inactif
+CA --> Gérer
+
+G <|- CA
+@enduml
