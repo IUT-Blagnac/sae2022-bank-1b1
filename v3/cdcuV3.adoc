@@ -26,6 +26,8 @@ Dans la V2, nous avons deux profils d'utilisateurs qui sont le Guichetier et le 
 
 == Analyse des besoins de la V3
 
+Diagramme de cas d'utilisation de la V3
+
 image::../assets/ucv3.png[uc V2, 500]
 
 Dans cette troisième version de notre application, nous allons implémenter les fonctions suivantes en plus de celles déjà présentes :
