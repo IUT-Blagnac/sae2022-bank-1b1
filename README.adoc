@@ -9,13 +9,13 @@ __Membres du groupe :__
 
 == Livrables
 
-[cols="1,2,3,5",options=header]
+[cols="1,2,2,5",options=header]
 |===
 | Date    | Nom         |  Lien                             | Retour
 | 03/04   | Gantt V1    |                              | Il manque les tâches de développement, tout doit apparaître dans le GANTT. Attention à l'échelle : en jour ce n'est pas adapté, ou alors indiquer une conversion ex 1jour=1h. Essayer d'avoir un affichage sur une page, quitte à faire un GANTT par version plutôt que des récap par semaine.  EP
 |         | CdC V1      |  https://github.com/IUT-Blagnac/sae2022-bank-1b1/blob/main/v1/cdcuV1.adoc[CdC V1]                                 |  Revoir les éléments de correction du CDCU :  il manque des informations dans votre entête/page de garde. Pour le contexte, il faut dabord présenter le contexte général du projet :  pourquoi cette application pour la banque ? (contexte economique, concurrentiel cf. S1).  Dans la présentation de l'existant préciser le rôle des 2 utilisateurs, expliquer l'héritage dans le UC.   V1 : Attention erreur typo dans le titre Vous pouvez prioriser les fonctions à réaliser, il y a parfois des besoins non fonctonnels : conditons pour débiter un compte par ex (règles organisationnelles de l'entreprise), nombre d'accès simultanés ... . Pour les contraintes : il en manque, contraintes juridiques par ex. , pour l'organisationnel : date des livraison attendues, organisation de l'équipe, outils collaboratifs utilisés, livrables attendus (il n'y a pas que les codes !!), formats ... EP
 |         | Suivi Projet |                                   |   Projet correctement géré avec issues assignées. Attention toutefois à l'arborescence de votre repository à organiser par version.           EP
-| 22/04  | CdC V2/V3 final| https://github.com/IUT-Blagnac/sae2022-bank-1b1/blob/main/v2/cdcuV2.adoc[CdC V2] \| https://github.com/IUT-Blagnac/sae2022-bank-1b1/blob/main/v3/cdcuV3.adoc[CdC V3]                                   |  Manque lien pour evaluation !!
+| 22/04  | CdC V2/V3 final| https://github.com/IUT-Blagnac/sae2022-bank-1b1/blob/main/v2/cdcuV2.adoc[CdC V2] https://github.com/IUT-Blagnac/sae2022-bank-1b1/blob/main/v3/cdcuV3.adoc[CdC V3]                                   |  Manque lien pour evaluation !!
 |         | Gantt V2    |                               |     
 |         | Gantt V3 |         |     
 |         | Doc. Tec. V1 |        |    
