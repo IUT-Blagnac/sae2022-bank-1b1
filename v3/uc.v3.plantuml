@@ -1,0 +1,31 @@
+@startuml v3
+skinparam actorStyle awesome
+left to right direction
+
+actor :Guichetier: as G
+actor :Chef d'Agence: as CA
+actor :Batch: as B
+
+usecase "Générer un relevé mensuel d'un compte en PDF" as pdf
+usecase "Gérer les prélèvements automatiques" as prélèvements
+
+usecase "Effectuer un Débit exceptionnel" as Debit
+usecase "Simuler un emprunt" as Emprunt
+usecase "Simuler une assurance d'emprunt" as Assurance
+
+usecase "Générer les relevés mensuel en PDF" as releve
+usecase "Exécuter les prélèvements automatiques" as execute
+
+
+G --> pdf
+G --> prélèvements
+
+CA --> Debit
+CA --> Emprunt
+CA --> Assurance
+
+G <|- CA
+
+B --> releve
+B --> execute
+@enduml
