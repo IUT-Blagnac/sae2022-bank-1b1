@@ -11,7 +11,7 @@ v3.0, 09/05/2022 - Equipe 1b1
 
 === a) Contexte général
 
-Dans le contexte actuel des banques françaises avec l’arrivée des néobanques, il est important pour les banques historiques de se digitaliser et d’utiliser de plus en plus d’outils informatiques. Ceux-ci permettront d’effectuer en temps réel et rendre accessibles les différentes opérations bancaires, autant pour les employés d’agence bancaire que pour les clients. En effet, la robotisation et le développement digital des services bancaires permettront de satisfaire les exigences d’instantanéité et d’efficacité des clients. C’est ainsi que notre projet Daily Bank App s’inscrit dans la modernisation de la banque Daily Bank. Daily Bank App est une application JAVA-Oracle de gestion des comptes clients pour une banque nommée Daily Bank. Cette célèbre banque possède déjà une application, mais elle est incomplète et il lui manque de nombreuses fonctionnalités. Elle souhaite proposer à ses clients une application rapide et simple d’utilisation, qui leur permettra d’interagir avec leur compte bancaire de manière instantanée. Cette application devra donc simplifier les actions bancaires des utilisateurs, mais elle devra aussi aider les employés de l’entreprise en leur permettant de gérer les comptes des clients en ligne et de manière immédiate. Pour ce projet, nous sommes une équipe de 3 développeurs, et grâce à nos compétences en informatique nous allons nous organiser pour proposer et implémenter de meilleures versions de l’application Daily Bank App qui, au fur et à mesure des versions, vont simplifier les relations entre les clients et les employés.
+Dans le contexte actuel des banques françaises avec l’arrivée des néobanques, il est important pour les banques historiques de se digitaliser et d’utiliser de plus en plus d’outils informatiques. Ceux-ci permettront d’effectuer en temps réel et de rendre accessibles les différentes opérations bancaires, autant pour les employés d’agence bancaire que pour les clients. En effet, la robotisation et le développement digital des services bancaires permettront de satisfaire les exigences d’instantanéité et d’efficacité des clients. C’est ainsi que notre projet Daily Bank App s’inscrit dans la modernisation de la banque Daily Bank. Daily Bank App est une application JAVA-Oracle de gestion des comptes clients pour une banque nommée Daily Bank. Cette célèbre banque possède déjà une application, mais elle est incomplète et il lui manque de nombreuses fonctionnalités. Elle souhaite proposer à ses clients une application rapide et simple d’utilisation, qui leur permettra d’interagir avec leur compte bancaire de manière instantanée. Cette application devra donc simplifier les actions bancaires des utilisateurs, mais elle devra aussi aider les employés de l’entreprise en leur permettant de gérer les comptes des clients en ligne et de manière immédiate. Pour ce projet, nous sommes une équipe de 3 développeurs, et grâce à nos compétences en informatique nous allons nous organiser pour proposer et implémenter de meilleures versions de l’application Daily Bank App qui, au fur et à mesure des versions, vont simplifier les relations entre les clients et les employés.
 
 === b) Problématique
 
@@ -38,10 +38,10 @@ image::../assets/ucv3.png[uc V3, 500]
 
 Dans cette troisième version de notre application, nous allons implémenter les fonctions suivantes en plus de celles déjà présentes :
 
-- La spécification finalisées de la version 2
+- La spécification finalisée de la version 2
 - La création de super options pour le chef d'agence
 
-Dans cette version, il y a aura l'ajout d'un batch ou traitement par lots qui réalisera certaines opérations automiquement, sans l'intervention d'une personne :
+Dans cette version, il y a aura l'ajout d'un batch ou traitement par lots qui réalisera certaines opérations automatiquement, sans l'intervention d'une personne :
 
 - La génération des relevés mensuels de compte en format PDF
 - L'exécution des prélèvements automatiques
@@ -63,9 +63,9 @@ L'organisation du développement de l'application se fera par Git, chaque foncti
 
 Finalement, nous effectuerons un merge de toutes les branches par l'intermédiaire de pull requests.
 
-Lors de ce projet, Project Libre sera utilisé pour réalisation du Gantt, Asciidoc sera utilisé pour la rédaction du cahier des charges, de la documentation utilisateur et de la documentation technique.
+Lors de ce projet, Project Libre sera utilisé pour la réalisation du Gantt, Asciidoc sera utilisé pour la rédaction du cahier des charges, de la documentation utilisateur et de la documentation technique.
 
-Le suivi de l'avancée du projet se fera à l'aide des issues sur Github.
+Le suivi de l'avancée du projet se fera à l'aide des issues sur GitHub.
 
 === c) Contraintes juridiques
 
@@ -73,6 +73,6 @@ Tout d'abord, notre application devra respecter les contraintes juridiques sur l
 
 Les données sensibles des clients de la banque, comme les numéros de carte bancaire ou bien les données personnelles, devront être stockés de manière sécurisée afin d'éviter toute fuite de données.
 
-De plus, notre application devra être éthique et modifier les données des clients seulement si ces derniers le souhaitent (numéro de carte bleu, propriétaire du compte...) et modifier le solde des comptes bancaires seulement lorsqu'un achat est effectué.
+De plus, notre application devra être éthique et modifier les données des clients seulement si ces derniers le souhaitent (numéro de carte bleue, propriétaire du compte...) et modifier le solde des comptes bancaires seulement lorsqu'un achat est effectué.
 
-Notre application devra donc rester sécurisée et fiable afin de respecter les lois en vigueur mais aussi de rassurer les futurs clients de cette dernière.
+Notre application devra donc rester sécurisée et fiable afin de respecter les lois en vigueur, mais aussi de rassurer les futurs clients de la banque et utilisateurs de l'application.
