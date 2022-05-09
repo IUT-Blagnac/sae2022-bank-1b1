@@ -11,6 +11,10 @@ v3.0, 08/05/2022 - Equipe 1b1
 
 Dans le contexte actuel des banques françaises avec l’arrivée des néobanques, il est important pour les banques historiques de se digitaliser et d’utiliser de plus en plus d’outils informatiques. Ceux-ci permettront d’effectuer en temps réel et rendre accessibles les différentes opérations bancaires, autant pour les employés d’agence bancaire que pour les clients. En effet, la robotisation et le développement digital des services bancaires permettront de satisfaire les exigences d’instantanéité et d’efficacité des clients. C’est ainsi que notre projet Daily Bank App s’inscrit dans la modernisation de la banque Daily Bank. Daily Bank App est une application JAVA-Oracle de gestion des comptes clients pour une banque nommée Daily Bank. Cette célèbre banque possède déjà une application, mais elle est incomplète et il lui manque de nombreuses fonctionnalités. Elle souhaite proposer à ses clients une application rapide et simple d’utilisation, qui leur permettra d’interagir avec leur compte bancaire de manière instantanée. Cette application devra donc simplifier les actions bancaires des utilisateurs, mais elle devra aussi aider les employés de l’entreprise en leur permettant de gérer les comptes des clients en ligne et de manière immédiate. Pour ce projet, nous sommes une équipe de 3 développeurs, et grâce à nos compétences en informatique nous allons nous organiser pour proposer et implémenter de meilleures versions de l’application Daily Bank App qui, au fur et à mesure des versions, vont simplifier les relations entre les clients et les employés.
 
+=== Problématique
+
+Étant donné le contexte et les contraintes imposées, comment allons-nous procéder afin de réaliser ce projet dans les temps et dans les conditions les plus optimales ?
+
 <<<
 
 == Analyse de l'existant
@@ -59,10 +63,10 @@ Le suivi de l'avancée du projet se fera à l'aide des issues sur Github.
 
 === Contraintes juridiques
 
-Tout d'abord, notre application devra respecter les contraintes juridiques de protection de données des utilisateurs.
+Tout d'abord, notre application devra respecter les contraintes juridiques sur la protection des données des utilisateurs (RGPD).
 
 Les données sensibles des clients de la banque, comme les numéros de carte bancaire ou bien les données personnelles, devront être stockés de manière sécurisée afin d'éviter toute fuite de données.
 
-De plus, notre application devra être éthique et modifier les données des clients seulement si ces derniers le souhaitent (numéro de carte bleu, propriétaire du comtpe...) et modifier le solde des comptes bancaires seulement lorsqu'un achat est effectué.
+De plus, notre application devra être éthique et modifier les données des clients seulement si ces derniers le souhaitent (numéro de carte bleu, propriétaire du compte...) et modifier le solde des comptes bancaires seulement lorsqu'un achat est effectué.
 
 Notre application devra donc rester sécurisée et fiable afin de respecter les lois en vigueur mais aussi de rassurer les futurs clients de cette dernière.
