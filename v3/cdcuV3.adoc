@@ -1,23 +1,25 @@
 = CDCU V3 Daily Bank App
 XU Anton - GAYRARD Loan - ROBERT Matthieu
-v3.0, 08/05/2022 - Equipe 1b1
+v3.0, 09/05/2022 - Equipe 1b1
 :toc:
 :toc-title: Sommaire
 :nofooter:
 
 <<<
 
-== Présentation du sujet
+== 1. Présentation du sujet
+
+=== a) Contexte général
 
 Dans le contexte actuel des banques françaises avec l’arrivée des néobanques, il est important pour les banques historiques de se digitaliser et d’utiliser de plus en plus d’outils informatiques. Ceux-ci permettront d’effectuer en temps réel et rendre accessibles les différentes opérations bancaires, autant pour les employés d’agence bancaire que pour les clients. En effet, la robotisation et le développement digital des services bancaires permettront de satisfaire les exigences d’instantanéité et d’efficacité des clients. C’est ainsi que notre projet Daily Bank App s’inscrit dans la modernisation de la banque Daily Bank. Daily Bank App est une application JAVA-Oracle de gestion des comptes clients pour une banque nommée Daily Bank. Cette célèbre banque possède déjà une application, mais elle est incomplète et il lui manque de nombreuses fonctionnalités. Elle souhaite proposer à ses clients une application rapide et simple d’utilisation, qui leur permettra d’interagir avec leur compte bancaire de manière instantanée. Cette application devra donc simplifier les actions bancaires des utilisateurs, mais elle devra aussi aider les employés de l’entreprise en leur permettant de gérer les comptes des clients en ligne et de manière immédiate. Pour ce projet, nous sommes une équipe de 3 développeurs, et grâce à nos compétences en informatique nous allons nous organiser pour proposer et implémenter de meilleures versions de l’application Daily Bank App qui, au fur et à mesure des versions, vont simplifier les relations entre les clients et les employés.
 
-=== Problématique
+=== b) Problématique
 
 Étant donné le contexte et les contraintes imposées, comment allons-nous procéder afin de réaliser ce projet dans les temps et dans les conditions les plus optimales ?
 
 <<<
 
-== Analyse de l'existant
+== 2. Analyse de l'existant
 
 Diagramme de cas d'utilisation de la V1 et la V2
 
@@ -28,28 +30,32 @@ Dans la V2, nous avons deux profils d'utilisateurs qui sont le Guichetier et le 
 
 <<<
 
-== Analyse des besoins de la V3
+== 3. Analyse des besoins de la V3
 
 Diagramme de cas d'utilisation de la V3
 
-image::../assets/ucv3.png[uc V2, 500]
+image::../assets/ucv3.png[uc V3, 500]
 
 Dans cette troisième version de notre application, nous allons implémenter les fonctions suivantes en plus de celles déjà présentes :
-- La création de super options pour le chef d'agence
-- La possibilité de générer des relevés mensuels de compte en format PDF
-- Éxécuter des prélèvements automatiques
 
+- La spécification finalisées de la version 2
+- La création de super options pour le chef d'agence
+
+Dans cette version, il y a aura l'ajout d'un batch ou traitement par lots qui réalisera certaines opérations automiquement, sans l'intervention d'une personne :
+
+- La génération des relevés mensuels de compte en format PDF
+- L'exécution des prélèvements automatiques
 
 
 <<<
 
-== Analyse des contraintes
+== 4. Analyse des contraintes
 
-=== Contraintes techniques
+=== a) Contraintes techniques
 
 Les nouvelles versions devront être programmées en Java, en couple avec le système de gestion de base de données Oracle. Ce dernier devra stocker toutes les procédures effectuées sur les comptes.
 
-=== Contraintes organisationnelles
+=== b) Contraintes organisationnelles
 
 La V3 devra être produite durant les semaines 22 à 23, et devra être livrée le 3 juin 2022, avec la participation de tous les membres du groupe.
 
@@ -61,7 +67,7 @@ Lors de ce projet, Project Libre sera utilisé pour réalisation du Gantt, Ascii
 
 Le suivi de l'avancée du projet se fera à l'aide des issues sur Github.
 
-=== Contraintes juridiques
+=== c) Contraintes juridiques
 
 Tout d'abord, notre application devra respecter les contraintes juridiques sur la protection des données des utilisateurs (RGPD).
 
