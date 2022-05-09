@@ -26,9 +26,12 @@ Dans la V2, nous avons deux profils d'utilisateurs qui sont le Guichetier et le 
 
 == Analyse des besoins de la V3
 
-Diagramme de cas d'utilisation de la V3
-
 image::../assets/ucv3.png[uc V2, 500]
+
+Dans cette troisième version de notre application, nous allons implémenter les fonctions suivantes en plus de celles déjà présentes :
+- La création de super options pour le chef d'agence
+- La possibilité de générer des relevés mensuels de compte en format PDF
+- Éxécuter des prélèvements automatiques
 
 
 
@@ -42,7 +45,7 @@ Les nouvelles versions devront être programmées en Java, en couple avec le sys
 
 === Contraintes organisationnelles
 
-La V2 devra être produite durant les semaines 22 à 23, et devra être livrée le 3 juin 2022, avec la participation de tous les membres du groupe.
+La V3 devra être produite durant les semaines 22 à 23, et devra être livrée le 3 juin 2022, avec la participation de tous les membres du groupe.
 
 L'organisation du développement de l'application se fera par Git, chaque fonctionnalité développée aura sa propre branche.
 
