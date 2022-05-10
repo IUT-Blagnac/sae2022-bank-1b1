@@ -1,6 +1,6 @@
 = CDCU V3 Daily Bank App
 XU Anton - GAYRARD Loan - ROBERT Matthieu
-v3.0, 09/05/2022 - Equipe 1b1
+v3.0, 10/05/2022 - Equipe 1b1
 :toc:
 :toc-title: Sommaire
 :nofooter:
@@ -21,16 +21,60 @@ Dans le contexte actuel des banques françaises avec l’arrivée des néobanque
 
 == 2. Analyse de l'existant
 
-Diagramme de cas d'utilisation de la V1 et la V2
+image::../assets/ucv0.png[uc V0]
 
-image::../assets/uc_existant_v3.png[uc existant V3]
+Dans la V0, les opérations possibles sont encore très limitées, il n'est pas possible de créer de nouveau compte ni de créditer un compte.
 
-Dans la V2, nous avons deux profils d'utilisateurs qui sont le Guichetier et le Chef d'agence. Le Guichetier peut créer et gérer les clients, créer des comptes, les créditer, les débiter, faire des virements de comptes à comptes, clôturer des comptes, gérer les prélèvements automatiques et générer un relevé mensuel d'un compte en PDF. Le chef d'agence est un Guichetier qui, en plus, peut rendre inactif un client, gérer les différents employés de l'agence, simuler un emprunt et une assurance d'emprunt et effectuer des débits exceptionnels.
+Cependant, il existe quand même différents profils d'utilisateurs qui sont le Guichetier et le Chef d'agence. Le guichetier peut créer et gérer les clients. Le Chef d'agence est un guichetier qui, en plus, peut rendre inactif un client.
+
+Les seuls 5 cas d'utilisation ne permettent pas encore à l'application existante d'être utilisée telle quelle.
  
 
 <<<
 
-== 3. Analyse des besoins de la V3
+== 3. Analyse des besoins
+
+=== a) Analyse des besoins de la V1
+
+Diagramme de cas d'utilisation de la V1
+
+image::../assets/ucv1.png[uc V1, 500]
+
+Le guichetier doit avoir la possibilité de créditer un compte d'un client avec un montant donné, afin d'ajouter de l'argent sur son compte.
+
+Le guichetier doit avoir la possibilité de débiter un compte d'un client avec un montant donné, afin de retirer de l'argent sur son compte.
+
+Le guichetier doit avoir la possibilité de créer un compte pour un client, et de l'ajouter à la base de données des comptes.
+
+Le guichetier doit avoir la possibilité d'effectuer des virements de compte à compte, avec un montant donné.
+
+Le guichetier doit avoir la possibilité de clôturer un compte d'un client, afin de le rendre inactif.
+
+Le chef d'agence doit avoir la possibilité d'effectuer les mêmes opérations que le guichetier, mais avec plus de contrôle.
+
+Le chef d'agence doit avoir la possibilité de gérer les employés de son agence.
+
+<<<
+
+=== b) Analyse des besoins de la V2
+
+Diagramme de cas d'utilisation de la V2
+
+image::../assets/ucv2.png[uc V2, 500]
+
+Le guichetier doit avoir la possibilité de générer un relevé mensuel d'un compte en PDF sur lequel figurera les différentes opérations effectuées sur le compte pendant un mois donné.
+
+Le guichetier doit avoir la possibilité de gérer les prélèvements automatiques.
+
+Le chef d'agence doit avoir la possibilité d'effectuer un débit exceptionnel.
+
+Le chef d'agence doit avoir la possibilité de simuler un emprunt à l'aide des informations d'un client.
+
+Le chef d'agence doit avoir la possibilité de simuler une assurance d'emprunt à l'aide des différentes informations d'un client.
+
+<<<
+
+=== c) Analyse des besoins de la V3
 
 Diagramme de cas d'utilisation de la V3
 
