@@ -44,7 +44,7 @@ Le guichetier doit avoir la possibilité de créditer un compte d'un client avec
 
 Le guichetier doit avoir la possibilité de débiter un compte d'un client avec un montant donné, afin de retirer de l'argent sur son compte.
 
-Le guichetier doit avoir la possibilité de créer un compte pour un client, et de l'ajouter à la base de donnée des comptes.
+Le guichetier doit avoir la possibilité de créer un compte pour un client, et de l'ajouter à la base de données des comptes.
 
 Le guichetier doit avoir la possibilité d'effectuer des virements de compte à compte, avec un montant donné.
 
@@ -62,11 +62,11 @@ Diagramme de cas d'utilisation de la V2
 
 image::../assets/ucv2.png[uc V2, 500]
 
-Le guichetier doit avoir la possibilité de générer un relevé mensuel d'un compte en PDF sur lequel figurera les différentes opérations effectué sur le compte pendant un mois donné.
+Le guichetier doit avoir la possibilité de générer un relevé mensuel d'un compte en PDF sur lequel figurera les différentes opérations effectuées sur le compte pendant un mois donné.
 
 Le guichetier doit avoir la possibilité de gérer les prélèvements automatiques.
 
-Le chef d'agence doit avoir la possibilié d'effectuer un débit exceptionnel.
+Le chef d'agence doit avoir la possibilité d'effectuer un débit exceptionnel.
 
 Le chef d'agence doit avoir la possibilité de simuler un emprunt à l'aide des informations d'un client.
 
