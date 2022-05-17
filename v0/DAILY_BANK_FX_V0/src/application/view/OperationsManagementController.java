@@ -56,6 +56,9 @@ public class OperationsManagementController implements Initializable {
 		this.validateComponentState();
 	}
 
+	/**
+	 * Affiche la vu des gestion des opérations d'un compte
+	 */
 	public void displayDialog() {
 		this.primaryStage.showAndWait();
 	}

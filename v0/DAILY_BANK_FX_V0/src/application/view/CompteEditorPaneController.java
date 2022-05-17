@@ -48,6 +48,13 @@ public class CompteEditorPaneController implements Initializable {
 		this.txtSolde.focusedProperty().addListener((t, o, n) -> this.focusSolde(t, o, n));
 	}
 
+	/**
+	 * Affiche la boite de dialogue d'édition d'un compte
+	 * @param client Client associé au compte à modifier
+	 * @param cpte Compte à modifier
+	 * @param mode Le mode d'édition sélectionné
+	 * @return Le compte modifié
+	 */
 	public CompteCourant displayDialog(Client client, CompteCourant cpte, EditionMode mode) {
 		this.clientDuCompte = client;
 		this.em = mode;

@@ -18,6 +18,11 @@ public class OperationEditorPane {
 	private Stage primaryStage;
 	private OperationEditorPaneController oepc;
 
+	/**
+	 * Constructeur de la classe OperationEditorPane permettant de charger la vu d'édition des opérations d'un compte
+	* @param _parentStage Stage parent de la vue
+	 * @param _dbstate Etat actuel de l'application DailyBank
+	 */
 	public OperationEditorPane(Stage _parentStage, DailyBankState _dbstate) {
 
 		try {
@@ -44,6 +49,12 @@ public class OperationEditorPane {
 		}
 	}
 
+	/**
+	 * Active l'affichage de la vu d'édition des opération d'un compte
+	 * @param cpte Compte dont on veut modifier les opérations
+	 * @param cm Type d'opération à modifier
+	 * @return L'opération modifié
+	 */
 	public Operation doOperationEditorDialog(CompteCourant cpte, CategorieOperation cm) {
 		return this.oepc.displayDialog(cpte, cm);
 	}

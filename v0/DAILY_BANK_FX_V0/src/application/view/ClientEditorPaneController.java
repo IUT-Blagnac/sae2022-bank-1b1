@@ -48,6 +48,12 @@ public class ClientEditorPaneController implements Initializable {
 		this.primaryStage.setOnCloseRequest(e -> this.closeWindow(e));
 	}
 
+	/**
+	 * Affiche la boite de dialogue d'édition d'un client
+	 * @param client Le client à modifier
+	 * @param mode Le mode d'édition sélectionné
+	 * @return Le client modifié
+	 */
 	public Client displayDialog(Client client, EditionMode mode) {
 
 		this.em = mode;

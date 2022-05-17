@@ -60,6 +60,9 @@ public class ComptesManagementController implements Initializable {
 		this.validateComponentState();
 	}
 
+	/**
+	 * Affiche la vu des gestion des comptes
+	 */
 	public void displayDialog() {
 		this.primaryStage.showAndWait();
 	}
