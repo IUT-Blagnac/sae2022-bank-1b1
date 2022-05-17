@@ -23,6 +23,11 @@ public class ClientsManagement {
 	private DailyBankState dbs;
 	private ClientsManagementController cmc;
 
+	/**
+	 * Constructeur de la classe ClientsManagement permettant de charger la vu de gestion des clients
+	 * @param _parentStage Stage parent de la vue
+	 * @param _dbstate Etat actuel de l'application DailyBank
+	 */
 	public ClientsManagement(Stage _parentStage, DailyBankState _dbstate) {
 		this.dbs = _dbstate;
 		try {
@@ -34,7 +39,7 @@ public class ClientsManagement {
 
 			this.primaryStage = new Stage();
 			this.primaryStage.initModality(Modality.WINDOW_MODAL);
-			this.primaryStage.initOwner(_parentStage);
+			this.primaryStage.initOwner(_parentStage); 
 			StageManagement.manageCenteringStage(_parentStage, this.primaryStage);
 			this.primaryStage.setScene(scene);
 			this.primaryStage.setTitle("Gestion des clients");
@@ -48,10 +53,18 @@ public class ClientsManagement {
 		}
 	}
 
+	/**
+	 * Active l'affichage de la vu de gestion des clients
+	 */
 	public void doClientManagementDialog() {
 		this.cmc.displayDialog();
 	}
 
+	/**
+	 * Active l'affichage de la vu de modification d'un client
+	 * @param c Le client à modifier
+	 * @return Le client modifié
+	 */
 	public Client modifierClient(Client c) {
 		ClientEditorPane cep = new ClientEditorPane(this.primaryStage, this.dbs);
 		Client result = cep.doClientEditorDialog(c, EditionMode.MODIFICATION);
@@ -73,6 +86,10 @@ public class ClientsManagement {
 		return result;
 	}
 
+	/**
+	 * Active l'affichage de la vu d'ajout d'un client
+	 * @return Le nouveau client créé
+	 */
 	public Client nouveauClient() {
 		Client client;
 		ClientEditorPane cep = new ClientEditorPane(this.primaryStage, this.dbs);
@@ -96,11 +113,22 @@ public class ClientsManagement {
 		return client;
 	}
 
+	/**
+	 * Active l'affichage de la vu de gestion des comptes clients
+	 * @param c Client dont on veut afficher les comptes
+	 */
 	public void gererComptesClient(Client c) {
 		ComptesManagement cm = new ComptesManagement(this.primaryStage, this.dbs, c);
 		cm.doComptesManagementDialog();
 	}
 
+	/**
+	 * Récupère la liste des compte d'un client
+	 * @param _numCompte Numéro du compte à chercher
+	 * @param _debutNom Début du nom du client associé au compte à chercher
+	 * @param _debutPrenom Début du prénom du client associé au compte à chercher
+	 * @return Liste la lite des comptes trouvé
+	 */
 	public ArrayList<Client> getlisteComptes(int _numCompte, String _debutNom, String _debutPrenom) {
 		ArrayList<Client> listeCli = new ArrayList<>();
 		try {

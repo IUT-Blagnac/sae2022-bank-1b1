@@ -19,9 +19,9 @@ public class CompteEditorPane {
 	private CompteEditorPaneController cepc;
 
 	/**
-	 * 
-	 * @param _parentStage
-	 * @param _dbstate
+	 * Constructeur de la classe CompteEditorPane permettant de charger la vu d'édition d'un compte
+	 * @param _parentStage Stage parent de la vue
+	 * @param _dbstate Etat actuel de l'application DailyBank
 	 */
 	public CompteEditorPane(Stage _parentStage, DailyBankState _dbstate) {
 
@@ -48,6 +48,13 @@ public class CompteEditorPane {
 		}
 	}
 
+	/** 
+	 * Active l'affichage de la vu d'édition d'un compte
+	 * @param client Le client associé au compte à éditer
+	 * @param cpte Le compte à éditer
+	 * @param em Le mode d'éditon du compte
+	 * @return Le compte édité
+	 */
 	public CompteCourant doCompteEditorDialog(Client client, CompteCourant cpte, EditionMode em) {
 		return this.cepc.displayDialog(client, cpte, em);
 	}

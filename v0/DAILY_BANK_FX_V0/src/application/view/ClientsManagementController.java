@@ -49,6 +49,9 @@ public class ClientsManagementController implements Initializable {
 		this.validateComponentState();
 	}
 
+	/**
+	 * Affiche la vu de gestion des clients
+	 */
 	public void displayDialog() {
 		this.primaryStage.showAndWait();
 	}

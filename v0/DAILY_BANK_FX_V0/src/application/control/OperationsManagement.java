@@ -21,6 +21,9 @@ import model.orm.AccessOperation;
 import model.orm.exception.ApplicationException;
 import model.orm.exception.DatabaseConnexionException;
 
+/**
+ * Classe permetant de charger la vue de gestion des opérations d'un compte
+ */
 public class OperationsManagement {
 
 	private Stage primaryStage;
@@ -29,6 +32,13 @@ public class OperationsManagement {
 	private Client clientDuCompte;
 	private CompteCourant compteConcerne;
 
+	/**
+	 * Constructeur de la classe OperationsManagement permetant de charger la vu de gestion des opéarations d'un comtpe
+	 * @param _parentStage Stage parent de la vue
+	 * @param _dbstate Etat actuel de l'application DailyBank
+	 * @param client Client associé au compte dont on veut afficher les opérations
+	 * @param compte Compte dont on veut afficher les opérations
+	 */
 	public OperationsManagement(Stage _parentStage, DailyBankState _dbstate, Client client, CompteCourant compte) {
 
 		this.clientDuCompte = client;
@@ -58,10 +68,17 @@ public class OperationsManagement {
 		}
 	}
 
+	/**
+	 * Affiche la boite de dialogue pour gérer les opérations d'un compte
+	 */
 	public void doOperationsManagementDialog() {
 		this.omc.displayDialog();
 	}
 
+	/**
+	 * Active la vu d'ajout d'un débit sur un compte
+	 * @return La nouvelle opération de débit créé
+	 */
 	public Operation enregistrerDebit() {
 
 		OperationEditorPane oep = new OperationEditorPane(this.primaryStage, this.dbs);
@@ -86,6 +103,10 @@ public class OperationsManagement {
 		return op;
 	}
 
+	/**
+	 * Récupère les opéraitons d'un compte
+	 * @return La liste des opération d'un compte avec le compte associé
+	 */
 	public PairsOfValue<CompteCourant, ArrayList<Operation>>  operationsEtSoldeDunCompte() {
 		ArrayList<Operation> listeOP = new ArrayList<>();
 

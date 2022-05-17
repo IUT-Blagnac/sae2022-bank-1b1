@@ -46,6 +46,12 @@ public class OperationEditorPaneController implements Initializable {
 		this.primaryStage.setOnCloseRequest(e -> this.closeWindow(e));
 	}
 
+	/**
+	 * Affiche la boite de dialogue de mofication des opérations
+	 * @param cpte Compte dont on veut modifier les opérations
+	 * @param mode Le mode d'édition sélectionné
+	 * @return L'opération modifié
+	 */
 	public Operation displayDialog(CompteCourant cpte, CategorieOperation mode) {
 		this.categorieOperation = mode;
 		this.compteEdite = cpte;
