@@ -18,6 +18,11 @@ public class CompteEditorPane {
 	private Stage primaryStage;
 	private CompteEditorPaneController cepc;
 
+	/**
+	 * 
+	 * @param _parentStage
+	 * @param _dbstate
+	 */
 	public CompteEditorPane(Stage _parentStage, DailyBankState _dbstate) {
 
 		try {

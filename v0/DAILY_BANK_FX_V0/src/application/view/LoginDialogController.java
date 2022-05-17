@@ -60,12 +60,18 @@ public class LoginDialogController implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 	}
 
+	/*
+	 * Action du bouton annuler
+	 */
 	@FXML
 	private void doCancel() {
 		this.dbs.setEmpAct(null);
 		this.primaryStage.close();
 	}
 
+	/*
+	 * Action du bouton valider
+	 */
 	@FXML
 	private void doOK() {
 		String login = this.txtLogin.getText().trim();

@@ -19,6 +19,10 @@ public class DailyBankMainFrame extends Application {
 	private DailyBankState dbs;
 	private Stage primaryStage;
 
+	/**
+	 * Lance la fenêtre d'accueil de l'application
+	 * @param primaryStage le stage de la fenêtre de l'application
+	 */
 	@Override
 	public void start(Stage primaryStage) {
 
@@ -92,10 +96,16 @@ public class DailyBankMainFrame extends Application {
 		}
 	}
 
+	/*
+	 * Lance l'application principale
+	 */
 	public static void runApp() {
 		Application.launch();
 	}
 
+	/*
+	 * Action du bouton déconnexion
+	 */
 	public void disconnect() {
 		this.dbs.setAgAct(null);
 		this.dbs.setEmpAct(null);
@@ -108,6 +118,9 @@ public class DailyBankMainFrame extends Application {
 		}
 	}
 
+	/*
+	 * Action du bouton connexion
+	 */
 	public void login() {
 		LoginDialog ld = new LoginDialog(this.primaryStage, this.dbs);
 		ld.doLoginDialog();
