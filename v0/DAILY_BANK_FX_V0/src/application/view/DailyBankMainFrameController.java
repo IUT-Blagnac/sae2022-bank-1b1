@@ -37,6 +37,9 @@ public class DailyBankMainFrameController implements Initializable {
 		this.validateComponentState();
 	}
 
+	/*
+	 * Affiche la fenêtre principale
+	 */
 	public void displayDialog() {
 		this.primaryStage.show();
 	}

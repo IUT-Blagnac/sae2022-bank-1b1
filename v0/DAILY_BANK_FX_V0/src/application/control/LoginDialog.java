@@ -22,8 +22,8 @@ public class LoginDialog {
 
 	/*
 	 * Charge la fenêtre de connexion à l'application
-	 * @param _parentStage le stage parent
-	 * @param _dbstate l'état de la base de donnée
+	 * @param _parentStage Stage le stage parent
+	 * @param _dbstate DailyBankState l'état de la base de donnée
 	 */
 	public LoginDialog(Stage _parentStage, DailyBankState _dbstate) {
 		this.dbs = _dbstate;
@@ -57,9 +57,9 @@ public class LoginDialog {
 	/**
 	 * Recherche un employé avec son login et son mot de passe
 	 * 
-	 * @param login le nom d'utilisateur de l'employé à chercher
-	 * @param password le mot de passe de l'employé à chercher
-	 * @return l'employé trouvé, null sinon
+	 * @param login String le nom d'utilisateur de l'employé à chercher
+	 * @param password String le mot de passe de l'employé à chercher
+	 * @return Employe l'employé trouvé, null sinon
 	 */
 	public Employe chercherParLogin(String login, String password) {
 		Employe employe = null;
