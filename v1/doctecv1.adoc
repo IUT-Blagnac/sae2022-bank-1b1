@@ -39,14 +39,10 @@ Le chef d'agence possède les mêmes fonctionnalités que le guichetier avec que
 
 === Structuration des packages
 
-application
-
-application.control
-
-application.tools
-
-application.view
-
+application +
+application.control +
+application.tools +
+application.view +
 model
 
 
@@ -69,6 +65,19 @@ model
 // Eléments essentiels à connaître, spécificités, … nécessaires à la mise en œuvre du développement. Cette partie peut être illustrée par un diagramme de séquence
 
 // Extraits de code significatifs commentés si nécessaires pour des points particuliers et importants
+=== Partage du travail
+
+.Loan
+* xref:doctecv1.adoc#1[1]
+* xref:doctecv1.adoc#3[3]
+
+.Matthieu
+* xref:doctecv1.adoc#1[2]
+* 4
+
+.Anton
+* 5
+
 
 === 1
 
