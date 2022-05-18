@@ -25,6 +25,8 @@ Daily Bank App est une application de gestion des comptes clients pour la banque
 
 ==== Débiter un compte
 
+==== Créditer un compte
+
 ==== Clôturer un compte
 
 ==== Effectuer un virement de compte à compte
