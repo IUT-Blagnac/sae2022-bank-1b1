@@ -39,4 +39,6 @@ Daily Bank App est une application de gestion des comptes clients pour la banque
 
 === Gestion des clients
 
+==== Modifier informations d'un client
+
 ==== Rendre inactif un client
