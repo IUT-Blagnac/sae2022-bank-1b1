@@ -1,10 +1,11 @@
 = Documentation Technique V1 Daily Bank App
 XU Anton - GAYRARD Loan - ROBERT Matthieu
-v1.0, 16/05/2022 - Equipe 1b1
-:toc:
+v1.0, 18/05/2022 - Equipe 1b1
+:toc: preamble
 :toc-title: Sommaire
 :nofooter:
 
+Equipe 1B1 - XU Anton - GAYRARD Loan - ROBERT Matthieu
 
 <<<
 
