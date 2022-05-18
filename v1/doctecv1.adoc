@@ -24,19 +24,19 @@ Le chef d'agence possède les mêmes fonctionnalités que le guichetier avec que
 
 === Diagramme de classe de la base de donnée
 
-image::../assets/v1/dcDb.v1/Digramme de classe de la basse de donnée.png[dc Db]
+image::../assets/v1/dcDb.v1/Diagramme de classe de la base de donnée.png[dc Db]
 
-Dans la base de donée actuelle nous avons diférentes tables qui sont relié entre elles. 
+Dans la base de donnée actuelle nous avons différentes tables qui sont reliées entre elles. 
 
-Nous avons la table AgenceBancaire qui représente une agence bancaire avec un identifiant, un nom et une adresse Postale, cette table est relié par une clé étrangère à la table Employe, cette clé étrangère représente l'indentifiant de l'employé qui est chef d'agence. 
+Nous avons la table AgenceBancaire qui représente une agence bancaire avec un identifiant, un nom et une adresse postale, cette table est reliée par une clé étrangère à la table Employe, cette clé étrangère représente l'identifiant de l'employé qui est chef d'agence.
 
-Nous avons la table Employe qui représente un employé avec un identifiant, un nom, un prenom, un chaine désignant ces droits d'accés, et ses identifiants de connexion. Cette table est relié par une clé étrangère à la table AgenceBancaire, cette clé étrangère représente l'identifiant de l'agence bancaire auquelle l'employé appartient.
+Nous avons la table Employe qui représente un employé avec un identifiant, un nom, un prenom, un chaine désignant ses droits d'accès, et ses identifiants de connexion. Cette table est reliée par une clé étrangère à la table AgenceBancaire, cette clé étrangère représente l'identifiant de l'agence bancaire à laquelle l'employé appartient.
 
-Nous avons la table Client qui représente un client avec un identifiant, un nom, un prenom, une adresse postale, une adresse mail, un numéro de téléphone et égallement un attibut indiquant si le client est actif ou inactif. Cette table est relié par une clé étrangère à la table AgenceBancaire, cette clé étrangère représente l'identifiant de l'agence bancaire auquelle le client est associé.
+Nous avons la table Client qui représente un client avec un identifiant, un nom, un prenom, une adresse postale, une adresse mail, un numéro de téléphone et également un attibut indiquant si le client est actif ou inactif. Cette table est reliée par une clé étrangère à la table AgenceBancaire, cette clé étrangère représente l'identifiant de l'agence bancaire à laquelle le client est associé.
 
-Nous avons la table CompteCourant qui désigne un Compte bancaire avec un numéro de compte, un solde de débit autorisé et un solde de compte et qui est relié par une clé étrangère à la table Client, cette clé étrangère représente l'identifiant du client auquel le compte courant est associé.
+Nous avons la table CompteCourant qui désigne un Compte bancaire avec un numéro de compte, un solde de débit autorisé et un solde de compte et qui est reliée par une clé étrangère à la table Client, cette clé étrangère représente l'identifiant du client auquel le compte courant est associé.
 
-Nous avons la table Operation qui réprésente les différente opérations effectué sur un compte avec un identifiant d'opération, le montant de l'opération, la date de l'opération et qui est relié par une clé étrangère à la table CompteCourant, cette clé étrangère représente l'identifiant du compte auquel l'opération est associé et égallement une clé étrangère vers la table TypeOperation qui permet d'identifier le type de l'opération.
+Nous avons la table Operation qui représente les différentes opérations effectuées sur un compte avec un identifiant d'opération, le montant de l'opération, la date de l'opération et qui est reliée par une clé étrangère à la table CompteCourant, cette clé étrangère représente l'identifiant du compte auquel l'opération est associée et également une clé étrangère vers la table TypeOperation qui permet d'identifier le type de l'opération.
 
 
 <<<
@@ -57,7 +57,9 @@ application +
 application.control +
 application.tools +
 application.view +
-model
+model.data +
+model.orm +
+model.orm.exception
 
 
 === Eléments essentiels / spécificités
@@ -67,7 +69,7 @@ model
 <<<
 
 == Fonctionnalités
-// Pour chaque fonctionnalité :
+// Pour chaque fonctionnalité : en les expliquant
 // Partie de use case réalisé - scénarios éventuels
 
 // Partie du diagramme de classes données nécessaires : en lecture, en mise à jour
@@ -93,15 +95,35 @@ model
 * 5
 
 
-=== 1
+=== V0
 
--
+==== Créer un client
 
-=== 2
+image::../assets/v1/createClient/Nouveau Client.png[Diagramme de séquence]
 
--
+==== Modifier un client
 
-=== 3
+image::../assets/v1/editClient/Editer Client.png[Diagramme de séquence]
 
--
+==== Consulter un compte
+
+
+==== Débiter un compte
+
+
+=== V1
+
+==== Créditer un compte
+
+==== Clôturer un compte
+
+==== Effectuer un virement de compte à compte
+
+==== Créer un employé
+
+==== Modifier un employé
+
+==== Supprimer un employé
+
+
 

@@ -1,4 +1,4 @@
-@startuml Digramme de classe de la basse de donnée
+@startuml Diagramme de classe de la base de donnée
 
 class AgenceBancaire {
     + idAg NUMBER
