@@ -22,9 +22,22 @@ Les guichetiers de la banque gèrent et consultent les profils des clients, cré
 
 Le chef d'agence possède les mêmes fonctionnalités que le guichetier avec quelques possibilité en plus comme rendre inactif un client ou gérer les différents employés et guichetiers de l'agence.
 
-=== Diagramme de classe des données
+=== Diagramme de classe de la base de donnée
 
--
+image::../assets/v1/dcDb.v1/Digramme de classe de la basse de donnée.png[dc Db]
+
+Dans la base de donée actuelle nous avons diférentes tables qui sont relié entre elles. 
+
+Nous avons la table AgenceBancaire qui représente une agence bancaire avec un identifiant, un nom et une adresse Postale, cette table est relié par une clé étrangère à la table Employe, cette clé étrangère représente l'indentifiant de l'employé qui est chef d'agence. 
+
+Nous avons la table Employe qui représente un employé avec un identifiant, un nom, un prenom, un chaine désignant ces droits d'accés, et ses identifiants de connexion. Cette table est relié par une clé étrangère à la table AgenceBancaire, cette clé étrangère représente l'identifiant de l'agence bancaire auquelle l'employé appartient.
+
+Nous avons la table Client qui représente un client avec un identifiant, un nom, un prenom, une adresse postale, une adresse mail, un numéro de téléphone et égallement un attibut indiquant si le client est actif ou inactif. Cette table est relié par une clé étrangère à la table AgenceBancaire, cette clé étrangère représente l'identifiant de l'agence bancaire auquelle le client est associé.
+
+Nous avons la table CompteCourant qui désigne un Compte bancaire avec un numéro de compte, un solde de débit autorisé et un solde de compte et qui est relié par une clé étrangère à la table Client, cette clé étrangère représente l'identifiant du client auquel le compte courant est associé.
+
+Nous avons la table Operation qui réprésente les différente opérations effectué sur un compte avec un identifiant d'opération, le montant de l'opération, la date de l'opération et qui est relié par une clé étrangère à la table CompteCourant, cette clé étrangère représente l'identifiant du compte auquel l'opération est associé et égallement une clé étrangère vers la table TypeOperation qui permet d'identifier le type de l'opération.
+
 
 <<<
 
