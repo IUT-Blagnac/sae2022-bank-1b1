@@ -192,8 +192,82 @@ image::../assets/v1/deactivateClient/Rendre inactif un client.png[Diagramme de s
 
 ==== Consulter un compte
 
+Consulter un compte est une fonctionnalité importante pour une banque, afin de gérer les comptes de ses clients et de veiller au bon fonctionnement d’une banque.
+Pour consulter un compte d’un client de la banque, il nous faut :
+
+- Le client en question
+- Le compte du client
+
+Voici le diagramme de séquence qui illustre le chemin parcouru afin de consulter le compte d’un client :
+
+(insérer image)
+
+Les Classes impliquées pour le bon fonctionnement de cette action sont :
+
+pass:[<u>Dans application.control :</u>]
+
+DailyBankMainFrame.java
+ClientsManagement.java
+ComptesManagement.java
+OperationsManagement.java
+OperationEditorPane.java
+
+pass:[<u>Dans application.tools :</u>]
+
+AlertUtilities.java
+CategorieOperation.java
+EditionMode.java
+PairsOfValue.java
+StageManagement.java
+
+pass:[<u>Dans application.view :</u>]
+
+DailyBankMainFrameController.java
+ClientsManagementController.java
+ComptesManagementController.java
+OperationsManagementController.java
+OperationEditorPaneController.java
+
 
 ==== Débiter un compte
+
+Enregistrer un débit est une fonctionnalité essentielle à toute banque, par exemple lors d'un achat en ligne, il est essentiel de débiter le client de la somme qu’il a dépensé.
+Pour débiter un client il nous faut :
+
+- Le client en question
+- Son compte à débiter
+- La somme à débiter
+
+Voici la fonctionnalité enregistrer un débit en détail, avec le diagramme de séquence et les classes impliquées dans son fonctionnement :
+
+(insérer image)
+
+Les Classes impliquées pour le bon fonctionnement de cette action sont :
+
+pass:[<u>Dans application.control :</u>]
+
+DailyBankMainFrame.java
+ClientsManagement.java
+ComptesManagement.java
+OperationsManagement.java
+OperationEditorPane.java
+
+pass:[<u>Dans application.tools :</u>]
+
+AlertUtilities.java
+CategorieOperation.java
+EditionMode.java
+PairsOfValue.java
+StageManagement.java
+
+pass:[<u>Dans application.view :</u>]
+
+DailyBankMainFrameController.java
+ClientsManagementController.java
+ComptesManagementController.java
+OperationsManagementController.java
+OperationEditorPaneController.java
+
 
 
 === V1
