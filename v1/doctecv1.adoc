@@ -100,6 +100,7 @@ model.orm.exception
 ==== Créer un client
 
 Création d'un nouveau client dans la base de donnée.
+
 Pour créer un client il faut fournir :
     
     - Un nom
@@ -108,7 +109,7 @@ Pour créer un client il faut fournir :
     - Un numéro de téléphone
     - Une adresse mail
 
-Dans la base de donnée, on agit en écriture sur la table Client en écriture.
+Dans la base de donnée, on agit sur la table Client en écriture.
 
 Voici une capture d'écran de l'interface de création d'un client :
 
@@ -132,6 +133,37 @@ Voici un diagramme de séquence permettant d'observer le passage entre les diff�
 image::../assets/v1/createClient/Nouveau Client.png[Diagramme de séquence]
 
 ==== Modifier un client
+
+Modification d'un client dans la base de donnée.
+
+Les différentes modification possible pour un client sont:
+
+    - Son nom
+    - Son prénom
+    - Son adresse postale
+    - Son numéro de téléphone
+    - Son adresse mail
+
+Dans la base de donnée, on agit en lecture pour récupérer les information du client et en écriture pour ajouter les nouvelles informations du client, sur la table Client. 
+
+Voici une capture d'écran de l'interface de modification d'un client :
+
+image::../assets/interface_edition_client.png[interface création client]
+
+Classes impliquées dans chaque package :
+    
+    application.control:
+        - ClientsManagement
+        - ClientEditorPane
+    application.view:
+        - ClientsManagementController
+        - ClientEditorPaneController
+    model.data:
+        - Client
+    application.tools:
+        - ConstantesIHM
+    
+Voici un diagramme de séquence permettant d'observer le passage entre les différentes classes :
 
 image::../assets/v1/editClient/Editer Client.png[Diagramme de séquence]
 
