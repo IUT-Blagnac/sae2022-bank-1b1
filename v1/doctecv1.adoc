@@ -89,10 +89,10 @@ model.orm.exception
 
 .Matthieu
 * xref:doctecv1.adoc#Créer un client[Créer un client]
-* 4
+* xref:doctecv1.adoc#Modifier un client[Modifier un client]
 
 .Anton
-* 5
+* xref:doctecv1.adoc#Rendre inactif un client[Rendre inactif un client]
 
 
 === V0
@@ -136,7 +136,7 @@ image::../assets/v1/createClient/Nouveau Client.png[Diagramme de séquence]
 
 Modification d'un client dans la base de donnée.
 
-Les différentes modification possible pour un client sont:
+Les différentes modifications possibles pour un client sont :
 
     - Son nom
     - Son prénom
@@ -165,17 +165,30 @@ Classes impliquées dans chaque package :
     
 Voici un diagramme de séquence permettant d'observer le passage entre les différentes classes :
 
-image::../assets/v1/editClient/Editer Client.png[Diagramme de séquence]
+image::../assets/v1/editClient/Editer client.png[Diagramme de séquence]
 
 ==== Rendre inactif un client
 
 L'état actif ou inactif d'un client peut seulement être modifié par un chef d'agence, nous le testons avec la méthode statique ConstantesIHM.isAdmin(Employe).
 
+clientEdite.estInactif est la variable String indiquant l'état d'activité du client. Sa valeur doit être changée grâce aux constantes ConstantesIHM.CLIENT_ACTIF ainsi que ConstantesIHM.CLIENT_INACTIF.
 
+Classes impliquées dans chaque package :
+    
+    application.control:
+        - ClientsManagement
+        - ClientEditorPane
+    application.view:
+        - ClientsManagementController
+        - ClientEditorPaneController
+    model.data:
+        - Client
+    application.tools:
+        - ConstantesIHM
 
-Le diagramme de séquence est identique à celui de Modifier un client
+Le diagramme de séquence est identique à celui de Modifier un client car l'activité d'un client est un des attributs modifiables d'un client.
 
-image::../assets/v1/deactivateClient/Rendre inactif un Client.png[Diagramme de séquence]
+image::../assets/v1/deactivateClient/Rendre inactif un client.png[Diagramme de séquence]
 
 ==== Consulter un compte
 
