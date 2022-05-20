@@ -169,9 +169,24 @@ image::../assets/v1/editClient/Editer client.png[Diagramme de séquence]
 
 ==== Rendre inactif un client
 
-L'état actif ou inactif d'un client peut seulement être modifié par un chef d'agence, nous le testons avec la méthode statique ConstantesIHM.isAdmin(Employe).
+Rendre inactif un client est une spécificité de la modification d'un client.
 
-clientEdite.estInactif est la variable String indiquant l'état d'activité du client. Sa valeur doit être changée grâce aux constantes ConstantesIHM.CLIENT_ACTIF ainsi que ConstantesIHM.CLIENT_INACTIF.
+L'état actif ou inactif d'un client peut seulement être modifié par un chef d'agence, nous le testons avec la méthode statique `ConstantesIHM.isAdmin(Employe)`.
+
+.ClientEditorPaneController.java
+[source,java]  
+---- 
+if (ConstantesIHM.isAdmin(this.dbs.getEmpAct())) {
+    this.rbActif.setDisable(false);
+    this.rbInactif.setDisable(false);
+} else {
+    this.rbActif.setDisable(true);
+    this.rbInactif.setDisable(true);
+----
+Les boutons permettant la modification de l'activité sont activés conditionnellement.
+
+
+clientEdite.estInactif est la variable String indiquant l'état d'activité du client. Sa valeur doit être changée grâce aux constantes `ConstantesIHM.CLIENT_ACTIF` ainsi que `ConstantesIHM.CLIENT_INACTIF`.
 
 Classes impliquées dans chaque package :
     
