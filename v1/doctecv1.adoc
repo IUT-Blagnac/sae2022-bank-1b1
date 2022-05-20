@@ -88,7 +88,7 @@ model.orm.exception
 * xref:doctecv1.adoc#3[3]
 
 .Matthieu
-* xref:doctecv1.adoc#Créer un client[1]
+* xref:doctecv1.adoc#Créer un client[Créer un client]
 * 4
 
 .Anton
@@ -134,6 +134,16 @@ image::../assets/v1/createClient/Nouveau Client.png[Diagramme de séquence]
 ==== Modifier un client
 
 image::../assets/v1/editClient/Editer Client.png[Diagramme de séquence]
+
+==== Rendre inactif un client
+
+L'état actif ou inactif d'un client peut seulement être modifié par un chef d'agence, nous le testons avec la méthode statique ConstantesIHM.isAdmin(Employe).
+
+
+
+Le diagramme de séquence est identique à celui de Modifier un client
+
+image::../assets/v1/deactivateClient/Rendre inactif un Client.png[Diagramme de séquence]
 
 ==== Consulter un compte
 
