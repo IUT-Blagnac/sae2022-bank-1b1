@@ -45,7 +45,11 @@ Nous avons la table Operation qui représente les différentes opérations effec
 
 === Architecture générale
 
--
+Voici l'architecture générale de l'application :
+
+image::../assets/architecture_application.png[architecture application]
+
+Dans cetta application nous avons une architecture où nous avons une base de donnée sur laquelle se connectent les différents utilisateurs de l'application, qui sont les guichetier et les chef d'agences. Les guichetiers et les chef d'agences ont accés en écriture et en lecture à la base de donnée afin de pouvoir ajouter de nouveaux et modifier des clients, ajouter, modifier et intéragir avec les comptes des clients. Le chef d'agence a égallement accés à la table contenant les employés de l'agence, afin de pouvoir en ajouter ou en supprimer. 
 
 === Ressources externes utilisées
 
