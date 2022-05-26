@@ -57,34 +57,34 @@ Dans cetta application nous avons une architecture où nous avons une base de do
 
 === Structuration des packages
 
-application :
+    application :
 
-    Nous retrouvons dans ce package principal la classe qui permet de lancer l'application (DailyBankApp.java) mais aussi la classe qui permet d'obtenir le statut de l'utilisateur connecté (chef d'agence ou employé).
-    Un fichier css est aussi présent afin de gérer le style de l'application
+        Nous retrouvons dans ce package principal la classe qui permet de lancer l'application (DailyBankApp.java) mais aussi la classe qui permet d'obtenir le statut de l'utilisateur connecté (chef d'agence ou employé).
+        Un fichier css est aussi présent afin de gérer le style de l'application.
 
-application.control :
+    application.control :
 
-    Dans ce package sont présents les classes qui gèrent l'affichage des différentes fenêtres de l'application. Ces classes récupèrent notamment les fichiers fxml qui permettront par la suite de créer la structure des différentes fenêtres de l'application.
+        Dans ce package sont présents les classes qui gèrent l'affichage des différentes fenêtres de l'application. Ces classes récupèrent notamment les fichiers fxml qui permettront par la suite de créer la structure des différentes fenêtres de l'application.
 
-application.tools :
+    application.tools :
 
-    Comme son nom l'indique, ce package contient diverses classes utiles, comme AlertUtilities.java qui va gérer l'affichage de fenêtres d'alerte, ou bien encore des classes qui vont permettre de gérer les crédits ou les débits (CategorieOperation.java).
+        Comme son nom l'indique, ce package contient diverses classes utiles, comme AlertUtilities.java qui va gérer l'affichage de fenêtres d'alerte, ou bien encore des classes qui vont permettre de gérer les crédits ou les débits (CategorieOperation.java).
 
-application.view :
+    application.view :
 
-    Ce package contient les classes qui vont récupérer les différents éléments des fenêtres de l'application, comme les boutons, et va leur donner une action (ex : quand on clique sur un bouton, on va effectuer une certaine action). Ce package contient aussi les fichiers FXML qui seront ensuites récupérés par les classes du package application.control.
+        Ce package contient les classes qui vont récupérer les différents éléments des fenêtres de l'application, comme les boutons, et va leur donner une action (ex : quand on clique sur un bouton, on va effectuer une certaine action). Ce package contient aussi les fichiers FXML qui seront ensuites récupérés par les classes du package application.control.
 
-model.data :
+    model.data :
 
-    Ce package contient les classes principales, comme par exemple Client.java ou CompteCourant.java, qui vont être utilisés afin de créer des objets Client et CompteCourant nécessaires au bon fonctionnement de l'application et à la structuration du code.
+        Ce package contient les classes principales, comme par exemple Client.java ou CompteCourant.java, qui vont être utilisés afin de créer des objets Client et CompteCourant nécessaires au bon fonctionnement de l'application et à la structuration du code.
 
-model.orm :
+    model.orm :
 
-    Ce package va contenir les classes qui communiquent avec la base de données. Comme classe importante nous pouvons citer AccesClient.java qui va chercher un client dans la base de donnée en fonction de son identifiant, de son age ou de son nom. Nous pouvons aussi noter LogToDatabase.java qui va permettre aux employés de l'agence de se connecter à la base de données afin de gérer les clients.
+        Ce package va contenir les classes qui communiquent avec la base de données. Comme classe importante nous pouvons citer AccesClient.java qui va chercher un client dans la base de donnée en fonction de son identifiant, de son age ou de son nom. Nous pouvons aussi noter LogToDatabase.java qui va permettre aux employés de l'agence de se connecter à la base de données afin de gérer les clients.
 
-model.orm.exception :
+    model.orm.exception :
 
-    Dans ce package sont présents les différentes exceptions que l'application peut lever (erreur de connexion à la base de donnée, erreur de privilège...).
+        Dans ce package sont présents les différentes exceptions que l'application peut lever (erreur de connexion à la base de donnée, erreur de privilège...).
 
 === Eléments essentiels / spécificités
 
