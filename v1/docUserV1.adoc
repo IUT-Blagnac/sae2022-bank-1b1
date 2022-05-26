@@ -13,13 +13,35 @@ Elle permet aux guichetiers de la banque de gérer et consulter les profils des 
 
 Le chef d'agence possède les même fonctionnalité que le guichetier avec quelques possibilité en plus comme rendre inactif un client ou des gérer les différents employés et guichetiers de l'agence.
 
-== Installation de l'application
+== Installation et lancement de l'application
 
 Prérequis: Avoir Java 8 installé
 
 Etapes:
+
     - Télécharger le fichier DailyBankV0.jar
-    - Ouvrir le ficheir DailyBankV0.jar
+    - Ouvrir le ficheir DailyBankV0.jar en double cliquant dessus
 
 
-== Fonctionnement
+== Utilisation de l'application
+
+=== Explications des différents rôles
+
+Dans cette application, il existe différents rôles qui peuvent effectuer différentes actions. Il y a le guichetiers qui peut éffectuer différentes action de création et de modification sur les clients et les comptes. Il y a le chef d'agence qui peut éffectuer les mêmes actions que le guichetier mais il peut aussi gérer (créer, modifier et supprimer) les guichetiers de l'agence.
+
+=== Fonctionnalités de l'application
+
+==== Créer un client
+
+
+==== Modifier un client
+
+
+==== Consulter un compte
+
+
+==== Débiter un compte
+
+
+==== Rendre inactif un client
+
