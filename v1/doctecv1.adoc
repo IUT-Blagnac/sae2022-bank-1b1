@@ -88,8 +88,8 @@ model.orm.exception
 === Partage du travail
 
 .Loan
-* xref:doctecv1.adoc#1[1]
-* xref:doctecv1.adoc#3[3]
+* xref:doctecv1.adoc#Consulter un compte[Consulter un compte]
+* xref:doctecv1.adoc#Débiter un compte[Débiter un compte]
 
 .Matthieu
 * xref:doctecv1.adoc#Créer un client[Créer un client]
