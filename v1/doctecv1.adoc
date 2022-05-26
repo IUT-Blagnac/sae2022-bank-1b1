@@ -49,7 +49,7 @@ Voici l'architecture générale de l'application :
 
 image::../assets/architecture_application.png[architecture application]
 
-Dans cetta application nous avons une architecture où nous avons une base de donnée sur laquelle se connectent les différents utilisateurs de l'application, qui sont les guichetier et les chef d'agences. Les guichetiers et les chef d'agences ont accés en écriture et en lecture à la base de donnée afin de pouvoir ajouter de nouveaux et modifier des clients, ajouter, modifier et intéragir avec les comptes des clients. Le chef d'agence a égallement accés à la table contenant les employés de l'agence, afin de pouvoir en ajouter ou en supprimer. 
+Dans cetta application nous avons une architecture où nous avons une base de donnée sur laquelle se connectent les différents utilisateurs de l'application, qui sont les guichetier et les chef d'agences. Les guichetiers et les chef d'agences ont accés en écriture et en lecture à la base de donnée afin de pouvoir ajouter de nouveaux et modifier des clients, ajouter, modifier et intéragir avec les comptes des clients. Le chef d'agence a également accés à la table contenant les employés de l'agence, afin de pouvoir en ajouter ou en supprimer ; il possède donc des privilèges plus élevés que les guichetiers.
 
 === Ressources externes utilisées
 
@@ -217,36 +217,32 @@ Pour consulter un compte d’un client de la banque, il nous faut :
 - Le client en question
 - Le compte du client
 
-Voici le diagramme de séquence qui illustre le chemin parcouru afin de consulter le compte d’un client :
+Voici le diagramme de séquence qui illustre le chemin parcouru depuis le lancement de l'application afin de consulter le compte d’un client :
 
-(insérer image)
+image::../assets/v1/consulterCompte/consulterCompte.PNG[Diagramme de séquence consulter un compte]
 
-Les Classes impliquées pour le bon fonctionnement de cette action sont :
+Les Classes impliquées dans chaque package pour le bon fonctionnement de cette action sont :
 
-pass:[<u>Dans application.control :</u>]
+    application.control
+        - DailyBankMainFrame.java
+        - ClientsManagement.java
+        - ComptesManagement.java
+        - OperationsManagement.java
+        - OperationEditorPane.java
 
-DailyBankMainFrame.java
-ClientsManagement.java
-ComptesManagement.java
-OperationsManagement.java
-OperationEditorPane.java
+    application.tools
+        - AlertUtilities.java
+        - CategorieOperation.java
+        - EditionMode.java
+        - PairsOfValue.java
+        - StageManagement.java
 
-pass:[<u>Dans application.tools :</u>]
-
-AlertUtilities.java
-CategorieOperation.java
-EditionMode.java
-PairsOfValue.java
-StageManagement.java
-
-pass:[<u>Dans application.view :</u>]
-
-DailyBankMainFrameController.java
-ClientsManagementController.java
-ComptesManagementController.java
-OperationsManagementController.java
-OperationEditorPaneController.java
-
+    application.view :
+        - DailyBankMainFrameController.java
+        - ClientsManagementController.java
+        - ComptesManagementController.java
+        - OperationsManagementController.java
+        - OperationEditorPaneController.java
 
 ==== Débiter un compte
 
@@ -257,37 +253,32 @@ Pour débiter un client il nous faut :
 - Son compte à débiter
 - La somme à débiter
 
-Voici la fonctionnalité enregistrer un débit en détail, avec le diagramme de séquence et les classes impliquées dans son fonctionnement :
+Voici la fonctionnalité enregistrer un débit en détail avec le diagramme de séquence depuis l'écran d'accueil de l'application :
 
-(insérer image)
+image::../assets/v1/debitClient/debit.PNG[Diagramme de séquence débiter un client]
 
-Les Classes impliquées pour le bon fonctionnement de cette action sont :
+Les Classes impliquées dans chaque package pour le bon fonctionnement de cette action sont :
 
-pass:[<u>Dans application.control :</u>]
+    application.control :
+        - DailyBankMainFrame.java
+        - ClientsManagement.java
+        - ComptesManagement.java
+        - OperationsManagement.java
+        - OperationEditorPane.java
 
-DailyBankMainFrame.java
-ClientsManagement.java
-ComptesManagement.java
-OperationsManagement.java
-OperationEditorPane.java
+    application.tools :
+        - AlertUtilities.java
+        - CategorieOperation.java
+        - EditionMode.java
+        - PairsOfValue.java
+        - StageManagement.java
 
-pass:[<u>Dans application.tools :</u>]
-
-AlertUtilities.java
-CategorieOperation.java
-EditionMode.java
-PairsOfValue.java
-StageManagement.java
-
-pass:[<u>Dans application.view :</u>]
-
-DailyBankMainFrameController.java
-ClientsManagementController.java
-ComptesManagementController.java
-OperationsManagementController.java
-OperationEditorPaneController.java
-
-
+    application.view :
+        - DailyBankMainFrameController.java
+        - ClientsManagementController.java
+        - ComptesManagementController.java
+        - OperationsManagementController.java
+        - OperationEditorPaneController.java
 
 === V1
 
@@ -302,6 +293,3 @@ OperationEditorPaneController.java
 ==== Modifier un employé
 
 ==== Supprimer un employé
-
-
-
