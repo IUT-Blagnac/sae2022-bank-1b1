@@ -89,7 +89,10 @@ Dans ce package sont présents les différentes exceptions que l'application peu
 
 === Eléments essentiels / spécificités
 
--
+LogToDatabase.java
+Client.java
+CompteCourant.java
+AccesClient.java
 
 <<<
 
