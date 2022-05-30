@@ -1,0 +1,18 @@
+@startuml Effectuer un débit
+
+DailyBankMainFrame -> ClientsManagement : gestionClients()
+ClientsManagement -> Client_select
+Client_select -> ComptesManagement : gererComptesClient(Client c)
+ComptesManagement -> Compte_select
+Compte_select -> OperationsManagement : gererOperations(CompteCourant cpt)
+
+OperationsManagement -> OperationEditorPane : enregistrerDebit()
+OperationsManagement <- OperationEditorPane : doCancel()
+OperationsManagement <- OperationEditorPane : doAjouter()
+ComptesManagement <- OperationsManagement : doCancel()
+Client_select <- Compte_select : doCancel()
+Client_select <- ComptesManagement : doCancel()
+DailyBankMainFrame <- Client_select : doCancel()
+DailyBankMainFrame <- ClientsManagement : doCancel()
+
+@enduml

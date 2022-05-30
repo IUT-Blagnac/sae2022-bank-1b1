@@ -1,0 +1,16 @@
+@startuml Rendre inactif un client
+
+ClientsManagementController -> ClientsManagement : modifierClient()
+ClientsManagement -> ClientEditorPane : doClientEditorDialog()
+ClientEditorPane -> ClientEditorPaneController : displayDialog()
+ClientEditorPaneController -> Client
+Client -> ClientEditorPaneController 
+ClientEditorPaneController -> ConstantesIHM
+ConstantesIHM -> ClientEditorPaneController 
+ClientEditorPaneController -> Stage : showAndWait()
+Stage -> ClientEditorPaneController
+ClientEditorPaneController -> ClientEditorPane : return()
+ClientEditorPane -> ClientsManagement : return()
+ClientsManagement -> ClientsManagementController : return ()
+
+@enduml
