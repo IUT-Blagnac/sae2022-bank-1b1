@@ -30,7 +30,7 @@ __Membres du groupe :__
 |         | Doc User V1    | https://github.com/IUT-Blagnac/sae2022-bank-1b1/blob/main/V1/doc_User_V1.adoc[Doc. User V1]       |
 |         | Recette V1  | https://github.com/IUT-Blagnac/sae2022-bank-1b1/blob/main/V1/recette_V1.adoc[Recette V1]                     | 
 |         | Suivi projet|   | 
-| 22/05   | Gantt V2  à jour    |       | 
+| 22/05   | Gantt V2  à jour    | https://github.com/IUT-Blagnac/sae2022-bank-1b1/blob/main/V2/Gantt_V2.pdf[Gantt V2]      | 
 |         | Doc. Util. V1 | https://github.com/IUT-Blagnac/sae2022-bank-1b1/blob/main/V1/doc_User_V1.adoc[Doc. User V1]        |         
 |         | Doc. Tec. V1 | https://github.com/IUT-Blagnac/sae2022-bank-1b1/blob/main/V1/doc_Tec_V1.adoc[Doc. Tec. V1]               |     
 |         | Code V1     | https://github.com/IUT-Blagnac/sae2022-bank-1b1/blob/main/DAILY_BANK_FX/[Code]                    | 
@@ -43,10 +43,10 @@ __Membres du groupe :__
 |         | Code V2     | https://github.com/IUT-Blagnac/sae2022-bank-1b1/blob/main/DAILY_BANK_FX/[Code]                      |
 |         | Recette V2  | https://github.com/IUT-Blagnac/sae2022-bank-1b1/blob/main/V2/recette_V2.adoc[Recette V2]  |
 |         | `jar` projet |     |
-|12/06   | Gantt V3 à Jour  |    |  
-|         | Doc. Util. V3 |         |           
-|         | Doc. Tec. V3 |    |     
-|         | Code V3     |                       |
-|         | Recette V3  |   |
+|12/06   | Gantt V3 à Jour  | https://github.com/IUT-Blagnac/sae2022-bank-1b1/blob/main/V3/Gantt_V3.pdf[Gantt V3]   |  
+|         | Doc. Util. V3 | https://github.com/IUT-Blagnac/sae2022-bank-1b1/blob/main/V3/doc_User_V3.adoc[Doc. User V3]         |           
+|         | Doc. Tec. V3 | https://github.com/IUT-Blagnac/sae2022-bank-1b1/blob/main/V3/doc_Tec_V3.adoc[Doc. Tec. V3]   |     
+|         | Code V3     | https://github.com/IUT-Blagnac/sae2022-bank-1b1/blob/main/DAILY_BANK_FX/[Code]                      |
+|         | Recette V3  | https://github.com/IUT-Blagnac/sae2022-bank-1b1/blob/main/V3/recette_V3.adoc[Recette V3]  |
 |         | `jar` projet |     |
 |===
