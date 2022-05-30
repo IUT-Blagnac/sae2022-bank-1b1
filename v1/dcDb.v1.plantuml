@@ -1,0 +1,54 @@
+@startuml Diagramme de classe de la base de donnée
+
+class AgenceBancaire {
+    + idAg NUMBER
+    + nomAg VARCHAR
+    + adressePostaleAg VARCHAR
+}
+
+class Employe {
+    + idEmploye NUMBER
+    + nom VARCHAR
+    + prenom VARCHAR
+    + droitsAccess VARCHAR
+    + login VARCHAR
+    + motPasse VARCHAR
+}
+
+class Client {
+    + idNumCli NUMBER
+    + nom VARCHAR
+    + prenom VARCHAR
+    + adressePostale VARCHAR
+    + email VARCHAR
+    + telephone CHAR
+    + estInactif CHAR
+}
+
+class CompteCourant {
+    + idNumCompte NUMBER
+    + debitAutorise NUMBER
+    + solde DECIMAL
+}
+
+class TypeOperation {
+    + idTypeOp VARCHAR
+}
+
+class Operation {
+    + idOperation NUMBER
+    + montant DECIMAL
+    + dateOp	DATE
+    + dateValeur DATE
+}
+
+AgenceBancaire "1" -up- "0..*" Employe : Possèder
+Employe "1" -- "0..1" AgenceBancaire : Est chef d'agence
+Client "0..*" -left- "1" AgenceBancaire
+CompteCourant "0..*" -- "1" Client
+Operation "0..*" -left- "1" CompteCourant
+Operation "0..*" -- "1" TypeOperation
+
+
+
+@enduml

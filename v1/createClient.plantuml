@@ -1,0 +1,14 @@
+@startuml Nouveau Client
+ClientsManagementController -> ClientsManagement : doNouveauClient()
+ClientsManagement -> ClientEditorPane : nouveauClient()
+ClientEditorPane -> ClientEditorPaneController : doClientEditorDialog()
+ClientEditorPaneController -> Client
+Client -> ClientEditorPaneController
+ClientEditorPaneController -> ConstantesIHM
+ConstantesIHM -> ClientEditorPaneController
+ClientEditorPaneController -> Stage : showAndWait()
+Stage -> ClientEditorPaneController
+ClientEditorPaneController -> ClientEditorPane : return()
+ClientEditorPane -> ClientsManagement : return()
+ClientsManagement -> ClientsManagementController : return ()
+@enduml
