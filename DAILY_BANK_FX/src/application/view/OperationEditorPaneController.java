@@ -55,19 +55,19 @@ public class OperationEditorPaneController implements Initializable {
 	public Operation displayDialog(CompteCourant cpte, CategorieOperation mode) {
 		this.categorieOperation = mode;
 		this.compteEdite = cpte;
+		
+		String info = "Cpt. : " + this.compteEdite.idNumCompte + "  "
+				+ String.format(Locale.ENGLISH, "%12.02f", this.compteEdite.solde) + "  /  "
+				+ String.format(Locale.ENGLISH, "%8d", this.compteEdite.debitAutorise);
+		this.lblMessage.setText(info);
+		ObservableList<String> list = FXCollections.observableArrayList();
 
 		switch (mode) {
+		
 		case DEBIT:
-
-			String info = "Cpt. : " + this.compteEdite.idNumCompte + "  "
-					+ String.format(Locale.ENGLISH, "%12.02f", this.compteEdite.solde) + "  /  "
-					+ String.format(Locale.ENGLISH, "%8d", this.compteEdite.debitAutorise);
-			this.lblMessage.setText(info);
 
 			this.btnOk.setText("Effectuer Débit");
 			this.btnCancel.setText("Annuler débit");
-
-			ObservableList<String> list = FXCollections.observableArrayList();
 
 			for (String tyOp : ConstantesIHM.OPERATIONS_DEBIT_GUICHET) {
 				list.add(tyOp);
@@ -76,10 +76,19 @@ public class OperationEditorPaneController implements Initializable {
 			this.cbTypeOpe.setItems(list);
 			this.cbTypeOpe.getSelectionModel().select(0);
 			break;
+			
 		case CREDIT:
-			AlertUtilities.showAlert(this.primaryStage, "Non implémenté", "Modif de compte n'est pas implémenté", null,
-					AlertType.ERROR);
-			return null;
+
+			this.btnOk.setText("Effectuer Crédit");
+			this.btnCancel.setText("Annuler crédit");
+
+			for (String tyOp : ConstantesIHM.OPERATIONS_CREDIT_GUICHET) {
+				list.add(tyOp);
+			}
+
+			this.cbTypeOpe.setItems(list);
+			this.cbTypeOpe.getSelectionModel().select(0);
+			break;
 		// break;
 		}
 
@@ -170,8 +179,10 @@ public class OperationEditorPaneController implements Initializable {
 			this.primaryStage.close();
 			break;
 		case CREDIT:
-			// ce genre d'operation n'est pas encore géré
-			this.operationResultat = null;
+			//Création d'un débit :
+			montant = Double.parseDouble(this.txtMontant.getText().trim());
+			typeOp = this.cbTypeOpe.getValue();
+			this.operationResultat = new Operation(-1, montant, null, null, this.compteEdite.idNumCli, typeOp);
 			this.primaryStage.close();
 			break;
 		}
