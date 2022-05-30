@@ -40,15 +40,14 @@ class Operation {
     + montant DECIMAL
     + dateOp	DATE
     + dateValeur DATE
+
 }
 
-AgenceBancaire "1" -up- "0..*" Employe : Possèder
+AgenceBancaire "1" -up- "0..*" Employe : Posséder
 Employe "1" -- "0..1" AgenceBancaire : Est chef d'agence
 Client "0..*" -left- "1" AgenceBancaire
 CompteCourant "0..*" -- "1" Client
 Operation "0..*" -left- "1" CompteCourant
 Operation "0..*" -- "1" TypeOperation
-
-
 
 @enduml
