@@ -21,7 +21,7 @@ public class LoginDialog {
 	private LoginDialogController ldc;
 
 	/*
-	 * Charge la fenêtre de connexion à l'application
+	 * Charge la fenêtre qui permet de se connecter à l'application
 	 * @param _parentStage Stage le stage parent
 	 * @param _dbstate DailyBankState l'état de la base de donnée
 	 */
