@@ -35,29 +35,29 @@ Dans cette application, il existe différents rôles qui peuvent effectuer diff�
 
 Pour créer un client, le guichetier ou le chef d'agence doit doit ouvrir le menu de gestion des clients, en allant dans le menu gestion et cliquer sur le boutton client.
 
-image::../assets/docUserV1/bouton_client.png[bouton client]
+image::../assets/doc_User_V1/bouton_client.png[bouton client]
 
 Un fois sur la fenêtre de gestion des clients, l'utilisateur doit cliquer sur le bouton "Nouveau client"
 
-image::../assets/docUserV1/menu_gestion_client.png[menu gestion client]
+image::../assets/doc_User_V1/menu_gestion_client.png[menu gestion client]
 
 Dès que l'utilisateur à cliqué sur le bouton "Nouveau client", un nouvelle fenêtre s'ouvre afin de pouvoir rentrer les informations du client (nom, prénom, adresse, numéro de téléphone et adresse mail) et cliquer sur le bouton ajouter, pour créer le client. Sur cette fenetre, il y a également la possibilité pour le chef d'agence de décider si le client est actif ou inactif.
 
-image::../assets/docUserV1/fenetre_ajout_client.png[fenetre ajout client]
+image::../assets/doc_User_V1/fenetre_ajout_client.png[fenetre ajout client]
 
 ==== Modifier un client
 
 Pour créer un client, le guichetier ou le chef d'agence doit doit ouvrir le menu de gestion des clients, en allant dans le menu gestion et cliquer sur le boutton client.
 
-image::../assets/docUserV1/bouton_client.png[bouton client]
+image::../assets/doc_User_V1/bouton_client.png[bouton client]
 
 Un fois sur la fenêtre de gestion des clients, l'utilisateur doit sélectionner un client et cliquer sur le bouton "Modifier client"
 
-image::../assets/docUserV1/menu_modif_client.png[menu modification client]
+image::../assets/doc_User_V1/menu_modif_client.png[menu modification client]
 
 Dès que l'utilisateur à cliqué sur le bouton "Modifier client", un nouvelle fenêtre s'ouvre afin de pouvoir rentrer les informations à changer du client (nom, prénom, adresse, numéro de téléphone et adresse mail) et cliquer sur le bouton "modifer", pour modifier le client. Sur cette fenetre, il y a également la possibilité pour le chef d'agence de décider si le client est actif ou inactif.
 
-image::../assets/docUserV1/fenetre_modif_client.png[fenetre modif client]
+image::../assets/doc_User_V1/fenetre_modif_client.png[fenetre modif client]
 
 ==== Consulter un compte
 
