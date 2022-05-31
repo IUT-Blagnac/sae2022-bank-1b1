@@ -27,7 +27,7 @@ __Membres du groupe :__
 |         | Gantt V2    | https://github.com/IUT-Blagnac/sae2022-bank-1b1/blob/main/V2/Gantt_V2.pdf[Gantt V2]                               |     
 |         | Gantt V3 | https://github.com/IUT-Blagnac/sae2022-bank-1b1/blob/main/V3/Gantt_V3.pdf[Gantt V3]        |     
 |         | Doc. Tec. V1 | https://github.com/IUT-Blagnac/sae2022-bank-1b1/blob/main/V1/doc_Tec_V1.adoc[Doc. Tec. V1]       |    
-|         | Doc User V1    | https://github.com/IUT-Blagnac/sae2022-bank-1b1/blob/main/V1/doc_User_V1.adoc[Doc. User V1]       |
+|         | Doc User V1    | https://github.com/IUT-Blagnac/sae2022-bank-1b1/blob/main/V1/doc_User_V1.adoc[Doc. User V1]       | Revoir les éléments de la page de garde (cf. CDCU). Il y a des fautes. Bien penser pour la suite à préciser qui rédige les paragraphes sur les fonstionnalités (rappel, chaque dev rédige ses fonctionnalités).
 |         | Recette V1  | https://github.com/IUT-Blagnac/sae2022-bank-1b1/blob/main/V1/recette_V1.adoc[Recette V1]                     | 
 |         | Suivi projet|   | 
 | 22/05   | Gantt V2  à jour    | https://github.com/IUT-Blagnac/sae2022-bank-1b1/blob/main/V2/Gantt_V2.pdf[Gantt V2]      | 
