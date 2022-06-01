@@ -116,7 +116,7 @@ public class AccessCompteCourant {
 
 			call = con.prepareCall(q);
 
-			call.setInt(1, cc.debitAutorise);
+			call.setInt(1, -cc.debitAutorise);
 			call.setDouble(2, cc.solde);
 			call.setInt(3, cc.idNumCli);
 			call.registerOutParameter(4, Types.INTEGER);
