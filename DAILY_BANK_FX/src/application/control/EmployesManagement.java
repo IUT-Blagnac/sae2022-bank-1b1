@@ -1,7 +1,5 @@
 package application.control;
 
-import java.util.ArrayList;
-
 import javafx.stage.Stage;
 import application.DailyBankApp;
 import application.DailyBankState;
