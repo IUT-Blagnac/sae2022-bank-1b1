@@ -1,7 +1,8 @@
 package application.control;
 
-import java.util.ArrayList;
+import javafx.stage.Stage;
 
+import java.util.ArrayList;
 import application.DailyBankApp;
 import application.DailyBankState;
 import application.tools.EditionMode;
@@ -11,7 +12,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
-import javafx.stage.Stage;
 import model.data.Client;
 import model.orm.AccessClient;
 import model.orm.exception.ApplicationException;

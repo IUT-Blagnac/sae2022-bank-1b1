@@ -74,11 +74,9 @@ public class EmployesManagementController implements Initializable {
 	@FXML
 	private ListView<Employe> lvEmployes;
 	@FXML
-	private Button btnDesactEmploye;
+	private Button btnSupprEmploye;
 	@FXML
 	private Button btnModifEmploye;
-	@FXML
-	private Button btnComptesEmploye;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -87,64 +85,6 @@ public class EmployesManagementController implements Initializable {
 	@FXML
 	private void doCancel() {
 		this.primaryStage.close();
-	}
-	
-	// ANTON - COMPTE???
-	@FXML
-	private void doRechercher() {
-		int numCompte;
-		try {
-			String nc = this.txtNum.getText();
-			if (nc.equals("")) {
-				numCompte = -1;
-			} else {
-				numCompte = Integer.parseInt(nc);
-				if (numCompte < 0) {
-					this.txtNum.setText("");
-					numCompte = -1;
-				}
-			}
-		} catch (NumberFormatException nfe) {
-			this.txtNum.setText("");
-			numCompte = -1;
-		}
-
-		String debutNom = this.txtNom.getText();
-		String debutPrenom = this.txtPrenom.getText();
-
-		if (numCompte != -1) {
-			this.txtNom.setText("");
-			this.txtPrenom.setText("");
-		} else {
-			if (debutNom.equals("") && !debutPrenom.equals("")) {
-				this.txtPrenom.setText("");
-			}
-		}
-		
-		// ANTON - COMPTE????
-		
-		// Recherche des employes en BD. cf. AccessEmploye > getEmployes(.)
-		// numCompte != -1 => recherche sur numCompte
-		// numCompte != -1 et debutNom non vide => recherche nom/prenom
-		// numCompte != -1 et debutNom vide => recherche tous les employes
-		ArrayList<Employe> listeEmp;
-		listeEmp = this.em.getlisteComptes(numCompte, debutNom, debutPrenom);
-
-		this.ole.clear();
-		for (Employe emp : listeEmp) {
-			this.ole.add(emp);
-		}
-
-		this.validateComponentState();
-	}
-
-	@FXML
-	private void doComptesEmploye() {
-		int selectedIndice = this.lvEmployes.getSelectionModel().getSelectedIndex();
-		if (selectedIndice >= 0) {
-			Employe employe = this.ole.get(selectedIndice);
-			this.em.gererComptesEmploye(employe);
-		}
 	}
 
 	@FXML
@@ -161,28 +101,26 @@ public class EmployesManagementController implements Initializable {
 	}
 
 	@FXML
-	private void doDesactiverEmploye() {
+	private void doSupprimerEmploye() {
 	}
 
 	@FXML
-	private void doNouveauEmploye() {
+	private void doNouvelEmploye() {
 		Employe employe;
-		employe = this.em.nouveauEmploye();
+		employe = this.em.nouvelEmploye();
 		if (employe != null) {
 			this.ole.add(employe);
 		}
 	}
 
 	private void validateComponentState() {
-		// Non implémenté => désactivé
-		this.btnDesactEmploye.setDisable(true);
 		int selectedIndice = this.lvEmployes.getSelectionModel().getSelectedIndex();
 		if (selectedIndice >= 0) {
 			this.btnModifEmploye.setDisable(false);
-			this.btnComptesEmploye.setDisable(false);
+			this.btnSupprEmploye.setDisable(false);
 		} else {
 			this.btnModifEmploye.setDisable(true);
-			this.btnComptesEmploye.setDisable(true);
+			this.btnSupprEmploye.setDisable(true);
 		}
 	}
 }

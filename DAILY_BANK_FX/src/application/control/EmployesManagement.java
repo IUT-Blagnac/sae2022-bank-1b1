@@ -2,6 +2,7 @@ package application.control;
 
 import java.util.ArrayList;
 
+import javafx.stage.Stage;
 import application.DailyBankApp;
 import application.DailyBankState;
 import application.tools.EditionMode;
@@ -11,7 +12,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
-import javafx.stage.Stage;
 import model.data.Employe;
 import model.orm.AccessEmploye;
 import model.orm.exception.ApplicationException;
@@ -65,9 +65,9 @@ public class EmployesManagement {
 	 * @param e Le employe à modifier
 	 * @return Le employe modifié
 	 */
-	public Employe modifierEmploye(Employe e) {
+	public Employe modifierEmploye(Employe emp) {
 		EmployeEditorPane eep = new EmployeEditorPane(this.primaryStage, this.dbs);
-		Employe result = eep.doEmployeEditorDialog(e, EditionMode.MODIFICATION);
+		Employe result = eep.doEmployeEditorDialog(emp, EditionMode.MODIFICATION);
 		if (result != null) {
 			try {
 				AccessEmploye ae = new AccessEmploye();
@@ -90,7 +90,7 @@ public class EmployesManagement {
 	 * Active l'affichage de la vue d'ajout d'un employe
 	 * @return Le nouvel employe créé
 	 */
-	public Employe nouveauEmploye() {
+	public Employe nouvelEmploye() {
 		Employe employe;
 		EmployeEditorPane eep = new EmployeEditorPane(this.primaryStage, this.dbs);
 		employe = eep.doEmployeEditorDialog(null, EditionMode.CREATION);
@@ -113,47 +113,4 @@ public class EmployesManagement {
 		return employe;
 	}
 	
-	// ANTON - UN EMPLOYE CA A PAS DE COMPTES BANCAIRES DU COUP J'IMAGINE CE TRUC JE LE SUPPRIME !!!!
-	
-	/**
-	 * Active l'affichage de la vue de gestion des comptes employes
-	 * @param e Employe dont on veut afficher les comptes
-	 */
-	public void gererComptesEmploye(Employe e) {
-		ComptesManagement cm = new ComptesManagement(this.primaryStage, this.dbs, e);
-		cm.doComptesManagementDialog();
-	}
-	
-	// ANTON - ET CA AUSSI ???
-	
-	/**
-	 * Récupère la liste des compte d'un employe
-	 * @param _numCompte Numéro du compte à chercher
-	 * @param _debutNom Début du nom du employe associé au compte à chercher
-	 * @param _debutPrenom Début du prénom du employe associé au compte à chercher
-	 * @return Liste la lite des comptes trouvés
-	 */
-	public ArrayList<Employe> getlisteComptes(int _numCompte, String _debutNom, String _debutPrenom) {
-		ArrayList<Employe> listeEmp = new ArrayList<>();
-		try {
-			// Recherche des employes en BD. cf. AccessEmploye > getEmployes(.)
-			// numCompte != -1 => recherche sur numCompte
-			// numCompte != -1 et debutNom non vide => recherche nom/prenom
-			// numCompte != -1 et debutNom vide => recherche tous les employes
-
-			AccessEmploye ae = new AccessEmploye();
-			listeEmp = ae.getEmployes(this.dbs.getEmpAct().idAg, _numCompte, _debutNom, _debutPrenom);
-
-		} catch (DatabaseConnexionException e) {
-			ExceptionDialog ed = new ExceptionDialog(this.primaryStage, this.dbs, e);
-			ed.doExceptionDialog();
-			this.primaryStage.close();
-			listeEmp = new ArrayList<>();
-		} catch (ApplicationException ae) {
-			ExceptionDialog ed = new ExceptionDialog(this.primaryStage, this.dbs, ae);
-			ed.doExceptionDialog();
-			listeEmp = new ArrayList<>();
-		}
-		return listeEmp;
-	}
 }
