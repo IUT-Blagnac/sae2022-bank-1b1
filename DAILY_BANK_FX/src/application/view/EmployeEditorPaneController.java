@@ -68,13 +68,8 @@ public class EmployeEditorPaneController implements Initializable {
 			this.txtIdEmp.setDisable(true);
 			this.txtNom.setDisable(false);
 			this.txtPrenom.setDisable(false);
-			if (ConstantesIHM.isAdmin(this.dbs.getEmpAct())) {
-				this.rbChefAgence.setDisable(false);
-				this.rbGuichetier.setDisable(false);
-			} else {
-				this.rbChefAgence.setDisable(true);
-				this.rbGuichetier.setDisable(true);
-			}
+			this.rbChefAgence.setDisable(false);
+			this.rbGuichetier.setDisable(false);
 			this.txtLogin.setDisable(false);
 			this.txtMotPasse.setDisable(false);
 			this.lblMessage.setText("Informations sur le nouvel employé");
@@ -87,10 +82,10 @@ public class EmployeEditorPaneController implements Initializable {
 			this.txtPrenom.setDisable(false);
 			if (ConstantesIHM.isAdmin(this.dbs.getEmpAct())) {
 				this.rbChefAgence.setDisable(false);
-				this.rbGuichetier.setDisable(false);
+				this.rbGuichetier.setDisable(true);
 			} else {
 				this.rbChefAgence.setDisable(true);
-				this.rbGuichetier.setDisable(true);
+				this.rbGuichetier.setDisable(false);
 			}
 			this.txtLogin.setDisable(false);
 			this.txtMotPasse.setDisable(false);
@@ -117,9 +112,11 @@ public class EmployeEditorPaneController implements Initializable {
 		this.txtPrenom.setText(this.employeEdite.prenom);
 		
 		if (ConstantesIHM.isAdmin(this.employeEdite)) {
-			this.rbGuichetier.setSelected(true);
-		} else {
+			this.rbChefAgence.setSelected(true);
 			this.rbGuichetier.setSelected(false);
+		} else {
+			this.rbChefAgence.setSelected(false);
+			this.rbGuichetier.setSelected(true);
 		}
 		
 		this.txtLogin.setText(this.employeEdite.login);
@@ -218,20 +215,19 @@ public class EmployeEditorPaneController implements Initializable {
 			return false;
 		}
 		
-		// ANTON - ANCIEN TEL
-		String regex = "(0)[1-9][0-9]{8}";
-		if (!Pattern.matches(regex, this.employeEdite.login) || this.employeEdite.login.length() > 10) {
-			AlertUtilities.showAlert(this.primaryStage, "Erreur de saisie", null, "Le téléphone n'est pas valable",
+		if (this.employeEdite.login.isEmpty()) {
+			AlertUtilities.showAlert(this.primaryStage, "Erreur de saisie", null, "Le login ne doit pas être vide",
 					AlertType.WARNING);
 			this.txtLogin.requestFocus();
 			return false;
 		}
 		
 		// ANTON - ANCIEN MAIL
-		regex = "^(?=.{1,64}@)[A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)@"
-                + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)(\\.[A-Za-z]{2,})$";
-        if (!Pattern.matches(regex, this.employeEdite.motPasse) || this.employeEdite.motPasse.length() > 20) {
-            AlertUtilities.showAlert(this.primaryStage, "Erreur de saisie", null, "Le mail n'est pas valable",
+//		String regex = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@"
+//						+ "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
+//        if (!Pattern.matches(regex, this.employeEdite.motPasse) || this.employeEdite.motPasse.length() > 20) {
+		if (this.employeEdite.motPasse.isEmpty()) {
+            AlertUtilities.showAlert(this.primaryStage, "Erreur de saisie", null, "Le mot de passe n'est pas valable",
                     AlertType.WARNING);
             this.txtMotPasse.requestFocus();
             return false;

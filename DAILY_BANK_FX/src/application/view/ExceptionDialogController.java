@@ -1,7 +1,6 @@
 package application.view;
 
 import javafx.stage.Stage;
-
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.net.URL;

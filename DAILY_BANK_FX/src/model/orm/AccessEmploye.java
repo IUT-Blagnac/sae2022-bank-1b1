@@ -73,17 +73,16 @@ public class AccessEmploye {
 				int idEmployeTR = rs.getInt("idEmploye");
 				String nom = rs.getString("nom");
 				String prenom = rs.getString("prenom");
-				String droitsAcces = rs.getString("droitsAcces");
-				droitsAcces = (droitsAcces == null ? "" : droitsAcces);
+				String droitsAccess = rs.getString("droitsAccess");
+				droitsAccess = (droitsAccess == null ? "" : droitsAccess);
 				String login = rs.getString("login");
 				login = (login == null ? "" : login);
 				String motPasse = rs.getString("motPasse");
 				motPasse = (motPasse == null ? "" : motPasse);
-				String estInactif = rs.getString("estInactif");
 				int idAgCli = rs.getInt("idAg");
 
 				alResult.add(
-						new Employe(idEmployeTR, nom, prenom, droitsAcces, login, motPasse, idAgCli));
+						new Employe(idEmployeTR, nom, prenom, droitsAccess, login, motPasse, idAgCli));
 			}
 			rs.close();
 			pst.close();
@@ -223,8 +222,8 @@ public class AccessEmploye {
 		try {
 			Connection con = LogToDatabase.getConnexion();
 
-			String query = "UPDATE EMPLOYE SET " + "nom = " + "? , " + "prenom = " + "? , " + "droitsAcces = "
-					+ "? , " + "login = " + "? , " + "motPasse = " + "? , " + "estInactif = " + "? " + " "
+			String query = "UPDATE EMPLOYE SET " + "nom = " + "? , " + "prenom = " + "? , " + "droitsAccess = "
+					+ "? , " + "login = " + "? , " + "motPasse = " + "? " + " "
 					+ "WHERE idEmploye = ? ";
 
 			PreparedStatement pst = con.prepareStatement(query);

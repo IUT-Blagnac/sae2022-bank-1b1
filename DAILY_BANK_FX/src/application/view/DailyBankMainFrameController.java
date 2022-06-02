@@ -1,7 +1,6 @@
 package application.view;
 
 import javafx.stage.Stage;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
