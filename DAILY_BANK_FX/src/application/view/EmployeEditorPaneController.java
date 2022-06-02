@@ -80,13 +80,8 @@ public class EmployeEditorPaneController implements Initializable {
 			this.txtIdEmp.setDisable(true);
 			this.txtNom.setDisable(false);
 			this.txtPrenom.setDisable(false);
-			if (ConstantesIHM.isAdmin(this.dbs.getEmpAct())) {
-				this.rbChefAgence.setDisable(false);
-				this.rbGuichetier.setDisable(true);
-			} else {
-				this.rbChefAgence.setDisable(true);
-				this.rbGuichetier.setDisable(false);
-			}
+			this.rbChefAgence.setDisable(false);
+			this.rbGuichetier.setDisable(false);
 			this.txtLogin.setDisable(false);
 			this.txtMotPasse.setDisable(false);
 			this.lblMessage.setText("Informations employé");
