@@ -1,5 +1,6 @@
 package application.control;
 
+import javafx.stage.Stage;
 import application.DailyBankApp;
 import application.DailyBankState;
 import application.view.DailyBankMainFrameController;
@@ -7,7 +8,6 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
 import model.data.AgenceBancaire;
 import model.orm.AccessAgenceBancaire;
 import model.orm.LogToDatabase;
@@ -161,7 +161,7 @@ public class DailyBankMainFrame extends Application {
 	 * Ouvre une nouvelle fenêtre de gestion d'employe
 	 */
 	public void gestionEmployes() {
-		ClientsManagement cm = new ClientsManagement(this.primaryStage, this.dbs);
-		cm.doClientManagementDialog();
+		EmployesManagement em = new EmployesManagement(this.primaryStage, this.dbs);
+		em.doEmployeManagementDialog();
 	}
 }
