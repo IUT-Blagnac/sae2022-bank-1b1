@@ -4,29 +4,29 @@ import application.DailyBankApp;
 import application.DailyBankState;
 import application.tools.EditionMode;
 import application.tools.StageManagement;
-import application.view.ClientEditorPaneController;
-import application.view.ClientsManagementController;
+import application.view.EmployeEditorPaneController;
+import application.view.EmployesManagementController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import model.data.Client;
+import model.data.Employe;
 
 public class EmployeEditorPane {
 
 	private Stage primaryStage;
-	private ClientEditorPaneController cepc;
+	private EmployeEditorPaneController eepc;
 
 	/**
-	 * Constructeur de la classe ClientEditorPane permettant de charger la vu d'édition d'un client
+	 * Constructeur de la classe EmployeEditorPane permettant de charger la vue d'édition d'un employe
 	 * @param _parentStage Stage parent de la vue
 	 * @param _dbstate Etat actuel de l'application DailyBank
 	 */
 	public EmployeEditorPane(Stage _parentStage, DailyBankState _dbstate) {
 
 		try {
-			FXMLLoader loader = new FXMLLoader(ClientsManagementController.class.getResource("clienteditorpane.fxml"));
+			FXMLLoader loader = new FXMLLoader(EmployesManagementController.class.getResource("employeeditorpane.fxml"));
 			BorderPane root = loader.load();
 
 			Scene scene = new Scene(root, root.getPrefWidth()+20, root.getPrefHeight()+10);
@@ -37,11 +37,11 @@ public class EmployeEditorPane {
 			this.primaryStage.initOwner(_parentStage);
 			StageManagement.manageCenteringStage(_parentStage, this.primaryStage);
 			this.primaryStage.setScene(scene);
-			this.primaryStage.setTitle("Gestion d'un client");
+			this.primaryStage.setTitle("Gestion d'un employe");
 			this.primaryStage.setResizable(false);
 
-			this.cepc = loader.getController();
-			this.cepc.initContext(this.primaryStage, _dbstate);
+			this.eepc = loader.getController();
+			this.eepc.initContext(this.primaryStage, _dbstate);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -49,12 +49,12 @@ public class EmployeEditorPane {
 	}
 
 	/**
-	 * Active l'affichage de la vu d'édition d'un client
-	 * @param client Le client à modifier
+	 * Active l'affichage de la vue d'édition d'un employe
+	 * @param employe L'employe à modifier
 	 * @param em Le mode d'édition
-	 * @return Le client modifié
+	 * @return L'employe modifié
 	 */
-	public Client doClientEditorDialog(Client client, EditionMode em) {
-		return this.cepc.displayDialog(client, em);
+	public Employe doEmployeEditorDialog(Employe employe, EditionMode em) {
+		return this.eepc.displayDialog(employe, em);
 	}
 }

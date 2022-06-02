@@ -71,7 +71,6 @@ public class EmployesManagementController implements Initializable {
 	@FXML
 	private TextField txtPrenom;
 	
-	// ANTON - CHANGER DANS LE FXML
 	@FXML
 	private ListView<Employe> lvEmployes;
 	@FXML

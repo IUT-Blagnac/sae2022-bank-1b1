@@ -19,7 +19,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-import model.data.Client;
+import model.data.Employe;
 import model.orm.exception.ApplicationException;
 import model.orm.exception.Order;
 import model.orm.exception.Table;
@@ -33,9 +33,9 @@ public class EmployeEditorPaneController implements Initializable {
 	private Stage primaryStage;
 
 	// Données de la fenêtre
-	private Client clientEdite;
+	private Employe employeEdite;
 	private EditionMode em;
-	private Client clientResult;
+	private Employe employeResult;
 
 	// Manipulation de la fenêtre
 	public void initContext(Stage _primaryStage, DailyBankState _dbstate) {
@@ -49,23 +49,23 @@ public class EmployeEditorPaneController implements Initializable {
 	}
 
 	/**
-	 * Affiche la boite de dialogue d'édition d'un client
-	 * @param client Le client à modifier
+	 * Affiche la boite de dialogue d'édition d'un employe
+	 * @param employe L'employe à modifier
 	 * @param mode Le mode d'édition sélectionné
-	 * @return Le client modifié
+	 * @return L'employe modifié
 	 */
-	public Client displayDialog(Client client, EditionMode mode) {
+	public Employe displayDialog(Employe employe, EditionMode mode) {
 
 		this.em = mode;
-		if (client == null) {
-			this.clientEdite = new Client(0, "", "", "", "", "", "N", this.dbs.getEmpAct().idAg);
+		if (employe == null) {
+			this.employeEdite = new Employe(0, "", "", "", "", "", "N", this.dbs.getEmpAct().idAg);
 		} else {
-			this.clientEdite = new Client(client);
+			this.employeEdite = new Employe(employe);
 		}
-		this.clientResult = null;
+		this.employeResult = null;
 		switch (mode) {
 		case CREATION:
-			this.txtIdcli.setDisable(true);
+			this.txtIdEmp.setDisable(true);
 			this.txtNom.setDisable(false);
 			this.txtPrenom.setDisable(false);
 			this.txtTel.setDisable(false);
@@ -79,12 +79,12 @@ public class EmployeEditorPaneController implements Initializable {
 				this.rbActif.setDisable(true);
 				this.rbInactif.setDisable(true);
 			}
-			this.lblMessage.setText("Informations sur le nouveau client");
+			this.lblMessage.setText("Informations sur le nouvel employé");
 			this.butOk.setText("Ajouter");
 			this.butCancel.setText("Annuler");
 			break;
 		case MODIFICATION:
-			this.txtIdcli.setDisable(true);
+			this.txtIdEmp.setDisable(true);
 			this.txtNom.setDisable(false);
 			this.txtPrenom.setDisable(false);
 			this.txtTel.setDisable(false);
@@ -98,14 +98,12 @@ public class EmployeEditorPaneController implements Initializable {
 				this.rbActif.setDisable(true);
 				this.rbInactif.setDisable(true);
 			}
-			this.lblMessage.setText("Informations client");
+			this.lblMessage.setText("Informations employé");
 			this.butOk.setText("Modifier");
 			this.butCancel.setText("Annuler");
 			break;
 		case SUPPRESSION:
-			// ce mode n'est pas utilisé pour les Clients :
-			// la suppression d'un client n'existe pas il faut que le chef d'agence
-			// bascule son état "Actif" à "Inactif"
+			// ANTON - A CODER
 			ApplicationException ae = new ApplicationException(Table.NONE, Order.OTHER, "SUPPRESSION CLIENT NON PREVUE",
 					null);
 			ExceptionDialog ed = new ExceptionDialog(this.primaryStage, this.dbs, ae);
@@ -118,23 +116,23 @@ public class EmployeEditorPaneController implements Initializable {
 			// rien pour l'instant
 		}
 		// initialisation du contenu des champs
-		this.txtIdcli.setText("" + this.clientEdite.idNumCli);
-		this.txtNom.setText(this.clientEdite.nom);
-		this.txtPrenom.setText(this.clientEdite.prenom);
-		this.txtAdr.setText(this.clientEdite.adressePostale);
-		this.txtMail.setText(this.clientEdite.email);
-		this.txtTel.setText(this.clientEdite.telephone);
+		this.txtIdEmp.setText("" + this.employeEdite.idNumEmp);
+		this.txtNom.setText(this.employeEdite.nom);
+		this.txtPrenom.setText(this.employeEdite.prenom);
+		this.txtAdr.setText(this.employeEdite.adressePostale);
+		this.txtMail.setText(this.employeEdite.email);
+		this.txtTel.setText(this.employeEdite.telephone);
 
-		if (ConstantesIHM.estInactif(this.clientEdite)) {
+		if (ConstantesIHM.estInactif(this.employeEdite)) {
 			this.rbInactif.setSelected(true);
 		} else {
 			this.rbInactif.setSelected(false);
 		}
 
-		this.clientResult = null;
+		this.employeResult = null;
 
 		this.primaryStage.showAndWait();
-		return this.clientResult;
+		return this.employeResult;
 	}
 
 	// Gestion du stage
@@ -148,7 +146,7 @@ public class EmployeEditorPaneController implements Initializable {
 	@FXML
 	private Label lblMessage;
 	@FXML
-	private TextField txtIdcli;
+	private TextField txtIdEmp;
 	@FXML
 	private TextField txtNom;
 	@FXML
@@ -176,7 +174,7 @@ public class EmployeEditorPaneController implements Initializable {
 
 	@FXML
 	private void doCancel() {
-		this.clientResult = null;
+		this.employeResult = null;
 		this.primaryStage.close();
 	}
 
@@ -185,18 +183,18 @@ public class EmployeEditorPaneController implements Initializable {
 		switch (this.em) {
 		case CREATION:
 			if (this.isSaisieValide()) {
-				this.clientResult = this.clientEdite;
+				this.employeResult = this.employeEdite;
 				this.primaryStage.close();
 			}
 			break;
 		case MODIFICATION:
 			if (this.isSaisieValide()) {
-				this.clientResult = this.clientEdite;
+				this.employeResult = this.employeEdite;
 				this.primaryStage.close();
 			}
 			break;
 		case SUPPRESSION:
-			this.clientResult = this.clientEdite;
+			this.employeResult = this.employeEdite;
 			this.primaryStage.close();
 			break;
 		}
@@ -204,24 +202,24 @@ public class EmployeEditorPaneController implements Initializable {
 	}
 
 	private boolean isSaisieValide() {
-		this.clientEdite.nom = this.txtNom.getText().trim();
-		this.clientEdite.prenom = this.txtPrenom.getText().trim();
-		this.clientEdite.adressePostale = this.txtAdr.getText().trim();
-		this.clientEdite.telephone = this.txtTel.getText().trim();
-		this.clientEdite.email = this.txtMail.getText().trim();
+		this.employeEdite.nom = this.txtNom.getText().trim();
+		this.employeEdite.prenom = this.txtPrenom.getText().trim();
+		this.employeEdite.adressePostale = this.txtAdr.getText().trim();
+		this.employeEdite.telephone = this.txtTel.getText().trim();
+		this.employeEdite.email = this.txtMail.getText().trim();
 		if (this.rbActif.isSelected()) {
-			this.clientEdite.estInactif = ConstantesIHM.CLIENT_ACTIF;
+			this.employeEdite.estInactif = ConstantesIHM.CLIENT_ACTIF;
 		} else {
-			this.clientEdite.estInactif = ConstantesIHM.CLIENT_INACTIF;
+			this.employeEdite.estInactif = ConstantesIHM.CLIENT_INACTIF;
 		}
 
-		if (this.clientEdite.nom.isEmpty()) {
+		if (this.employeEdite.nom.isEmpty()) {
 			AlertUtilities.showAlert(this.primaryStage, "Erreur de saisie", null, "Le nom ne doit pas être vide",
 					AlertType.WARNING);
 			this.txtNom.requestFocus();
 			return false;
 		}
-		if (this.clientEdite.prenom.isEmpty()) {
+		if (this.employeEdite.prenom.isEmpty()) {
 			AlertUtilities.showAlert(this.primaryStage, "Erreur de saisie", null, "Le prénom ne doit pas être vide",
 					AlertType.WARNING);
 			this.txtPrenom.requestFocus();
@@ -229,7 +227,7 @@ public class EmployeEditorPaneController implements Initializable {
 		}
 
 		String regex = "(0)[1-9][0-9]{8}";
-		if (!Pattern.matches(regex, this.clientEdite.telephone) || this.clientEdite.telephone.length() > 10) {
+		if (!Pattern.matches(regex, this.employeEdite.telephone) || this.employeEdite.telephone.length() > 10) {
 			AlertUtilities.showAlert(this.primaryStage, "Erreur de saisie", null, "Le téléphone n'est pas valable",
 					AlertType.WARNING);
 			this.txtTel.requestFocus();
@@ -237,7 +235,7 @@ public class EmployeEditorPaneController implements Initializable {
 		}
 		regex = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@"
 				+ "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
-		if (!Pattern.matches(regex, this.clientEdite.email) || this.clientEdite.email.length() > 20) {
+		if (!Pattern.matches(regex, this.employeEdite.email) || this.employeEdite.email.length() > 20) {
 			AlertUtilities.showAlert(this.primaryStage, "Erreur de saisie", null, "Le mail n'est pas valable",
 					AlertType.WARNING);
 			this.txtMail.requestFocus();
