@@ -1,6 +1,9 @@
 package application.control;
 
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
+
 import application.DailyBankApp;
 import application.DailyBankState;
 import application.tools.EditionMode;
@@ -44,6 +47,8 @@ public class EmployesManagement {
 			this.primaryStage.setResizable(false);
 
 			this.emc = loader.getController();
+			System.out.println("ALLO");
+			System.out.println(emc);
 			this.emc.initContext(this.primaryStage, this, _dbstate);
 
 		} catch (Exception e) {
@@ -110,5 +115,35 @@ public class EmployesManagement {
 		}
 		return employe;
 	}
-	
+
+	/**
+	 * Récupère la liste des employés
+	 * @param _numCompte ID de l'employé à chercher
+	 * @param _debutNom Début du nom de l'employé à chercher
+	 * @param _debutPrenom Début du prénom de l'employé à chercher
+	 * @return Liste la liste des employés trouvés
+	 */
+	public ArrayList<Employe> getlisteComptes(int _numCompte, String _debutNom, String _debutPrenom) {
+		ArrayList<Employe> listeEmp = new ArrayList<>();
+		try {
+			// Recherche des employés en BD. cf. AccessEmploye > getEmployes(.)
+			// numCompte != -1 => recherche sur numCompte
+			// numCompte != -1 et debutNom non vide => recherche nom/prenom
+			// numCompte != -1 et debutNom vide => recherche tous les employés
+
+			AccessEmploye ae = new AccessEmploye();
+			listeEmp = ae.getEmployes(this.dbs.getEmpAct().idAg, _numCompte, _debutNom, _debutPrenom);
+
+		} catch (DatabaseConnexionException e) {
+			ExceptionDialog ed = new ExceptionDialog(this.primaryStage, this.dbs, e);
+			ed.doExceptionDialog();
+			this.primaryStage.close();
+			listeEmp = new ArrayList<>();
+		} catch (ApplicationException ae) {
+			ExceptionDialog ed = new ExceptionDialog(this.primaryStage, this.dbs, ae);
+			ed.doExceptionDialog();
+			listeEmp = new ArrayList<>();
+		}
+		return listeEmp;
+	}
 }

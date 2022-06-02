@@ -1,7 +1,6 @@
 package application.control;
 
 import javafx.stage.Stage;
-
 import application.DailyBankApp;
 import application.DailyBankState;
 import application.tools.StageManagement;

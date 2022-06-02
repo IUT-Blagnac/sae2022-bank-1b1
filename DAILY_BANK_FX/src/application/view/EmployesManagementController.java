@@ -16,6 +16,7 @@ import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import model.data.Client;
 import model.data.Employe;
 
 public class EmployesManagementController implements Initializable {
@@ -87,6 +88,52 @@ public class EmployesManagementController implements Initializable {
 		this.primaryStage.close();
 	}
 
+	@FXML
+	private void doRechercher() {
+		int numCompte;
+		try {
+			String nc = this.txtNum.getText();
+			if (nc.equals("")) {
+				numCompte = -1;
+			} else {
+				numCompte = Integer.parseInt(nc);
+				if (numCompte < 0) {
+					this.txtNum.setText("");
+					numCompte = -1;
+				}
+			}
+		} catch (NumberFormatException nfe) {
+			this.txtNum.setText("");
+			numCompte = -1;
+		}
+
+		String debutNom = this.txtNom.getText();
+		String debutPrenom = this.txtPrenom.getText();
+
+		if (numCompte != -1) {
+			this.txtNom.setText("");
+			this.txtPrenom.setText("");
+		} else {
+			if (debutNom.equals("") && !debutPrenom.equals("")) {
+				this.txtPrenom.setText("");
+			}
+		}
+
+		// Recherche des clients en BD. cf. AccessEmploye > getEmploye(.)
+		// numCompte != -1 => recherche sur numCompte
+		// numCompte != -1 et debutNom non vide => recherche nom/prenom
+		// numCompte != -1 et debutNom vide => recherche tous les employes
+		ArrayList<Employe> listeEmp;
+		listeEmp = this.em.getlisteComptes(numCompte, debutNom, debutPrenom);
+
+		this.ole.clear();
+		for (Employe emp : listeEmp) {
+			this.ole.add(emp);
+		}
+
+		this.validateComponentState();
+	}
+	
 	@FXML
 	private void doModifierEmploye() {
 

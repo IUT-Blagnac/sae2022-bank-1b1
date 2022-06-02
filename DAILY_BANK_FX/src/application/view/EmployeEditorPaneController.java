@@ -68,10 +68,6 @@ public class EmployeEditorPaneController implements Initializable {
 			this.txtIdEmp.setDisable(true);
 			this.txtNom.setDisable(false);
 			this.txtPrenom.setDisable(false);
-			this.txtLogin.setDisable(false);
-			this.txtMotPasse.setDisable(false);
-			this.rbChefAgence.setSelected(true);
-			this.rbGuichetier.setSelected(false);
 			if (ConstantesIHM.isAdmin(this.dbs.getEmpAct())) {
 				this.rbChefAgence.setDisable(false);
 				this.rbGuichetier.setDisable(false);
@@ -79,6 +75,8 @@ public class EmployeEditorPaneController implements Initializable {
 				this.rbChefAgence.setDisable(true);
 				this.rbGuichetier.setDisable(true);
 			}
+			this.txtLogin.setDisable(false);
+			this.txtMotPasse.setDisable(false);
 			this.lblMessage.setText("Informations sur le nouvel employé");
 			this.butOk.setText("Ajouter");
 			this.butCancel.setText("Annuler");
@@ -87,10 +85,6 @@ public class EmployeEditorPaneController implements Initializable {
 			this.txtIdEmp.setDisable(true);
 			this.txtNom.setDisable(false);
 			this.txtPrenom.setDisable(false);
-			this.txtLogin.setDisable(false);
-			this.txtMotPasse.setDisable(false);
-			this.rbChefAgence.setSelected(true);
-			this.rbGuichetier.setSelected(false);
 			if (ConstantesIHM.isAdmin(this.dbs.getEmpAct())) {
 				this.rbChefAgence.setDisable(false);
 				this.rbGuichetier.setDisable(false);
@@ -98,6 +92,8 @@ public class EmployeEditorPaneController implements Initializable {
 				this.rbChefAgence.setDisable(true);
 				this.rbGuichetier.setDisable(true);
 			}
+			this.txtLogin.setDisable(false);
+			this.txtMotPasse.setDisable(false);
 			this.lblMessage.setText("Informations employé");
 			this.butOk.setText("Modifier");
 			this.butCancel.setText("Annuler");
@@ -221,7 +217,8 @@ public class EmployeEditorPaneController implements Initializable {
 			this.txtPrenom.requestFocus();
 			return false;
 		}
-
+		
+		// ANTON - ANCIEN TEL
 		String regex = "(0)[1-9][0-9]{8}";
 		if (!Pattern.matches(regex, this.employeEdite.login) || this.employeEdite.login.length() > 10) {
 			AlertUtilities.showAlert(this.primaryStage, "Erreur de saisie", null, "Le téléphone n'est pas valable",
@@ -229,6 +226,8 @@ public class EmployeEditorPaneController implements Initializable {
 			this.txtLogin.requestFocus();
 			return false;
 		}
+		
+		// ANTON - ANCIEN MAIL
 		regex = "^(?=.{1,64}@)[A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)@"
                 + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)(\\.[A-Za-z]{2,})$";
         if (!Pattern.matches(regex, this.employeEdite.motPasse) || this.employeEdite.motPasse.length() > 20) {
