@@ -84,7 +84,7 @@ image::../assets/docUserV1/debit_apparait_sur_compte.png[bouton effectuer debit]
 
 ==== Créditer un compte
 
-De la même façon que débiter un compte, le guichetier ou le chef d'agence peut créditer un compte. Pour cela, il suffit de se rendre sur la page de gestion des opérations d'un compte xref:docUserV1.adoc#Débiter un compte[voir débiter un compte] et cliquer sur le bouton "Créditer".
+De la même façon que débiter un compte, le guichetier ou le chef d'agence peut créditer un compte. Pour cela, il suffit de se rendre sur la page de gestion des opérations d'un compte xref:docUserV1.adoc#débiter-un-compte[voir débiter un compte] et cliquer sur le bouton "Créditer".
 
 ==== Rendre inactif un client
 
