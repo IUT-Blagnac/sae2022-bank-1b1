@@ -76,7 +76,7 @@ public class OperationsManagement {
 	}
 
 	/**
-	 * Active la vu d'ajout d'un débit sur un compte
+	 * Active la vue d'ajout d'un débit sur un compte
 	 * @return La nouvelle opération de débit créé
 	 */
 	public Operation enregistrerDebit() {
@@ -101,6 +101,35 @@ public class OperationsManagement {
 			}
 		}
 		return op;
+	}
+	
+	/**
+	 * Active la vue d'ajout d'un crédit sur un compte
+	 * @return La nouvelle opération de crédit créé
+	 */
+	public Operation enregistrerCredit() {
+		OperationEditorPane oep = new OperationEditorPane(this.primaryStage, this.dbs);
+		Operation op = oep.doOperationEditorDialog(this.compteConcerne, CategorieOperation.CREDIT);
+		
+		if (op != null) {
+			try {
+				AccessOperation ao = new AccessOperation();
+
+				ao.insertCredit(this.compteConcerne.idNumCompte, op.montant, op.idTypeOp);
+
+			} catch (DatabaseConnexionException e) {
+				ExceptionDialog ed = new ExceptionDialog(this.primaryStage, this.dbs, e);
+				ed.doExceptionDialog();
+				this.primaryStage.close();
+				op = null;
+			} catch (ApplicationException ae) {
+				ExceptionDialog ed = new ExceptionDialog(this.primaryStage, this.dbs, ae);
+				ed.doExceptionDialog();
+				op = null;
+			}
+		}
+		return op;
+		
 	}
 
 	/**

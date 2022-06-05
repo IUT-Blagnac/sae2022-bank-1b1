@@ -281,7 +281,7 @@ Voici la fonctionnalité enregistrer un débit en détail avec le diagramme de s
 
 image::../assets/doc_Tec_V1/debit.PNG[Diagramme de séquence débiter un client]
 
-Les Classes impliquées dans chaque package pour le bon fonctionnement de cette action sont :
+Les Classes impliquées dans les packages application pour le bon fonctionnement de cette action sont :
 
     application.control :
         - DailyBankMainFrame.java
@@ -307,6 +307,41 @@ Les Classes impliquées dans chaque package pour le bon fonctionnement de cette 
 === V1
 
 ==== Créditer un compte
+
+Créditer un compte est une fonctionnalité essentielle à toute banque, par exemple lors d'un dépot de chèque où bien lors du jour de paye, il est essentiel de créditer le client de la somme qu’il a reçu.
+
+Pour créditer un client nous avons besoins des informations suivantes :
+
+    - Le client en question
+    - Son compte à créditer
+    - La somme à créditer
+
+Voici le diagramme de séquence depuis l'écran d'accueil de l'application afin de créditer un client :
+
+image::../assets/v1/creditClient/credit.PNG[Diagramme de séquence créditer un client]
+
+Les classes impliquées dans les packages application pour créditer un compte sont :
+
+    application.control :
+        - DailyBankMainFrame.java
+        - ClientsManagement.java
+        - ComptesManagement.java
+        - OperationsManagement.java
+        - OperationEditorPane.java
+
+    application.tools :
+        - AlertUtilities.java
+        - CategorieOperation.java
+        - EditionMode.java
+        - PairsOfValue.java
+        - StageManagement.java
+
+    application.view :
+        - DailyBankMainFrameController.java
+        - ClientsManagementController.java
+        - ComptesManagementController.java
+        - OperationsManagementController.java
+        - OperationEditorPaneController.java
 
 ==== Clôturer un compte
 

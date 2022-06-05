@@ -64,6 +64,39 @@ image::../assets/doc_User_V1/fenetre_modif_client.png[fenetre modif client]
 
 ==== Débiter un compte
 
+Pour débiter un compte, le guichetier ou le chef d'agence doit ouvrir le menu de gestion des comptes, en allant dans le menu gestion et cliquer sur le bouton Comptes client.
+
+image::../assets/docUserV1/bouton_comptes_client.png[bouton comptes client]
+
+Une nouvelle fenêtre s'ouvre, afin de pouvoir sélectionner le compte du client à débiter. Une fois le bon compte bancaire sélectionné, il faut cliquer sur le bouton "Voir opérations" :
+
+image::../assets/docUserV1/menu_gestion_comptes.png[menu gestion comptes]
+
+Il suffit ensuite de cliquer sur le bouton "Enregistrer débit" et d'entrer les informations sur ce débit (montant, type) avant de valider l'opération :
+
+image::../assets/docUserV1/bouton_enregistrer_debit.png[bouton enregistrer debit]
+
+image::../assets/docUserV1/effectuer_debit.png[bouton effectuer debit]
+
+Et voila ! Le débit est effectué ! Il apparait maintenant dans la liste des opérations du compte :
+
+image::../assets/docUserV1/debit_apparait_sur_compte.png[débit sur compte]
+
+==== Créditer un compte
+
+De la même façon que débiter un compte, le guichetier ou le chef d'agence peut créditer un compte. Pour cela, il suffit de se rendre sur la page de gestion des opérations d'un compte xref:docUserV1.adoc#débiter-un-compte[voir débiter un compte] et de cliquer sur le bouton "Enregistrer Crédit" :
+
+image::../assets/docUserV1/bouton_enregistrer_credit.png[bouton enregistrer credit]
+
+Une fois sur la page d'enregistrement d'un crédit, il faut tout comme le débit indiquer le montant du crédit et le mode avant de cliquer sur le bouton "Effectuer un crédit" :
+
+image::../assets/docUserV1/effectuer_credit.png[bouton effectuer crédit]
+
+Et voila ! Le crédit est effectué ! Il apparait maintenant dans la liste des opérations du compte :
+
+image::../assets/docUserV1/credit_apparait_sur_compte.png[crédit sur compte]
+
+
 
 ==== Rendre inactif un client
 
