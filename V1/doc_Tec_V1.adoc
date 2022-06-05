@@ -279,7 +279,7 @@ Pour débiter un client il nous faut :
 
 Voici la fonctionnalité enregistrer un débit en détail avec le diagramme de séquence depuis l'écran d'accueil de l'application :
 
-image::../assets/doc_Tec_V1/debit.PNG[Diagramme de séquence débiter un client]
+image::../assets/doc_Tec_V1/debit.png[Diagramme de séquence débiter un client]
 
 Les Classes impliquées dans les packages application pour le bon fonctionnement de cette action sont :
 
