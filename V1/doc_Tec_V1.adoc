@@ -24,7 +24,7 @@ Le chef d'agence possède les mêmes fonctionnalités que le guichetier avec que
 
 === Diagramme de classe de la base de donnée
 
-image::../assets/v1/dcDb.v1/Diagramme de classe de la base de donnée.png[dc Db]
+image::../assets/doc_Tec_V1/Diagramme de classe de la base de donnée.png[dc Db]
 
 Dans la base de donnée actuelle nous avons différentes tables qui sont reliées entre elles. 
 
@@ -47,7 +47,7 @@ Nous avons la table Operation qui représente les différentes opérations effec
 
 Voici l'architecture générale de l'application :
 
-image::../assets/architecture_application.png[architecture application]
+image::../assets/doc_Tec_V1/architecture_application.png[architecture application]
 
 Dans cetta application nous avons une architecture où nous avons une base de donnée sur laquelle se connectent les différents utilisateurs de l'application, qui sont les guichetier et les chef d'agences. Les guichetiers et les chef d'agences ont accés en écriture et en lecture à la base de donnée afin de pouvoir ajouter de nouveaux et modifier des clients, ajouter, modifier et intéragir avec les comptes des clients. Le chef d'agence a également accés à la table contenant les employés de l'agence, afin de pouvoir en ajouter ou en supprimer ; il possède donc des privilèges plus élevés que les guichetiers.
 
@@ -112,15 +112,15 @@ AccesClient.java
 === Partage du travail
 
 .Loan
-* xref:doctecv1.adoc#Consulter un compte[Consulter un compte]
-* xref:doctecv1.adoc#Débiter un compte[Débiter un compte]
+* xref:doc_Tec_V1.adoc#Consulter un compte[Consulter un compte]
+* xref:doc_Tec_V1.adoc#Débiter un compte[Débiter un compte]
 
 .Matthieu
-* xref:doctecv1.adoc#Créer un client[Créer un client]
-* xref:doctecv1.adoc#Modifier un client[Modifier un client]
+* xref:doc_Tec_V1.adoc#Créer un client[Créer un client]
+* xref:doc_Tec_V1.adoc#Modifier un client[Modifier un client]
 
 .Anton
-* xref:doctecv1.adoc#Rendre inactif un client[Rendre inactif un client]
+* xref:doc_Tec_V1.adoc#Rendre inactif un client[Rendre inactif un client]
 
 
 === V0
@@ -141,7 +141,7 @@ Dans la base de donnée, on agit sur la table Client en écriture.
 
 Voici une capture d'écran de l'interface de création d'un client :
 
-image::../assets/interface_creation_client.png[interface création client]
+image::../assets/doc_Tec_V1/interface_creation_client.png[interface création client]
 
 Classes impliquées dans chaque package :
     
@@ -158,7 +158,7 @@ Classes impliquées dans chaque package :
     
 Voici un diagramme de séquence permettant d'observer le passage entre les différentes classes :
 
-image::../assets/v1/createClient/Nouveau Client.png[Diagramme de séquence]
+image::../assets/doc_Tec_V1/Nouveau Client.png[Diagramme de séquence]
 
 ==== Modifier un client
 
@@ -176,7 +176,7 @@ Dans la base de donnée, on agit en lecture pour récupérer les information du 
 
 Voici une capture d'écran de l'interface de modification d'un client :
 
-image::../assets/interface_edition_client.png[interface création client]
+image::../assets/doc_Tec_V1/interface_edition_client.png[interface création client]
 
 Classes impliquées dans chaque package :
     
@@ -193,7 +193,7 @@ Classes impliquées dans chaque package :
     
 Voici un diagramme de séquence permettant d'observer le passage entre les différentes classes :
 
-image::../assets/v1/editClient/Editer client.png[Diagramme de séquence]
+image::../assets/doc_Tec_V1/Editer client.png[Diagramme de séquence]
 
 ==== Rendre inactif un client
 
@@ -231,7 +231,7 @@ Classes impliquées dans chaque package :
 
 Le diagramme de séquence est identique à celui de Modifier un client car l'activité d'un client est un des attributs modifiables d'un client.
 
-image::../assets/v1/deactivateClient/Rendre inactif un client.png[Diagramme de séquence]
+image::../assets/doc_Tec_V1/Rendre inactif un client.png[Diagramme de séquence]
 
 ==== Consulter un compte
 
@@ -243,7 +243,7 @@ Pour consulter un compte d’un client de la banque, il nous faut :
 
 Voici le diagramme de séquence qui illustre le chemin parcouru depuis le lancement de l'application afin de consulter le compte d’un client :
 
-image::../assets/v1/consulterCompte/consulterCompte.PNG[Diagramme de séquence consulter un compte]
+image::../assets/doc_Tec_V1/consulterCompte.PNG[Diagramme de séquence consulter un compte]
 
 Les Classes impliquées dans chaque package pour le bon fonctionnement de cette action sont :
 
@@ -279,7 +279,7 @@ Pour débiter un client il nous faut :
 
 Voici la fonctionnalité enregistrer un débit en détail avec le diagramme de séquence depuis l'écran d'accueil de l'application :
 
-image::../assets/v1/debitClient/debit.PNG[Diagramme de séquence débiter un client]
+image::../assets/doc_Tec_V1/debit.PNG[Diagramme de séquence débiter un client]
 
 Les Classes impliquées dans les packages application pour le bon fonctionnement de cette action sont :
 
