@@ -13,8 +13,6 @@ usecase "Clôturer un compte" as Clôturer
 
 usecase "Gérer les employés" as Gérer
 
-
-
 G --> Crédit
 G --> Débit
 G --> Créer
