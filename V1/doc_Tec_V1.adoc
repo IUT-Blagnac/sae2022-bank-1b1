@@ -112,15 +112,15 @@ AccesClient.java
 === Partage du travail
 
 .Loan
-* xref:doctecv1.adoc#Consulter un compte[Consulter un compte]
-* xref:doctecv1.adoc#Débiter un compte[Débiter un compte]
+* xref:doc_Tec_v1.adoc#Consulter un compte[Consulter un compte]
+* xref:doc_Tec_v1.adoc#Débiter un compte[Débiter un compte]
 
 .Matthieu
-* xref:doctecv1.adoc#Créer un client[Créer un client]
-* xref:doctecv1.adoc#Modifier un client[Modifier un client]
+* xref:doc_Tec_v1.adoc#Créer un client[Créer un client]
+* xref:doc_Tec_v1.adoc#Modifier un client[Modifier un client]
 
 .Anton
-* xref:doctecv1.adoc#Rendre inactif un client[Rendre inactif un client]
+* xref:doc_Tec_v1.adoc#Rendre inactif un client[Rendre inactif un client]
 
 
 === V0
