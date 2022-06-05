@@ -318,7 +318,7 @@ Pour créditer un client nous avons besoins des informations suivantes :
 
 Voici le diagramme de séquence depuis l'écran d'accueil de l'application afin de créditer un client :
 
-image::../assets/doc_Tec_V1/credit.PNG[Diagramme de séquence créditer un client]
+image::../assets/doc_Tec_V1/credit.png[Diagramme de séquence créditer un client]
 
 Les classes impliquées dans les packages application pour créditer un compte sont :
 
