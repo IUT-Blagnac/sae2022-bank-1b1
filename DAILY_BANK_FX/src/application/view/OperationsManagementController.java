@@ -21,6 +21,9 @@ import javafx.stage.WindowEvent;
 import model.data.Client;
 import model.data.CompteCourant;
 import model.data.Operation;
+import model.data.Virement;
+import model.orm.exception.DataAccessException;
+import model.orm.exception.DatabaseConnexionException;
 
 public class OperationsManagementController implements Initializable {
 
@@ -82,6 +85,9 @@ public class OperationsManagementController implements Initializable {
 	@FXML
 	private Button btnCredit;
 
+	@FXML
+	private Button btnVirer;
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 	}
@@ -107,12 +113,25 @@ public class OperationsManagementController implements Initializable {
 
 	@FXML
 	private void doAutre() {
+		try {
+			Virement v = this.om.enregistrerVirement();
+			if (v != null) {
+				this.updateInfoCompteClient();
+				this.validateComponentState();
+			}
+		} catch (DatabaseConnexionException e) {
+			throw new RuntimeException(e);
+		} catch (DataAccessException e) {
+			throw new RuntimeException(e);
+		}
+
 	}
 
 	private void validateComponentState() {
 		// Non implémenté => désactivé
 		this.btnCredit.setDisable(true);
 		this.btnDebit.setDisable(false);
+		this.btnVirer.setDisable(false);
 	}
 
 	private void updateInfoCompteClient() {
