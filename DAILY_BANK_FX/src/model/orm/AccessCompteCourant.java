@@ -1,9 +1,6 @@
 package model.orm;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 
 import model.data.CompteCourant;
@@ -107,6 +104,35 @@ public class AccessCompteCourant {
 			return cc;
 		} catch (SQLException e) {
 			throw new DataAccessException(Table.CompteCourant, Order.SELECT, "Erreur accès", e);
+		}
+	}
+	
+	public void insertCompteCourant(CompteCourant cc) throws DataAccessException, DatabaseConnexionException, ManagementRuleViolation{
+		try {
+			Connection con = LogToDatabase.getConnexion();
+			CallableStatement call;
+
+			String q = "{call creercompte (?, ?, ?, ?)}";
+
+			call = con.prepareCall(q);
+
+			call.setInt(1, -cc.debitAutorise);
+			call.setDouble(2, cc.solde);
+			call.setInt(3, cc.idNumCli);
+			call.registerOutParameter(4, Types.INTEGER);
+
+			call.execute();
+
+			int res = call.getInt(4);
+
+			if (res == -1) {
+				throw new ManagementRuleViolation(Table.CompteCourant, Order.INSERT,
+						"Erreur de montant initial: Montant initial trop faible", null);
+			}
+
+			cc.idNumCompte  = res;
+		} catch (SQLException e) {
+			throw new DataAccessException(Table.CompteCourant, Order.INSERT, "Erreur accès", e);
 		}
 	}
 
