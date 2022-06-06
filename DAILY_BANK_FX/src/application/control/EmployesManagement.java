@@ -16,7 +16,9 @@ import javafx.stage.Modality;
 import model.data.Employe;
 import model.orm.AccessEmploye;
 import model.orm.exception.ApplicationException;
+import model.orm.exception.DataAccessException;
 import model.orm.exception.DatabaseConnexionException;
+import model.orm.exception.RowNotFoundOrTooManyRowsException;
 
 public class EmployesManagement {
 
@@ -112,6 +114,24 @@ public class EmployesManagement {
 			}
 		}
 		return employe;
+	}
+	/**
+	 * Supprime un employé
+	 * @param emp employé à supprimer
+	 */
+	public void supprimerEmploye(Employe emp) {
+		try {
+			AccessEmploye ae = new AccessEmploye();
+			
+			ae.deleteEmploye(emp);
+		} catch (DatabaseConnexionException e) {
+			ExceptionDialog ed = new ExceptionDialog(this.primaryStage, this.dbs, e);
+			ed.doExceptionDialog();
+			this.primaryStage.close();
+		} catch (ApplicationException ae) {
+			ExceptionDialog ed = new ExceptionDialog(this.primaryStage, this.dbs, ae);
+			ed.doExceptionDialog();
+		}
 	}
 
 	/**
