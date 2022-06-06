@@ -182,6 +182,34 @@ public class AccessOperation {
 		}
 	}
 
+	public void effectuerVirement(int idNumCompteDeb, int idNumCompteCred, double montant) throws DatabaseConnexionException, ManagementRuleViolation {
+		try {
+			Connection con = LogToDatabase.getConnexion();
+			CallableStatement call;
+
+			String q = "{call Virer (?, ?, ?, ?)}";
+			call = con.prepareCall(q);
+
+			call.setInt(1, idNumCompteDeb);
+			call.setInt(2, idNumCompteCred);
+			call.setDouble(3, montant);
+			call.registerOutParameter(4, java.sql.Types.INTEGER);
+
+			call.execute();
+
+			int res = call.getInt(4);
+
+			if (res != 0) { // Erreur applicative
+				throw new ManagementRuleViolation(Table.Operation, Order.INSERT,
+						"Erreur de règle de gestion : découvert autorisé dépassé", null);
+			}
+
+
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
 	/**
 	 * Fonction utilitaire qui retourne un ordre sql "to_date" pour mettre une date
 	 * dans une requête sql

@@ -16,9 +16,11 @@ import javafx.stage.Stage;
 import model.data.Client;
 import model.data.CompteCourant;
 import model.data.Operation;
+import model.data.Virement;
 import model.orm.AccessCompteCourant;
 import model.orm.AccessOperation;
 import model.orm.exception.ApplicationException;
+import model.orm.exception.DataAccessException;
 import model.orm.exception.DatabaseConnexionException;
 
 /**
@@ -130,6 +132,30 @@ public class OperationsManagement {
 		}
 		return op;
 		
+	}
+
+	public Virement enregistrerVirement() throws DatabaseConnexionException, DataAccessException {
+
+		VirementEditorPane vep = new VirementEditorPane(this.primaryStage, this.dbs);
+		Virement virement = vep.doVirementEditorDialog(this.compteConcerne);
+		if (virement != null) {
+			try {
+				AccessOperation ao = new AccessOperation();
+
+				ao.effectuerVirement(this.compteConcerne.idNumCompte,virement.idNumCompteCred, virement.montant);
+
+			} catch (DatabaseConnexionException e) {
+				ExceptionDialog ed = new ExceptionDialog(this.primaryStage, this.dbs, e);
+				ed.doExceptionDialog();
+				this.primaryStage.close();
+				virement = null;
+			} catch (ApplicationException ae) {
+				ExceptionDialog ed = new ExceptionDialog(this.primaryStage, this.dbs, ae);
+				ed.doExceptionDialog();
+				virement = null;
+			}
+		}
+		return virement;
 	}
 
 	/**
