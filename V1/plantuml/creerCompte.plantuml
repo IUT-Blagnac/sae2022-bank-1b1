@@ -1,0 +1,18 @@
+@startuml Créer Compte
+ClientsManagementController -> ClientsManagement : gererComptesClient()
+ClientsManagement  -> ComptesManagement : doComptesManagementDialog()
+ComptesManagement -> ComptesManagementController : displayDialog()
+ComptesManagementController -> ComptesManagement : creerCompte()
+ComptesManagement  -> CompteEditorPane : doCompteEditorDialog()
+CompteEditorPane -> CompteEditorPaneController : doCompteEditorDialog()
+CompteEditorPaneController -> CompteCourant
+CompteCourant -> CompteEditorPaneController 
+CompteEditorPaneController  -> Stage : showAndWait()
+Stage -> CompteEditorPaneController 
+CompteEditorPaneController  -> CompteEditorPane 
+CompteEditorPane -> ComptesManagement  
+ComptesManagement -> AccessCompteCourant : insertCompteCourant()
+AccessCompteCourant -> ComptesManagement 
+ComptesManagement -> ComptesManagementController 
+
+@enduml

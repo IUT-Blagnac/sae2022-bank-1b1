@@ -345,6 +345,31 @@ Les classes impliquées dans les packages application pour créditer un compte s
 
 ==== Clôturer un compte
 
+==== Créer un compte
+
+Créer un compte est une fonctionnalité essentielle pour un banque, car chaque mouvement d'argent (débit ou crédit) passe par un compte.
+
+Pour créer un compte, il faut d'abord créer un client si le compte est pour un nouveau client et ensuite il faut fournir les informations suivantes :
+
+    - Le monant de découvert autorisé
+    - Le montant du solde de premier dépot (qui doit être supérieur à 50€)
+
+Voici le diagramme de séquence depuis l'écran de gestion des clients afin de créer un compte :
+
+image::../assets/doc_Tec_V1/Créer Compte.png[Diagramme de séquence créer un compte]
+
+Les classes impliquées dans les packages application pour créer un compte sont :
+
+    application.control :
+        - ClientsManagement.java
+        - ComptesManagement.java
+        - CompteEditorPane.java
+
+    application.view :
+        - ClientsManagementController.java
+        - ComptesManagementController.java
+        - CompteEditorPaneController.java
+
 ==== Effectuer un virement de compte à compte
 
 ==== Créer un employé
