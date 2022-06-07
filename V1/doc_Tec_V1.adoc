@@ -3,6 +3,7 @@ XU Anton - GAYRARD Loan - ROBERT Matthieu
 v1.0, 18/05/2022 - Equipe 1b1
 :toc: preamble
 :toc-title: Sommaire
+:toclevels: 4
 :nofooter:
 
 Equipe 1B1 - XU Anton - GAYRARD Loan - ROBERT Matthieu
