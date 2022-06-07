@@ -1,5 +1,6 @@
 package application.control;
 
+import javafx.stage.Stage;
 import application.DailyBankApp;
 import application.DailyBankState;
 import application.tools.StageManagement;
@@ -8,7 +9,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
-import javafx.stage.Stage;
 import model.orm.exception.ApplicationException;
 
 public class ExceptionDialog {

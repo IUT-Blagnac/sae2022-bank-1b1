@@ -2,6 +2,7 @@ package application.control;
 
 import java.util.ArrayList;
 
+import javafx.stage.Stage;
 import application.DailyBankApp;
 import application.DailyBankState;
 import application.tools.AlertUtilities;
@@ -14,7 +15,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
-import javafx.stage.Stage;
 import model.data.Client;
 import model.data.CompteCourant;
 import model.orm.AccessCompteCourant;

@@ -2,8 +2,9 @@ package application.tools;
 
 import javafx.stage.Stage;
 
-public class StageManagement {
 
+public class StageManagement {
+	
 	/*
 	 * Centers primary Stage over its parent Stage
 	 */

@@ -5,28 +5,28 @@ import application.DailyBankApp;
 import application.DailyBankState;
 import application.tools.EditionMode;
 import application.tools.StageManagement;
-import application.view.CompteEditorPaneController;
+import application.view.EmployeEditorPaneController;
+import application.view.EmployesManagementController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
-import model.data.Client;
-import model.data.CompteCourant;
+import model.data.Employe;
 
-public class CompteEditorPane {
+public class EmployeEditorPane {
 
 	private Stage primaryStage;
-	private CompteEditorPaneController cepc;
+	private EmployeEditorPaneController eepc;
 
 	/**
-	 * Constructeur de la classe CompteEditorPane permettant de charger la vu d'édition d'un compte
+	 * Constructeur de la classe EmployeEditorPane permettant de charger la vue d'édition d'un employe
 	 * @param _parentStage Stage parent de la vue
 	 * @param _dbstate Etat actuel de l'application DailyBank
 	 */
-	public CompteEditorPane(Stage _parentStage, DailyBankState _dbstate) {
+	public EmployeEditorPane(Stage _parentStage, DailyBankState _dbstate) {
 
 		try {
-			FXMLLoader loader = new FXMLLoader(CompteEditorPaneController.class.getResource("compteeditorpane.fxml"));
+			FXMLLoader loader = new FXMLLoader(EmployesManagementController.class.getResource("employeeditorpane.fxml"));
 			BorderPane root = loader.load();
 
 			Scene scene = new Scene(root, root.getPrefWidth()+20, root.getPrefHeight()+10);
@@ -37,25 +37,24 @@ public class CompteEditorPane {
 			this.primaryStage.initOwner(_parentStage);
 			StageManagement.manageCenteringStage(_parentStage, this.primaryStage);
 			this.primaryStage.setScene(scene);
-			this.primaryStage.setTitle("Gestion d'un compte");
+			this.primaryStage.setTitle("Gestion d'un employe");
 			this.primaryStage.setResizable(false);
 
-			this.cepc = loader.getController();
-			this.cepc.initContext(this.primaryStage, _dbstate);
+			this.eepc = loader.getController();
+			this.eepc.initContext(this.primaryStage, _dbstate);
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	/** 
-	 * Active l'affichage de la vu d'édition d'un compte
-	 * @param client Le client associé au compte à éditer
-	 * @param cpte Le compte à éditer
-	 * @param em Le mode d'éditon du compte
-	 * @return Le compte édité
+	/**
+	 * Active l'affichage de la vue d'édition d'un employe
+	 * @param employe L'employe à modifier
+	 * @param em Le mode d'édition
+	 * @return L'employe modifié
 	 */
-	public CompteCourant doCompteEditorDialog(Client client, CompteCourant cpte, EditionMode em) {
-		return this.cepc.displayDialog(client, cpte, em);
+	public Employe doEmployeEditorDialog(Employe employe, EditionMode em) {
+		return this.eepc.displayDialog(employe, em);
 	}
 }
