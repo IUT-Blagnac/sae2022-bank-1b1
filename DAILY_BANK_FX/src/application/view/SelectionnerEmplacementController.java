@@ -1,13 +1,25 @@
 package application.view;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.ResourceBundle;
+
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.Phrase;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
+import com.itextpdf.text.Font;
 
 import application.DailyBankState;
 import application.control.ExceptionDialog;
-import application.tools.PairsOfValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -92,32 +104,115 @@ public class SelectionnerEmplacementController implements Initializable {
 			
 		}
 		
+		//Bouton qui génère le fichier pdf
 		@FXML
 		private void doGenerer() {
 			boolean isValide = true;
+			String erreur = "";
 			
 			if (this.chemin == null) {
-				this.texteErreur.setText("Veuillez entrer un chemin où enregistrer votre fichier");
+				erreur = erreur + "Veuillez entrer un chemin où enregistrer votre fichier" + "\n";
 				isValide = false;
 			}
 			if (this.zoneNomFichier.getText().equals("")) {
-				this.texteErreur.setText("Veuillez donner un nom à votre fichier");
+				erreur = erreur + "Veuillez donner un nom à votre fichier" + "\n";
 				isValide = false;
 			}
+			
+			//Si le chemin du fichier et le nom du fichier sont valides
 			if (isValide) {
-				this.texteErreur.setText("Relevé de compte à coder !");
-				System.out.println("Chemin : "+this.chemin);
-				System.out.println("Nom du fichier : "+this.zoneNomFichier.getText());
-				System.out.println("Client : "+this.client.toString());
-				System.out.println("Compte : "+this.compte.toString());
+				String PATH = this.chemin + "/" + this.zoneNomFichier.getText() + ".pdf" ;
 				try {
-					System.out.println("Opérations : "+getOperationsDuCompte().toString());
-				} catch (Exception E) {
-					System.out.println(E);
+					genererPDF(PATH);
+				} catch (Exception e) {
+					e.printStackTrace();
 				}
+			
+			//Sinon on indique à l'utilisateur le ou les erreurs
+			} else {
+				this.texteErreur.setText(erreur);
 			}
 		}
-		
+
+		private void genererPDF(String PATH) throws Exception {
+
+			try {
+				
+				//Polices d'écriture
+				Font policeTitre = new Font(Font.FontFamily.TIMES_ROMAN, 18,
+			            Font.BOLD);
+				Font policeTitre2 = new Font(Font.FontFamily.TIMES_ROMAN, 14,
+			            Font.BOLD);
+				
+				//Initialisation du document
+				Document document = new Document();
+	            PdfWriter.getInstance(document, new FileOutputStream(PATH));
+	            document.open();
+	            
+	            Paragraph preface = new Paragraph();
+	            
+	            //Titre du document PDF
+	            preface.add(new Paragraph("Relevé de compte de "+client.prenom+" "+client.nom, policeTitre));
+	            preface.add(new Paragraph("Compte bancaire numéro "+compte.idNumCompte, policeTitre));
+	            
+	            //Ajout de la date
+	            SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm:ss zzz");
+	            Date date = new Date();
+	            preface.add(new Paragraph(sdf.format(date),policeTitre2));
+	            
+	            
+	            document.add(preface);
+	            
+	            document.add(new Paragraph(" "));
+	            
+	            //Ajout du solde restant
+	            preface = new Paragraph();
+	            preface.add(new Paragraph("Solde restant actuel : "+compte.solde+" €"));
+	            document.add(preface);
+	            
+	            document.add(new Paragraph(" "));
+	            
+	            
+	            //Ajout de la table des opérations du compte
+	            PdfPTable table = new PdfPTable(3);
+
+	            PdfPCell c1 = new PdfPCell(new Phrase("Date"));
+	            c1.setHorizontalAlignment(Element.ALIGN_CENTER);
+	            table.addCell(c1);
+
+	            c1 = new PdfPCell(new Phrase("Type d'opération"));
+	            c1.setHorizontalAlignment(Element.ALIGN_CENTER);
+	            table.addCell(c1);
+
+	            c1 = new PdfPCell(new Phrase("Montant"));
+	            c1.setHorizontalAlignment(Element.ALIGN_CENTER);
+	            table.addCell(c1);
+	            table.setHeaderRows(1);
+
+	            ArrayList<Operation> operations = getOperationsDuCompte();
+	            int len = operations.size();
+
+	            for (int i=0 ; i<len ; i++) {
+	            	table.addCell(""+operations.get(i).dateOp);
+	            	table.addCell(operations.get(i).idTypeOp);
+	            	table.addCell(""+operations.get(i).montant+" €");
+	            }
+
+	            //Ajout de la table des opérations
+	            document.add(table);
+
+	            //Finalement on ferme le document pdf car tout a été écrit
+	            document.close();
+
+	            //Une fois tout effectué, on indique à l'utilisateur que le pdf a bien été généré sur la fenêtre
+				this.texteErreur.setText("Relevé de compte enregistré !");
+
+				//Si il y a eu une erreur lors de la création du pdf on l'indique à l'utilisateur
+			} catch (Exception E) {
+				this.texteErreur.setText("Erreur lors de l'enregistrement du relevé...");
+			}
+		}
+
 		/*
 		 * Méthode locale, utilisée pour récupérer les opérations du compte afin de générer le relevé pdf
 		 * Aucun paramètre n'est nécessaire car les arguments sont des attributs locaux de la classe
@@ -145,7 +240,6 @@ public class SelectionnerEmplacementController implements Initializable {
 				ed.doExceptionDialog();
 				listeOP = new ArrayList<>();
 			}
-			System.out.println(this.compte.solde);
 			return listeOP;
 		}
 		

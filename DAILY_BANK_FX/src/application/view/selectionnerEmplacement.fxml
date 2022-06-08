@@ -17,7 +17,7 @@
          <children>
             <Label fx:id="texteCheminFichier" text="Emplacement du fichier " />
             <Button fx:id="boutonSelectionner" mnemonicParsing="false" onAction="#choisirCheminFichier" text="Selectionner" />
-            <Label alignment="BOTTOM_LEFT" prefHeight="0.0" prefWidth="600.0" text="Entrez le nom du fichier (le .pdf sera ajouté automatiquement) :">
+            <Label alignment="BOTTOM_LEFT" prefHeight="0.0" prefWidth="600.0" text="Nom du fichier (le .pdf sera ajouté automatiquement) :">
                <padding>
                   <Insets top="50.0" />
                </padding>
