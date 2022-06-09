@@ -23,6 +23,7 @@ import model.data.Client;
 import model.data.CompteCourant;
 import model.data.Operation;
 import model.data.Virement;
+import model.orm.AccessCompteCourant;
 import model.orm.exception.DataAccessException;
 import model.orm.exception.DatabaseConnexionException;
 
@@ -147,7 +148,21 @@ public class OperationsManagementController implements Initializable {
 		// Non implémenté => désactivé
 		this.btnCredit.setDisable(false);
 		this.btnDebit.setDisable(false);
-		this.btnVirer.setDisable(false);
+
+		AccessCompteCourant acc = new AccessCompteCourant();
+		try {
+			ArrayList<CompteCourant> listeCompte = acc.getCompteCourants(this.clientDuCompte.idNumCli);
+			if (listeCompte.size() <= 1) {
+				this.btnVirer.setDisable(true);
+			} else {
+				this.btnVirer.setDisable(false);
+			}
+		} catch (DataAccessException e) {
+			throw new RuntimeException(e);
+		} catch (DatabaseConnexionException e) {
+			throw new RuntimeException(e);
+		}
+
 		this.btnGenererReleve.setDisable(false);
 	}
 
