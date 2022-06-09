@@ -88,14 +88,6 @@ public class EmployeEditorPaneController implements Initializable {
 			this.butOk.setText("Modifier");
 			this.butCancel.setText("Annuler");
 			break;
-		case SUPPRESSION:
-			// ANTON - A CODER
-			ApplicationException ae = new ApplicationException(Table.NONE, Order.OTHER, "SUPPRESSION CLIENT NON PREVUE",
-					null);
-			ExceptionDialog ed = new ExceptionDialog(this.primaryStage, this.dbs, ae);
-			ed.doExceptionDialog();
-
-			break;
 		}
 		// Paramétrages spécifiques pour les chefs d'agences
 		if (ConstantesIHM.isAdmin(this.dbs.getEmpAct())) {
@@ -177,10 +169,6 @@ public class EmployeEditorPaneController implements Initializable {
 				this.employeResult = this.employeEdite;
 				this.primaryStage.close();
 			}
-			break;
-		case SUPPRESSION:
-			this.employeResult = this.employeEdite;
-			this.primaryStage.close();
 			break;
 		}
 
