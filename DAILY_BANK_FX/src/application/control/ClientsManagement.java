@@ -1,7 +1,7 @@
 package application.control;
 
+import javafx.stage.Stage;
 import java.util.ArrayList;
-
 import application.DailyBankApp;
 import application.DailyBankState;
 import application.tools.EditionMode;
@@ -11,7 +11,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
-import javafx.stage.Stage;
 import model.data.Client;
 import model.orm.AccessClient;
 import model.orm.exception.ApplicationException;
@@ -123,11 +122,11 @@ public class ClientsManagement {
 	}
 
 	/**
-	 * Récupère la liste des compte d'un client
-	 * @param _numCompte Numéro du compte à chercher
-	 * @param _debutNom Début du nom du client associé au compte à chercher
-	 * @param _debutPrenom Début du prénom du client associé au compte à chercher
-	 * @return Liste la lite des comptes trouvé
+	 * Récupère la liste des client
+	 * @param _numCompte ID du client à chercher
+	 * @param _debutNom Début du nom du client à chercher
+	 * @param _debutPrenom Début du prénom du client à chercher
+	 * @return Liste la liste des clients trouvés
 	 */
 	public ArrayList<Client> getlisteComptes(int _numCompte, String _debutNom, String _debutPrenom) {
 		ArrayList<Client> listeCli = new ArrayList<>();

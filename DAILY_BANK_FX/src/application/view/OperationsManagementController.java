@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 
 import application.DailyBankState;
 import application.control.OperationsManagement;
+import application.control.SelectionnerEmplacement;
 import application.tools.NoSelectionModel;
 import application.tools.PairsOfValue;
 import javafx.collections.FXCollections;
@@ -88,6 +89,9 @@ public class OperationsManagementController implements Initializable {
 
 	@FXML
 	private Button btnVirer;
+	
+	@FXML
+	private Button btnGenererReleve;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -134,6 +138,11 @@ public class OperationsManagementController implements Initializable {
 		}
 
 	}
+	
+	@FXML
+	private void genererReleve() {
+		this.om.selectionnerEmplacement();
+	}
 
 	private void validateComponentState() {
 		// Non implémenté => désactivé
@@ -153,6 +162,8 @@ public class OperationsManagementController implements Initializable {
 		} catch (DatabaseConnexionException e) {
 			throw new RuntimeException(e);
 		}
+
+		this.btnGenererReleve.setDisable(false);
 	}
 
 	private void updateInfoCompteClient() {

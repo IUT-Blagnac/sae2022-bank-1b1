@@ -1,5 +1,6 @@
 package application.view;
 
+import javafx.stage.Stage;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.net.URL;
@@ -11,7 +12,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import model.orm.exception.ApplicationException;
 

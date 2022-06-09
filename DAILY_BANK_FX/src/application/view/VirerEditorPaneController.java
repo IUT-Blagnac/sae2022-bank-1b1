@@ -1,14 +1,10 @@
 package application.view;
 
 import application.DailyBankState;
-import application.tools.AlertUtilities;
-import application.tools.CategorieOperation;
-import application.tools.ConstantesIHM;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -16,7 +12,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import model.data.CompteCourant;
-import model.data.Operation;
 import model.data.Virement;
 import model.orm.AccessCompteCourant;
 import model.orm.exception.DataAccessException;
@@ -124,6 +119,7 @@ public class VirerEditorPaneController implements Initializable {
 		this.txtMontant.getStyleClass().remove("borderred");
 		this.lblMontant.getStyleClass().remove("borderred");
 		this.lblMessage.getStyleClass().remove("borderred");
+		
 		String info = "Cpt. : " + this.compteEdite.idNumCompte + "  "
 				+ String.format(Locale.ENGLISH, "%12.02f", this.compteEdite.solde) + "  /  "
 				+ String.format(Locale.ENGLISH, "%8d", this.compteEdite.debitAutorise);

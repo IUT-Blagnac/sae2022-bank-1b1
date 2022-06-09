@@ -9,9 +9,9 @@ v1.0, 16/05/2022 - Equipe 1b1
 
 Daily Bank App est une application de gestion des comptes clients pour la banque DailyBank. Cette application est à destination des employés de la banque, les guichetiers et les chef d'agences. 
 
-Elle permet aux guichetiers de la banque de gérer et consulter les profils des clients, de créer et gérer des comptes et également de créditer, débiter et éffectuer des virements de compte à comptes. 
+Elle permet aux guichetiers de la banque de gérer et consulter les profils des clients, de créer et gérer des comptes et également de créditer, débiter et effectuer des virements de compte à compte. 
 
-Le chef d'agence possède les même fonctionnalité que le guichetier avec quelques possibilité en plus comme rendre inactif un client ou des gérer les différents employés et guichetiers de l'agence.
+Le chef d'agence possède les mêmes fonctionnalités que le guichetier avec quelques possibilité en plus comme rendre inactif un client ou des gérer les différents employés et guichetiers de l'agence.
 
 == Installation et lancement de l'application
 
@@ -20,20 +20,19 @@ Prérequis: Avoir Java 8 installé
 Etapes:
 
     - Télécharger le fichier DailyBankV0.jar
-    - Ouvrir le ficheir DailyBankV0.jar en double cliquant dessus
+    - Ouvrir le fichier DailyBankV0.jar en double cliquant dessus
 
+
+== Explications des différents rôles
+
+Dans cette application, il existe différents rôles qui peuvent effectuer différentes actions. Il y a le guichetier qui peut effectuer différentes actions de création et de modification sur les clients et les comptes. Il y a le chef d'agence qui peut effectuer les mêmes actions que le guichetier mais il peut aussi gérer (créer, modifier et supprimer) les guichetiers de l'agence.
 
 == Utilisation de l'application
 
-=== Explications des différents rôles
 
-Dans cette application, il existe différents rôles qui peuvent effectuer différentes actions. Il y a le guichetiers qui peut éffectuer différentes action de création et de modification sur les clients et les comptes. Il y a le chef d'agence qui peut éffectuer les mêmes actions que le guichetier mais il peut aussi gérer (créer, modifier et supprimer) les guichetiers de l'agence.
+=== Créer un client
 
-=== Fonctionnalités de l'application
-
-==== Créer un client
-
-Pour créer un client, le guichetier ou le chef d'agence doit doit ouvrir le menu de gestion des clients, en allant dans le menu gestion et cliquer sur le boutton client.
+Pour créer un client, le guichetier ou le chef d'agence doit doit ouvrir le menu de gestion des clients, en allant dans le menu gestion et cliquer sur le bouton client.
 
 image::../assets/doc_User_V1/bouton_client.png[bouton client]
 
@@ -41,13 +40,13 @@ Un fois sur la fenêtre de gestion des clients, l'utilisateur doit cliquer sur l
 
 image::../assets/doc_User_V1/menu_gestion_client.png[menu gestion client]
 
-Dès que l'utilisateur à cliqué sur le bouton "Nouveau client", un nouvelle fenêtre s'ouvre afin de pouvoir rentrer les informations du client (nom, prénom, adresse, numéro de téléphone et adresse mail) et cliquer sur le bouton ajouter, pour créer le client. Sur cette fenetre, il y a également la possibilité pour le chef d'agence de décider si le client est actif ou inactif.
+Dès que l'utilisateur à cliqué sur le bouton "Nouveau client", un nouvelle fenêtre s'ouvre afin de pouvoir rentrer les informations du client (nom, prénom, adresse, numéro de téléphone et adresse mail) et cliquer sur le bouton ajouter, pour créer le client. Sur cette fenêtre, il y a également la possibilité pour le chef d'agence de décider si le client est actif ou inactif.
 
-image::../assets/doc_User_V1/fenetre_ajout_client.png[fenetre ajout client]
+image::../assets/doc_User_V1/fenetre_ajout_client.png[fenêtre ajout client]
 
-==== Modifier un client
+=== Modifier un client
 
-Pour créer un client, le guichetier ou le chef d'agence doit doit ouvrir le menu de gestion des clients, en allant dans le menu gestion et cliquer sur le boutton client.
+Pour créer un client, le guichetier ou le chef d'agence doit doit ouvrir le menu de gestion des clients, en allant dans le menu gestion et cliquer sur le bouton client.
 
 image::../assets/doc_User_V1/bouton_client.png[bouton client]
 
@@ -55,14 +54,14 @@ Un fois sur la fenêtre de gestion des clients, l'utilisateur doit sélectionner
 
 image::../assets/doc_User_V1/menu_modif_client.png[menu modification client]
 
-Dès que l'utilisateur à cliqué sur le bouton "Modifier client", un nouvelle fenêtre s'ouvre afin de pouvoir rentrer les informations à changer du client (nom, prénom, adresse, numéro de téléphone et adresse mail) et cliquer sur le bouton "modifer", pour modifier le client. Sur cette fenetre, il y a également la possibilité pour le chef d'agence de décider si le client est actif ou inactif.
+Dès que l'utilisateur à cliqué sur le bouton "Modifier client", un nouvelle fenêtre s'ouvre afin de pouvoir rentrer les informations à changer du client (nom, prénom, adresse, numéro de téléphone et adresse mail) et cliquer sur le bouton "modifier", pour modifier le client. Sur cette fenêtre, il y a également la possibilité pour le chef d'agence de décider si le client est actif ou inactif.
 
-image::../assets/doc_User_V1/fenetre_modif_client.png[fenetre modif client]
+image::../assets/doc_User_V1/fenetre_modif_client.png[fenêtre modif client]
 
-==== Consulter un compte
+=== Consulter un compte
 
 
-==== Débiter un compte
+=== Débiter un compte
 
 Pour débiter un compte, le guichetier ou le chef d'agence doit ouvrir le menu de gestion des comptes, en allant dans le menu gestion et cliquer sur le bouton Comptes client.
 
@@ -78,11 +77,11 @@ image::../assets/doc_User_V1/bouton_enregistrer_debit.png[bouton enregistrer deb
 
 image::../assets/doc_User_V1/effectuer_debit.png[bouton effectuer debit]
 
-Et voila ! Le débit est effectué ! Il apparait maintenant dans la liste des opérations du compte :
+Et voila ! Le débit est effectué ! Il apparaît maintenant dans la liste des opérations du compte :
 
 image::../assets/doc_User_V1/debit_apparait_sur_compte.png[débit sur compte]
 
-==== Créditer un compte
+=== Créditer un compte
 
 De la même façon que débiter un compte, le guichetier ou le chef d'agence peut créditer un compte. Pour cela, il suffit de se rendre sur la page de gestion des opérations d'un compte xref:doc_User_V1.adoc#débiter-un-compte[voir débiter un compte] et de cliquer sur le bouton "Enregistrer Crédit" :
 
@@ -92,11 +91,11 @@ Une fois sur la page d'enregistrement d'un crédit, il faut tout comme le débit
 
 image::../assets/doc_User_V1/effectuer_credit.png[bouton effectuer crédit]
 
-Et voila ! Le crédit est effectué ! Il apparait maintenant dans la liste des opérations du compte :
+Et voila ! Le crédit est effectué ! Il apparaît maintenant dans la liste des opérations du compte :
 
 image::../assets/doc_User_V1/credit_apparait_sur_compte.png[crédit sur compte]
 
 
 
-==== Rendre inactif un client
+=== Rendre inactif un client
 

@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.regex.Pattern;
 
+import javafx.stage.Stage;
 import application.DailyBankState;
 import application.control.ExceptionDialog;
 import application.tools.AlertUtilities;
@@ -17,7 +18,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
-import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import model.data.Client;
 import model.orm.exception.ApplicationException;

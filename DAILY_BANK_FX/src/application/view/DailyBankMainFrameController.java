@@ -1,5 +1,6 @@
 package application.view;
 
+import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -12,7 +13,6 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
-import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import model.data.AgenceBancaire;
 import model.data.Employe;
@@ -155,8 +155,7 @@ public class DailyBankMainFrameController implements Initializable {
 
 	@FXML
 	private void doEmployeOption() {
-		AlertUtilities.showAlert(this.primaryStage, "Gestion des Employé", "En cours de développement",
-				"Livraison prévue\nEn juin 2022", AlertType.INFORMATION);
+		this.dbmf.gestionEmployes();
 	}
 
 	private void actionQuitterBD() {

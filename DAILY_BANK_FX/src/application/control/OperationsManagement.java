@@ -105,6 +105,14 @@ public class OperationsManagement {
 		return op;
 	}
 	
+	/*
+	 * Ouvre une nouvelle fenêtre afin de sélectionner le dossier pour le relevé pdf
+	 */
+	public void selectionnerEmplacement() {
+		SelectionnerEmplacement se = new SelectionnerEmplacement(this.primaryStage, this.dbs, this.clientDuCompte, this.compteConcerne);
+		se.doSelectionnerEmplacement();
+	}
+	
 	/**
 	 * Active la vue d'ajout d'un crédit sur un compte
 	 * @return La nouvelle opération de crédit créé

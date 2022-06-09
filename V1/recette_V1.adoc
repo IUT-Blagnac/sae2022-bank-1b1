@@ -13,7 +13,7 @@ Equipe 1B1 - XU Anton - GAYRARD Loan - ROBERT Matthieu
 
 Daily Bank App est une application de gestion des comptes clients pour la banque DailyBank. Cette application est à destination des employés de la banque, les guichetiers et les chef d’agences.
 
-Elle permet aux guichetiers de la banque de gérer et consulter les profils des clients, de créer et gérer des comptes et également de créditer, débiter et éffectuer des virements de compte à comptes.
+Elle permet aux guichetiers de la banque de gérer et consulter les profils des clients, de créer et gérer des comptes et également de créditer, débiter et effectuer des virements de compte à comptes.
 
 Le chef d’agence possède les même fonctionnalité que le guichetier avec quelques possibilité en plus comme rendre inactif un client ou des gérer les différents employés et guichetiers de l’agence.
 

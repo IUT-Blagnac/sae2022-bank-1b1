@@ -3,6 +3,7 @@ XU Anton - GAYRARD Loan - ROBERT Matthieu
 v1.0, 18/05/2022 - Equipe 1b1
 :toc: preamble
 :toc-title: Sommaire
+:toclevels: 4
 :nofooter:
 
 Equipe 1B1 - XU Anton - GAYRARD Loan - ROBERT Matthieu
@@ -30,9 +31,9 @@ Dans la base de donnée actuelle nous avons différentes tables qui sont reliée
 
 Nous avons la table AgenceBancaire qui représente une agence bancaire avec un identifiant, un nom et une adresse postale, cette table est reliée par une clé étrangère à la table Employe, cette clé étrangère représente l'identifiant de l'employé qui est chef d'agence.
 
-Nous avons la table Employe qui représente un employé avec un identifiant, un nom, un prenom, un chaine désignant ses droits d'accès, et ses identifiants de connexion. Cette table est reliée par une clé étrangère à la table AgenceBancaire, cette clé étrangère représente l'identifiant de l'agence bancaire à laquelle l'employé appartient.
+Nous avons la table Employe qui représente un employé avec un identifiant, un nom, un prénom, un chaîne désignant ses droits d'accès, et ses identifiants de connexion. Cette table est reliée par une clé étrangère à la table AgenceBancaire, cette clé étrangère représente l'identifiant de l'agence bancaire à laquelle l'employé appartient.
 
-Nous avons la table Client qui représente un client avec un identifiant, un nom, un prenom, une adresse postale, une adresse mail, un numéro de téléphone et également un attibut indiquant si le client est actif ou inactif. Cette table est reliée par une clé étrangère à la table AgenceBancaire, cette clé étrangère représente l'identifiant de l'agence bancaire à laquelle le client est associé.
+Nous avons la table Client qui représente un client avec un identifiant, un nom, un prénom, une adresse postale, une adresse mail, un numéro de téléphone et également un attribut indiquant si le client est actif ou inactif. Cette table est reliée par une clé étrangère à la table AgenceBancaire, cette clé étrangère représente l'identifiant de l'agence bancaire à laquelle le client est associé.
 
 Nous avons la table CompteCourant qui désigne un Compte bancaire avec un numéro de compte, un solde de débit autorisé et un solde de compte et qui est reliée par une clé étrangère à la table Client, cette clé étrangère représente l'identifiant du client auquel le compte courant est associé.
 
@@ -49,7 +50,7 @@ Voici l'architecture générale de l'application :
 
 image::../assets/doc_Tec_V1/architecture_application.png[architecture application]
 
-Dans cetta application nous avons une architecture où nous avons une base de donnée sur laquelle se connectent les différents utilisateurs de l'application, qui sont les guichetier et les chef d'agences. Les guichetiers et les chef d'agences ont accés en écriture et en lecture à la base de donnée afin de pouvoir ajouter de nouveaux et modifier des clients, ajouter, modifier et intéragir avec les comptes des clients. Le chef d'agence a également accés à la table contenant les employés de l'agence, afin de pouvoir en ajouter ou en supprimer ; il possède donc des privilèges plus élevés que les guichetiers.
+Dans cette application nous avons une architecture où nous avons une base de donnée sur laquelle se connectent les différents utilisateurs de l'application, qui sont les guichetier et les chef d'agences. Les guichetiers et les chef d'agences ont accès en écriture et en lecture à la base de donnée afin de pouvoir ajouter de nouveaux et modifier des clients, ajouter, modifier et interagir avec les comptes des clients. Le chef d'agence a également accès à la table contenant les employés de l'agence, afin de pouvoir en ajouter ou en supprimer ; il possède donc des privilèges plus élevés que les guichetiers.
 
 === Ressources externes utilisées
 
@@ -73,7 +74,7 @@ Comme son nom l'indique, ce package contient diverses classes utiles, comme Aler
 
 - application.view :
 
-Ce package contient les classes qui vont récupérer les différents éléments des fenêtres de l'application, comme les boutons, et va leur donner une action (ex : quand on clique sur un bouton, on va effectuer une certaine action). Ce package contient aussi les fichiers FXML qui seront ensuites récupérés par les classes du package application.control.
+Ce package contient les classes qui vont récupérer les différents éléments des fenêtres de l'application, comme les boutons, et va leur donner une action (ex : quand on clique sur un bouton, on va effectuer une certaine action). Ce package contient aussi les fichiers FXML qui seront ensuite récupérés par les classes du package application.control.
 
 - model.data :
 
@@ -87,7 +88,7 @@ Ce package va contenir les classes qui communiquent avec la base de données. Co
 
 Dans ce package sont présents les différentes exceptions que l'application peut lever (erreur de connexion à la base de donnée, erreur de privilège...).
 
-=== Eléments essentiels / spécificités
+=== Éléments essentiels / spécificités
 
 LogToDatabase.java
 Client.java
@@ -106,21 +107,24 @@ AccesClient.java
 
 // Classes impliquées dans chaque package
 
-// Eléments essentiels à connaître, spécificités, … nécessaires à la mise en œuvre du développement. Cette partie peut être illustrée par un diagramme de séquence
+// Éléments essentiels à connaître, spécificités, … nécessaires à la mise en œuvre du développement. Cette partie peut être illustrée par un diagramme de séquence
 
 // Extraits de code significatifs commentés si nécessaires pour des points particuliers et importants
 === Partage du travail
 
 .Loan
-* xref:doc_Tec_V1.adoc#Consulter un compte[Consulter un compte]
-* xref:doc_Tec_V1.adoc#Débiter un compte[Débiter un compte]
+* xref:doc_Tec_V1.adoc#consulter-un-compte[Consulter un compte]
+* xref:doc_Tec_V1.adoc#débiter-un-compte[Débiter un compte]
 
 .Matthieu
-* xref:doc_Tec_V1.adoc#Créer un client[Créer un client]
-* xref:doc_Tec_V1.adoc#Modifier un client[Modifier un client]
+* xref:doc_Tec_V1.adoc#créer-un-client[Créer un client]
+* xref:doc_Tec_V1.adoc#modifier-un-client[Modifier un client]
 
 .Anton
-* xref:doc_Tec_V1.adoc#Rendre inactif un client[Rendre inactif un client]
+* xref:doc_Tec_V1.adoc#rendre-inactif-un-client[Rendre inactif un client]
+* xref:doc_Tec_V1.adoc#créer-un-employé[Créer un employé]
+* xref:doc_Tec_V1.adoc#modifier-un-employé[Modifier un employé]
+* xref:doc_Tec_V1.adoc#supprimer-un-employé[Supprimer un employé]
 
 
 === V0
@@ -210,6 +214,7 @@ if (ConstantesIHM.isAdmin(this.dbs.getEmpAct())) {
 } else {
     this.rbActif.setDisable(true);
     this.rbInactif.setDisable(true);
+}
 ----
 Les boutons permettant la modification de l'activité sont activés conditionnellement.
 
@@ -308,7 +313,7 @@ Les Classes impliquées dans les packages application pour le bon fonctionnement
 
 ==== Créditer un compte
 
-Créditer un compte est une fonctionnalité essentielle à toute banque, par exemple lors d'un dépot de chèque où bien lors du jour de paye, il est essentiel de créditer le client de la somme qu’il a reçu.
+Créditer un compte est une fonctionnalité essentielle à toute banque, par exemple lors d'un dépôt de chèque où bien lors du jour de paye, il est essentiel de créditer le client de la somme qu’il a reçu.
 
 Pour créditer un client nous avons besoins des informations suivantes :
 
@@ -344,6 +349,31 @@ Les classes impliquées dans les packages application pour créditer un compte s
         - OperationEditorPaneController.java
 
 ==== Clôturer un compte
+
+==== Créer un compte
+
+Créer un compte est une fonctionnalité essentielle pour un banque, car chaque mouvement d'argent (débit ou crédit) passe par un compte.
+
+Pour créer un compte, il faut d'abord créer un client si le compte est pour un nouveau client et ensuite il faut fournir les informations suivantes :
+
+    - Le montant de découvert autorisé
+    - Le montant du solde de premier dépôt (qui doit être supérieur à 50€)
+
+Voici le diagramme de séquence depuis l'écran de gestion des clients afin de créer un compte :
+
+image::../assets/doc_Tec_V1/Créer Compte.png[Diagramme de séquence créer un compte]
+
+Les classes impliquées dans les packages application pour créer un compte sont :
+
+    application.control :
+        - ClientsManagement.java
+        - ComptesManagement.java
+        - CompteEditorPane.java
+
+    application.view :
+        - ClientsManagementController.java
+        - ComptesManagementController.java
+        - CompteEditorPaneController.java
 
 ==== Effectuer un virement de compte à compte
 
