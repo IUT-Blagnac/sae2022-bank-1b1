@@ -379,6 +379,35 @@ Les classes impliquées dans les packages application pour créer un compte sont
 
 ==== Créer un employé
 
+Seulement les chefs d'agence ont accès à la gestion des employés.
+
+Pour créer un employé, la fenêtre de dialogue `EmployeEditorPane.java` est appelée depuis la classe `EmployesManagement.java` par la méthode `nouvelEmploye()` avec la constante `EditionMode.CREATION` en paramètre.
+
+La fenêtre `EmployeEditorPane.java` et sa classe controlleur `EmployeEditorPaneController.java` gèrent la création et l'initialisation de l'employé par l'utilisateur, ils renvoient ensuite l'employé pour l'insérer dans la base de données grâce à la classe `AccessEmploye.java` qui est en charge des requêtes SQL.
+
+Classes impliquées dans chaque package :
+    
+    application.control:
+        - EmployesManagement.java
+        - EmployeEditorPane.java
+    application.view:
+        - EmployesManagementController.java
+        - EmployeEditorPaneController.java
+    model.data:
+        - Employe.java
+    model.orm:
+        - AccessEmploye.java
+    application.tools:
+        - ConstantesIHM.java
+
+Voici le diagramme de séquence synthétisant les appels de méthodes dans les différentes classes à partir de la fenêtre principale :
+
+image::../assets/doc_Tec_V1/Créer un employé.png[Diagramme de séquence créer un employé]
+
 ==== Modifier un employé
 
+Seulement les chefs d'agence ont accès à la gestion des employés.
+
 ==== Supprimer un employé
+
+Seulement les chefs d'agence ont accès à la gestion des employés.
