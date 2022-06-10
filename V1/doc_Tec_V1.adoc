@@ -408,6 +408,10 @@ image::../assets/doc_Tec_V1/Créer un employé.png[Diagramme de séquence créer
 
 Seulement les chefs d'agence ont accès à la gestion des employés.
 
+La modification d'un employé est similaire à la création passe par les mêmes classes que pour la création, seulement les méthodes diffèrent.
+
+Pour modifier un employé, la fenêtre de dialogue `EmployeEditorPane.java` est appelée depuis la classe `EmployesManagement.java` par la méthode `modifierEmploye()` avec la constante `EditionMode.MODIFICATION` en paramètre.
+
 ==== Supprimer un employé
 
 Seulement les chefs d'agence ont accès à la gestion des employés.
