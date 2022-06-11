@@ -4,8 +4,8 @@ DailyBankMainFrame -> EmployesManagement : doEmployeManagementDialog()
 EmployesManagement -> EmployesManagementController : displayDialog()
 EmployesManagementController -> ListView : getSelectionModel()
 EmployesManagementController <- ListView
-EmployesManagementController -> ListView : get()
-EmployesManagementController <- ListView
+EmployesManagementController -> ObservableList : get()
+EmployesManagementController <- ObservableList
 EmployesManagement <- EmployesManagementController : modifierEmploye()
 EmployesManagement -> EmployeEditorPane : doEmployeEditorDialog()
 EmployeEditorPane -> EmployeEditorPaneController : displayDialog()
