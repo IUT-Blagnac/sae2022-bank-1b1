@@ -1,0 +1,22 @@
+@startuml Modifier un employé
+
+DailyBankMainFrame -> EmployesManagement : doEmployeManagementDialog()
+EmployesManagement -> EmployesManagementController : displayDialog()
+EmployesManagementController -> ListView : getSelectionModel()
+EmployesManagementController <- ListView
+EmployesManagementController -> ListView : get()
+EmployesManagementController <- ListView
+EmployesManagement <- EmployesManagementController : modifierEmploye()
+EmployesManagement -> EmployeEditorPane : doEmployeEditorDialog()
+EmployeEditorPane -> EmployeEditorPaneController : displayDialog()
+EmployeEditorPaneController -> Stage : showAndWait()
+EmployeEditorPaneController -> Employe
+EmployeEditorPaneController <- Employe
+EmployeEditorPaneController -> Stage : close()
+EmployeEditorPaneController <- Stage
+EmployeEditorPane <- EmployeEditorPaneController
+EmployesManagement <- EmployeEditorPane
+
+EmployesManagement -> AccessEmploye : updateEmploye()
+EmployesManagement -> EmployesManagementController
+@enduml
