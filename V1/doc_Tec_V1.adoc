@@ -412,7 +412,7 @@ La modification d'un employé est très similaire à la création et passe par l
 
 Pour modifier un employé, la fenêtre de dialogue `EmployeEditorPane.java` est appelée depuis la classe `EmployesManagement.java` par la méthode `modifierEmploye()` avec la constante `EditionMode.MODIFICATION` en paramètre.
 
-La classe `EmployeEditorPane.java` et la classe controlleur `EmployeEditorPaneController.java` affichent la fenêtre de modification d'un employé et remplit les champs préexistants grâce à l'employé sélectionné graphiquement, récupéré par la `ListView`. +
+La classe `EmployeEditorPane.java` et la classe controlleur `EmployeEditorPaneController.java` affichent la fenêtre de modification d'un employé et remplit les champs préexistants grâce à l'employé sélectionné graphiquement, récupéré dans la `ObservableList`. +
 Lors de la confirmation, l'employé modifié est envoyé à la classe `AccessEmploye.java` qui effectue une requête SQL UPDATE pour mettre à jour les attributs de l'employé.
 
 Classes impliquées dans chaque package :
@@ -437,3 +437,11 @@ image::../assets/doc_Tec_V1/Modifier un employé.png[Diagramme de séquence modi
 ==== Supprimer un employé
 
 Seulement les chefs d'agence ont accès à la gestion des employés.
+
+Pour supprimer un employé, l'employé sélectionné est récupéré puis une fenêtre de confirmation est appelée par la méthode statique `confirmYesCancel` de la classe `AlertUtilities.java` avec le paramètre `AlertType.CONFIRMATION`.
+
+Si l'utilisateur confirme la suppression, l'employé à supprimer est envoyé en paramètre à la classe `AccessEmploye.java` par la méthode `deleteEmploye()`. Cette classe envoie ensuite une requête SQL DELETE à la base de données pour supprimer l'employé.
+
+Voici le diagramme de séquence synthétisant les appels de méthodes dans les différentes classes à partir de la fenêtre principale :
+
+image::../assets/doc_Tec_V1/Supprimer un employé.png[Diagramme de séquence supprimer un employé]
