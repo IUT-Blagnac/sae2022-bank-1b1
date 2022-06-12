@@ -377,6 +377,35 @@ Les classes impliquées dans les packages application pour créer un compte sont
 
 ==== Effectuer un virement de compte à compte
 
+Le virement de compte à compte est possible uniquement entre deux compte d'un même client.
+Pour pouvoir effectuer le virement, il faut que le montant débité sur le premier compte respecte le découvert du compte.
+
+Pour effectuer un virement de compte à compte, il faut :
+    - Sélectionner le compte à créditer
+    - Indiquer le montant à débiter du premier compte
+
+Voici le diagramme de séquence depuis la vu de gestion des opération effectuées sur un compte :
+
+image::../assets/doc_Tec_V1/Virement de compte à compte.png[Diagramme de séquence virement de compte à compte]
+
+Les classes impliquées dans les packages application pour effectuer un virement sont :
+
+    application.control :
+        - OperationsManagement.java
+        - VirementEditorPane.java
+
+    application.view :
+        - OperationsManagementController.java
+        - VirerEditorPaneController.java
+
+Les classes impliquées dans le package model pour effectuer un virement sont :
+
+    model.data :
+        - Virement.java
+
+    model.orm:
+        - AccessOperation.java
+        
 ==== Créer un employé
 
 ==== Modifier un employé

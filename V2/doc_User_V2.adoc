@@ -95,6 +95,24 @@ Et voila ! Le crédit est effectué ! Il apparaît maintenant dans la liste des 
 
 image::../assets/doc_User_V1/credit_apparait_sur_compte.png[crédit sur compte]
 
+=== Effectuer un virement de compte à compte (Matthieu)
+
+Comme pour le débit ou le crédit d'un compte, le virement peut être éffectué par le guichetier ou le chef d'agence. Le virement de compte à compte est possible uniquement entre deux comptes d'un même client.
+
+Pour effectuer un virement, il suffit de se rendre sur la page de gestion  des opération d'un compte et de cliquer sur le bouton "Effectuer virement" :
+
+image::../assets/doc_User_V1/bouton_effectuer_virement.png[bouton effectuer virement]
+
+Une fois sur la page d'enregistrement d'un virement, il faut sélectionner le compte qui va recevoir le virement et indiquer le montant du virement avant de cliquer sur le bouton "Effectuer un virement" :
+
+image::../assets/doc_User_V1/effectuer_virement.png[bouton effectuer virement]
+
+Et voilà ! Le virement est effectué ! Il apparaît maintenant dans la liste des opérations des deux compte concerné par le virement :
+
+image::../assets/doc_User_V1/virement_apparait1.png[virement sur compte 1]
+
+image::../assets/doc_User_V1/virement_apparait1.png[virement sur compte 2]
+
 === Générer un relevé de compte en pdf
 
 Pour pouvoir générer le relevé d'un compte en pdf, il faut tout d'abord se rendre sur la page de gestion des opérations d'un compte xref:doc_User_V2.adoc#débiter-un-compte[voir débiter un compte] et cliquer sur le bouton "Générer relevé (.pdf)"
