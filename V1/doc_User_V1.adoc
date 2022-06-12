@@ -99,3 +99,22 @@ image::../assets/doc_User_V1/credit_apparait_sur_compte.png[crédit sur compte]
 
 === Rendre inactif un client
 
+=== Gérer les employés
+
+Pour pouvoir accéder à la gestion d'un employé, il faut d'abord être connecté en tant que chef d'agence.
+
+
+Pour accéder au menu de gestion des employés, depuis le menu principal, cliquer sur Gestion puis Employé :
+
+image::../assets/doc_User_V1/gestion_employes.png[Gestion employés]
+
+Ensuite, il suffit de cliquer sur les différents boutons afin d'effectuer les actions voulues pour la gestion des comptes des employés :
+
+- Rechercher
+- Créer
+- Modifier
+- Supprimer
+
+image::../assets/doc_User_V1/crud_employes.png[Gestion employés]
+
+Le numéro entre crochets est le numéro de l'employé.
