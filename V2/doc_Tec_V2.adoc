@@ -8,6 +8,7 @@ v2.0, 9/06//2022 - Equipe 1b1
 
 
 image::../assets/logo_iut_blagnac.png[Logo, 400]
+XU Anton - GAYRARD Loan - ROBERT Matthieu +
 IUT de Blagnac +
 BUT Informatique +
 Année 2021-2022
@@ -46,6 +47,7 @@ Nous avons la table CompteCourant qui désigne un Compte bancaire avec un numér
 
 Nous avons la table Operation qui représente les différentes opérations effectuées sur un compte avec un identifiant d'opération, le montant de l'opération, la date de l'opération et qui est reliée par une clé étrangère à la table CompteCourant, cette clé étrangère représente l'identifiant du compte auquel l'opération est associée et également une clé étrangère vers la table TypeOperation qui permet d'identifier le type de l'opération.
 
+Nous avons la table PrelevementAutomatique qui représente les différents prélèvements automatique avec un bénéficiaire, une date de prélèvement, un montant et qui est reliée par une clé étrangère à la table CompteCourant, cette clé étrangère représente l'identifiant du compte auquel le prélèvement automatique est associé.
 
 <<<
 
@@ -155,7 +157,7 @@ Dans sa colonne il doit remplir la ligne correspondant à chaque partie qu'il a 
 
 === V0
 
-==== Créer un client
+==== Créer un client (Matthieu)
 
 Création d'un nouveau client dans la base de donnée.
 
@@ -190,7 +192,7 @@ Voici un diagramme de séquence permettant d'observer le passage entre les diff�
 
 image::../assets/doc_Tec_V1/Nouveau Client.png[Diagramme de séquence]
 
-==== Modifier un client
+==== Modifier un client (Modifier)
 
 Modification d'un client dans la base de donnée.
 
@@ -264,7 +266,7 @@ Le diagramme de séquence est identique à celui de Modifier un client car l'act
 
 image::../assets/doc_Tec_V1/Rendre inactif un client.png[Diagramme de séquence]
 
-==== Consulter un compte
+==== Consulter un compte (Loan)
 
 Consulter un compte est une fonctionnalité importante pour une banque, afin de gérer les comptes de ses clients et de veiller au bon fonctionnement d’une banque.
 Pour consulter un compte d’un client de la banque, il nous faut :
@@ -374,11 +376,13 @@ Les classes impliquées dans les packages application pour créditer un compte s
         - OperationsManagementController.java
         - OperationEditorPaneController.java
 
-==== Clôturer un compte
+==== Clôturer un compte (Matthieu)
 
 Clôturer un compte signifie que le client n'a plus accès au compte et ne peut plus faire d'opérations avec ce compte.
 
 Pour pouvoir clôturer un compte, il faut que le solde du compte soit à 0
+
+Dans la base de donnée, on agit en lecture pour récupérer les information du compte et en écriture pour modifier la valeur de l'attribut estCloture du compte, sur la table CompteCourant. 
 
 Voici le diagramme de séquence depuis l'écran de gestion des comptes afin de clôturer un compte :
 
@@ -400,7 +404,7 @@ Les classes impliquées dans les packages model pour clôturer un compte sont :
     model.orm :
         - AccessCompteCourant.java
 
-==== Créer un compte
+==== Créer un compte (Matthieu)
 
 Créer un compte est une fonctionnalité essentielle pour un banque, car chaque mouvement d'argent (débit ou crédit) passe par un compte.
 
@@ -408,6 +412,8 @@ Pour créer un compte, il faut d'abord créer un client si le compte est pour un
 
     - Le montant de découvert autorisé
     - Le montant du solde de premier dépôt (qui doit être supérieur à 50€)
+
+Dans la base de donnée, on agit en écriture pour ajouter le nouveau compte, sur la table CompteCourant. 
 
 Voici le diagramme de séquence depuis l'écran de gestion des clients afin de créer un compte :
 
@@ -425,7 +431,7 @@ Les classes impliquées dans les packages application pour créer un compte sont
         - ComptesManagementController.java
         - CompteEditorPaneController.java
 
-==== Effectuer un virement de compte à compte
+==== Effectuer un virement de compte à compte (Matthieu)
 
 Le virement de compte à compte est possible uniquement entre deux compte d'un même client.
 Pour pouvoir effectuer le virement, il faut que le montant débité sur le premier compte respecte le découvert du compte.
@@ -433,6 +439,8 @@ Pour pouvoir effectuer le virement, il faut que le montant débité sur le premi
 Pour effectuer un virement de compte à compte, il faut :
     - Sélectionner le compte à créditer
     - Indiquer le montant à débiter du premier compte
+
+Dans la base de donnée, on agit en écriture pour ajouter le nouveau virement, sur la table Operation en utilisant la procedure virer. 
 
 Voici le diagramme de séquence depuis la vu de gestion des opération effectuées sur un compte :
 
@@ -558,13 +566,15 @@ Voici le diagramme de séquence depuis l'écran d'accueil pour générer un rele
 
 image::../assets/doc_Tec_V2/diagramme_sequence_generer_pdf.png[Diagramme de séquence générer un relevé de compte]
 
-==== Créer un prélèvement automatique
+==== Créer un prélèvement automatique (Matthieu)
 
 Pour créer un prélèvement automatique, il faut fournir les informations suivantes :
 
     - Le nom du bénéficiaire
     - Le jour du prélèvement
     - Le montant du prélèvement
+
+Dans la base de donnée, on agit en écriture pour ajouter le nouveau prélèvement, sur la table PrelevementAutomatique. 
 
 Voici le diagramme de séquence depuis l'écran de gestion des comptes :
 
@@ -590,7 +600,7 @@ Les classes impliquée dans les packages model pour créer un prélèvement sont
     model.orm : 
         - AccessPrelevement.java
     
-==== Modifier un prélèvement automatique
+==== Modifier un prélèvement automatique (Matthieu)
 
 La modification d'un prélèvement est similaire à la création d'un prélèvement et mobilise les même classes.
 
@@ -599,6 +609,8 @@ Lors de la modification d'un prélèvement, les informations suivantes peuvent �
     - Le nom du bénéficiaire
     - Le jour du prélèvement
     - Le montant du prélèvement
+
+Dans la base de donnée, on agit en lecture pour récupérer les information du prélèvement et en écriture pour ajouter les nouvelles informations du prélèvement, sur la table PrelevementAutomatique. 
 
 Voici le diagramme de séquence depuis l'écran de gestion des comptes :
 
@@ -624,9 +636,11 @@ Les classes impliquée dans les packages model pour créer un prélèvement sont
     model.orm : 
         - AccessPrelevement.java
 
-==== Supprimer un prélèvement automatique
+==== Supprimer un prélèvement automatique (Matthieu)
 
 La suppression d'un prélèvement automatique mobilise les mêmes classe que la création et la modification d'un prélèvement.
+
+Dans la base de donnée, on agit en lecture pour récupérer les information du prélèvement à supprimer et en écriture pour supprimer le prélèvement, sur la table PrelevementAutomatique. 
 
 Voici le diagramme de séquence depuis l'écran de gestion des comptes :
 
