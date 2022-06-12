@@ -82,6 +82,8 @@ public class ComptesManagementController implements Initializable {
 	@FXML
 	private Button btnVoirOpes;
 	@FXML
+	private Button btnVoirPrelev;
+	@FXML
 	private Button btnModifierCompte;
 	@FXML
 	private Button btnSupprCompte;
@@ -104,6 +106,15 @@ public class ComptesManagementController implements Initializable {
 		}
 		this.loadList();
 		this.validateComponentState();
+	}
+
+	@FXML
+	private void doVoirPrelevements() {
+		int selectedIndice = this.lvComptes.getSelectionModel().getSelectedIndex();
+		if (selectedIndice >= 0) {
+			CompteCourant cpt = this.olCompteCourant.get(selectedIndice);
+			this.cm.gererPrelevements(cpt);
+		}
 	}
 
 	@FXML
@@ -140,8 +151,10 @@ public class ComptesManagementController implements Initializable {
 		int selectedIndice = this.lvComptes.getSelectionModel().getSelectedIndex();
 		if (selectedIndice >= 0) {
 			this.btnVoirOpes.setDisable(false);
+			this.btnVoirPrelev.setDisable(false);
 		} else {
 			this.btnVoirOpes.setDisable(true);
+			this.btnVoirPrelev.setDisable(true);
 		}
 	}
 }
