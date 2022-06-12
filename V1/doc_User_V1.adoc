@@ -95,7 +95,21 @@ Et voila ! Le crédit est effectué ! Il apparaît maintenant dans la liste des 
 
 image::../assets/doc_User_V1/credit_apparait_sur_compte.png[crédit sur compte]
 
+=== Clôturer un compte
 
+Pour clôturer un compte, il faut que le solde du compte soit égal à 0.
+
+Pour clôturer un compte, le guichetier ou le chef d'agence doit ouvrir le menu de gestion des comptes, puis sélectionner un client et cliquer sur le bouton "Clôturer compte" : 
+
+image::../assets/doc_User_V1/bouton_cloturer_compte.png[bouton cloturer compte]
+
+Lorsque l'utilisateur clique sur le bouton clôturer compte, si le solde du compte n'est pas égal à 0, une fenêtre d'erreur s'ouvre indiquant que le compte ne peut pas être clôturé :
+
+image::../assets/doc_User_V1/erreur_cloturer_compte.png[erreur cloture compte]
+
+Lorsque l'utilisateur clique sur le bouton clôturer compte, si le solde du compte est égal à 0, une fenêtre de confirmation s'ouvre pour confirmer la clôture du compte :
+
+image::../assets/doc_User_V1/confirmation_cloturer_compte.png[confirmation cloture compte]
 
 === Rendre inactif un client
 
@@ -118,3 +132,4 @@ Ensuite, il suffit de cliquer sur les différents boutons afin d'effectuer les a
 image::../assets/doc_User_V1/crud_employes.png[Gestion employés]
 
 Le numéro entre crochets est le numéro de l'employé.
+
