@@ -1,0 +1,23 @@
+@startuml Supprimer un employé
+
+DailyBankMainFrame -> EmployesManagement : doEmployeManagementDialog()
+
+EmployesManagement -> EmployesManagementController : displayDialog()
+
+EmployesManagementController -> ListView : getSelectionModel()
+EmployesManagementController <- ListView
+EmployesManagementController -> ObservableList : get()
+EmployesManagementController <- ObservableList
+EmployesManagementController -> AlertUtilities : confirmYesCancel()
+
+AlertUtilities -> Alert : showAndWait()
+AlertUtilities <- Alert
+
+EmployesManagementController <- AlertUtilities
+
+EmployesManagement <- EmployesManagementController : supprimerEmploye()
+EmployesManagementController -> ObservableList : remove()
+
+EmployesManagement -> AccessEmploye : deleteEmploye()
+EmployesManagement -> EmployesManagementController
+@enduml

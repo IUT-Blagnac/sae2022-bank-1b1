@@ -1,0 +1,18 @@
+@startuml Créer un employé
+
+DailyBankMainFrame -> EmployesManagement : doEmployeManagementDialog()
+EmployesManagement -> EmployesManagementController : displayDialog()
+EmployesManagement <- EmployesManagementController : nouvelEmploye()
+EmployesManagement -> EmployeEditorPane : doEmployeEditorDialog()
+EmployeEditorPane -> EmployeEditorPaneController : displayDialog()
+EmployeEditorPaneController -> Stage : showAndWait()
+EmployeEditorPaneController -> Employe
+EmployeEditorPaneController <- Employe
+EmployeEditorPaneController -> Stage : close()
+EmployeEditorPaneController <- Stage
+EmployeEditorPane <- EmployeEditorPaneController
+EmployesManagement <- EmployeEditorPane
+
+EmployesManagement -> AccessEmploye : insertEmploye()
+EmployesManagement -> EmployesManagementController
+@enduml

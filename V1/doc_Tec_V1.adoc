@@ -408,6 +408,69 @@ Les classes impliquées dans le package model pour effectuer un virement sont :
         
 ==== Créer un employé
 
+Seulement les chefs d'agence ont accès à la gestion des employés.
+
+Pour créer un employé, la fenêtre de dialogue `EmployeEditorPane.java` est appelée depuis la classe `EmployesManagement.java` par la méthode `nouvelEmploye()` avec la constante `EditionMode.CREATION` en paramètre.
+
+La fenêtre `EmployeEditorPane.java` et sa classe controlleur `EmployeEditorPaneController.java` gèrent la création et l'initialisation de l'employé par l'utilisateur, ils  renvoient ensuite l'employé pour l'insérer dans la base de données grâce à la classe `AccessEmploye.java` qui est en charge des requêtes SQL.
+
+Classes impliquées dans chaque package :
+    
+    application.control:
+        - EmployesManagement.java
+        - EmployeEditorPane.java
+    application.view:
+        - EmployesManagementController.java
+        - EmployeEditorPaneController.java
+    model.data:
+        - Employe.java
+    model.orm:
+        - AccessEmploye.java
+    application.tools:
+        - ConstantesIHM.java
+
+Voici le diagramme de séquence synthétisant les appels de méthodes dans les différentes classes à partir de la fenêtre principale :
+
+image::../assets/doc_Tec_V1/Créer un employé.png[Diagramme de séquence créer un employé]
+
 ==== Modifier un employé
 
+Seulement les chefs d'agence ont accès à la gestion des employés.
+
+La modification d'un employé est très similaire à la création et passe par les mêmes classes que pour la création, l'employé modifié doit être récupéré pour être ensuite modifié dans la base de données.
+
+Pour modifier un employé, la fenêtre de dialogue `EmployeEditorPane.java` est appelée depuis la classe `EmployesManagement.java` par la méthode `modifierEmploye()` avec la constante `EditionMode.MODIFICATION` en paramètre.
+
+La classe `EmployeEditorPane.java` et la classe controlleur `EmployeEditorPaneController.java` affichent la fenêtre de modification d'un employé et remplit les champs préexistants grâce à l'employé sélectionné graphiquement, récupéré dans la `ObservableList`. +
+Lors de la confirmation, l'employé modifié est envoyé à la classe `AccessEmploye.java` qui effectue une requête SQL UPDATE pour mettre à jour les attributs de l'employé.
+
+Classes impliquées dans chaque package :
+    
+    application.control:
+        - EmployesManagement.java
+        - EmployeEditorPane.java
+    application.view:
+        - EmployesManagementController.java
+        - EmployeEditorPaneController.java
+    model.data:
+        - Employe.java
+    model.orm:
+        - AccessEmploye.java
+    application.tools:
+        - ConstantesIHM.java
+
+Voici le diagramme de séquence synthétisant les appels de méthodes dans les différentes classes à partir de la fenêtre principale :
+
+image::../assets/doc_Tec_V1/Modifier un employé.png[Diagramme de séquence modifier un employé]
+
 ==== Supprimer un employé
+
+Seulement les chefs d'agence ont accès à la gestion des employés.
+
+Pour supprimer un employé, l'employé sélectionné est récupéré puis une fenêtre de confirmation est appelée par la méthode statique `confirmYesCancel` de la classe `AlertUtilities.java` avec le paramètre `AlertType.CONFIRMATION`.
+
+Si l'utilisateur confirme la suppression, l'employé à supprimer est envoyé en paramètre à la classe `AccessEmploye.java` par la méthode `deleteEmploye()`. Cette classe envoie ensuite une requête SQL DELETE à la base de données pour supprimer l'employé.
+
+Voici le diagramme de séquence synthétisant les appels de méthodes dans les différentes classes à partir de la fenêtre principale :
+
+image::../assets/doc_Tec_V1/Supprimer un employé.png[Diagramme de séquence supprimer un employé]
