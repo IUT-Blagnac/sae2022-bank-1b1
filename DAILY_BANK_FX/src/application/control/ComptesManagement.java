@@ -116,6 +116,24 @@ public class ComptesManagement {
 		return compte;
 	}
 
+	public void cloturerCompte(CompteCourant cpt) {
+		if (cpt.solde == 0) {
+			try {
+				cpt.estCloture = "O";
+
+				AccessCompteCourant acc = new AccessCompteCourant();
+				acc.updateCompteCourant(cpt);
+			} catch (DatabaseConnexionException e) {
+				ExceptionDialog ed = new ExceptionDialog(this.primaryStage, this.dbs, e);
+				ed.doExceptionDialog();
+				this.primaryStage.close();
+			} catch (ApplicationException ae) {
+				ExceptionDialog ed = new ExceptionDialog(this.primaryStage, this.dbs, ae);
+				ed.doExceptionDialog();
+			}
+		}
+	}
+
 	/**
 	 * Récupère les comptes d'un client
 	 * @return La liste des comptes d'un client

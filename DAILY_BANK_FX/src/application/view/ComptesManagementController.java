@@ -6,14 +6,12 @@ import java.util.ResourceBundle;
 
 import application.DailyBankState;
 import application.control.ComptesManagement;
+import application.tools.AlertUtilities;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.SelectionMode;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import model.data.Client;
@@ -83,10 +81,10 @@ public class ComptesManagementController implements Initializable {
 	private Button btnVoirOpes;
 	@FXML
 	private Button btnVoirPrelev;
+//	@FXML
+//	private Button btnModifierCompte;
 	@FXML
-	private Button btnModifierCompte;
-	@FXML
-	private Button btnSupprCompte;
+	private Button btnCloturerCompte;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -117,12 +115,26 @@ public class ComptesManagementController implements Initializable {
 		}
 	}
 
-	@FXML
-	private void doModifierCompte() {
-	}
+//	@FXML
+//	private void doModifierCompte() {
+//	}
 
 	@FXML
-	private void doSupprimerCompte() {
+	private void doCloturerCompte() {
+		int selectedIndice = this.lvComptes.getSelectionModel().getSelectedIndex();
+		if (selectedIndice >= 0) {
+			CompteCourant cpt = this.olCompteCourant.get(selectedIndice);
+			if (cpt.solde == 0) {
+				boolean confirm = AlertUtilities.confirmYesCancel(this.primaryStage, "Clôturer le compte",
+						"Voulez-vous vraiment clôturer le compte ",  cpt.toString(), Alert.AlertType.CONFIRMATION);
+				if (confirm) {
+					this.cm.cloturerCompte(cpt);
+				}
+			} else {
+				AlertUtilities.showAlert(this.primaryStage,"Erreur", "Impossible de cloturer le compte",
+						"Le compte doit être soldé à 0 pour pouvoir être cloturé", Alert.AlertType.ERROR);
+			}
+		}
 	}
 
 	@FXML
@@ -145,16 +157,25 @@ public class ComptesManagementController implements Initializable {
 
 	private void validateComponentState() {
 		// Non implémenté => désactivé
-		this.btnModifierCompte.setDisable(true);
-		this.btnSupprCompte.setDisable(true);
+
 
 		int selectedIndice = this.lvComptes.getSelectionModel().getSelectedIndex();
 		if (selectedIndice >= 0) {
-			this.btnVoirOpes.setDisable(false);
-			this.btnVoirPrelev.setDisable(false);
+			CompteCourant cpt = this.olCompteCourant.get(selectedIndice);
+
+			if (cpt.estCloture.equals("N")) {
+				this.btnVoirOpes.setDisable(false);
+				this.btnVoirPrelev.setDisable(false);
+				this.btnCloturerCompte.setDisable(false);
+			} else {
+				this.btnVoirOpes.setDisable(true);
+				this.btnVoirPrelev.setDisable(true);
+				this.btnCloturerCompte.setDisable(true);
+			}
 		} else {
 			this.btnVoirOpes.setDisable(true);
 			this.btnVoirPrelev.setDisable(true);
+			this.btnCloturerCompte.setDisable(true);
 		}
 	}
 }

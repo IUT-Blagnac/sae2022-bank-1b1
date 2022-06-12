@@ -163,11 +163,12 @@ public class AccessCompteCourant {
 			}
 			Connection con = LogToDatabase.getConnexion();
 
-			String query = "UPDATE CompteCourant SET " + "debitAutorise = ? " + "WHERE idNumCompte = ?";
+			String query = "UPDATE CompteCourant SET " + "debitAutorise = ? , estCloture = ?" + "WHERE idNumCompte = ?";
 
 			PreparedStatement pst = con.prepareStatement(query);
 			pst.setInt(1, cc.debitAutorise);
-			pst.setInt(2, cc.idNumCompte);
+			pst.setString(2, cc.estCloture);
+			pst.setInt(3, cc.idNumCompte);
 
 			System.err.println(query);
 
