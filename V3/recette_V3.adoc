@@ -1,0 +1,305 @@
+= Cahier de recette V3
+XU Anton - GAYRARD Loan - ROBERT Matthieu
+v1.0, 18/05/2022 - Equipe 1b1
+:toc: preamble
+:toc-title: Sommaire
+:nofooter:
+
+image::../assets/logo_iut_blagnac.png[Logo, 400]
+XU Anton - GAYRARD Loan - ROBERT Matthieu +
+IUT de Blagnac +
+BUT Informatique +
+Année 2021-2022
+
+<<<
+
+== Présentation
+
+Daily Bank App est une application de gestion des comptes clients pour la banque DailyBank. Cette application est à destination des employés de la banque, les guichetiers et les chef d’agences.
+
+Elle permet aux guichetiers de la banque de gérer et consulter les profils des clients, de créer et gérer des comptes et également de créditer, débiter et effectuer des virements de compte à comptes.
+
+Le chef d’agence possède les même fonctionnalité que le guichetier avec quelques possibilité en plus comme rendre inactif un client ou des gérer les différents employés et guichetiers de l’agence.
+
+<<<
+
+== Fiches de tests
+
+=== V0
+
+==== Créer un client (Matthieu)
+
+|===
+|nom Test |Nom cas utilisation |Condition de satisfaction |Pré-condition
+
+|TestCréerClientOK
+|Créer un client
+|Toutes les informations du nouveau client sont renseignées
+|
+
+|TestCréerClientNOK
+|Créer un client
+|Blocage : Il manque un information sur le client à renseigner
+|
+|===
+
+==== Modifier un client (Matthieu)
+
+|===
+|nom Test |Nom cas utilisation |Condition de satisfaction |Pré-condition
+
+|TestModifierClientOK
+|Modifier un client
+|Toutes les informations du nouveau client sont renseignées
+|Un client est sélectionné
+
+|TestModifierClientNOK
+|Modifier un client
+|Blocage : Il manque un information sur le client à renseigner
+|Un client est sélectionné
+|===
+
+
+
+==== Débiter un compte (Loan)
+
+|===
+|nom Test |Nom cas utilisation |Condition de satisfaction |Pré-condition
+
+|TestDebiterCompteOK
+|Débiter un compte
+|Le compte est débité
+|Une valeur (positive) est rentrée dans le champ de saisie
+
+|TestDebiterCompteChampVide
+|Débiter un compte
+|Blocage : Le champ de saisie est vide, l'interface change de style pour avertir l'utilisateur que le champ est vide
+|Le champ de saisie est vide
+
+|TestDebiterCompteValeurNulle
+|Débiter un compte
+|Blocage : La valeur rentrée dans le champ de saisie ne peut pas être négative, l'interface change de style pour avertir l'utilisateur que la valeur rentrée n'est pas valide
+|Le champ de saisie contient une valeur négative
+
+|===
+
+==== Rendre inactif un client (Anton)
+
+|===
+|nom Test |Nom cas utilisation |Condition de satisfaction |Pré-condition
+
+|TestInactifClientOK
+|Rendre inactif un client
+|Le client est rendu inactif
+|Un client est sélectionné
+|===
+
+=== V1
+
+==== Créditer un compte (Loan)
+
+|===
+|nom Test |Nom cas utilisation |Condition de satisfaction |Pré-condition
+
+|TestCrediterCompteOK
+|Créditer un compte
+|Le compte est crédité
+|Une valeur (positive) est rentrée dans le champ de saisie
+
+|TestCrediterCompteChampVide
+|Créditer un compte
+|Blocage : Le champ de saisie est vide, l'interface change de style pour avertir l'utilisateur que le champ est vide
+|Le champ de saisie est vide
+
+|TestCrediterCompteValeurNulle
+|Créer un compte
+|Blocage : La valeur rentrée dans le champ de saisie ne peut pas être négative, l'interface change de style pour avertir l'utilisateur que la valeur rentrée n'est pas valide
+|Le champ de saisie contient une valeur négative
+
+|===
+
+==== Créer un compte (Matthieu)
+
+|===
+|nom Test |Nom cas utilisation |Condition de satisfaction |Pré-condition
+
+|TestCreerCompteOK
+|Créer un compte
+|Le compte est créé
+|Toutes les informations du nouveau compte sont renseignées
+
+|TestCreerCompteNOK
+|Créer un compte
+|Blocage : Il manque un information sur le compte à renseigner
+|
+
+|TestCreerCompteNOK2
+|Créer un compte
+|Blocage : Le montant de dépot initial est inférieur à 50
+|
+
+|===
+
+==== Clôturer un compte (Matthieu)
+
+|===
+|nom Test |Nom cas utilisation |Condition de satisfaction |Pré-condition
+
+|TestCloturerCompteOK
+|Clôturer un compte
+|Le compte est clôturé et on ne peut plus faire d'opération avec ce compte
+|Le solde du compte est égal à 0
+
+|TestCloturerCompteNOK
+|Clôturer un compte
+|Blocage : Le solde du comptes n'est pas égal à 0
+|
+|===
+
+==== Effectuer un virement de compte à compte (Matthieu)
+
+|===
+|nom Test |Nom cas utilisation |Condition de satisfaction |Pré-condition
+
+|TestVirementCompteOK
+|Effectuer un virement de compte à compte
+|Le virement est effectué, le compte débiteur à bien été débité et le compte créditeur à bien été crédité
+|Le client possède deux comptes dans l'agence bancaire
+
+|TestVirementCompteNOK
+|Effectuer un virement de compte à compte
+|Blocage : Le montant du virement est inférieur à 50
+|Le client possède deux comptes dans l'agence bancaire
+
+|===
+
+
+==== Créer un employé (Anton)
+
+|===
+|nom Test |Nom cas utilisation |Condition de satisfaction |Pré-condition
+
+|TestCréerEmployéOK
+|Créer un employé
+|L'employé est créé avec toutes les informations renseignées
+|Être connecté en tant que chef d'agence
+
+|TestCréerEmployéNOK
+|Créer un employé
+|Blocage : On ne peut pas créer un employé lorsqu'il manque des informations à renseigner
+|Être connecté en tant que chef d'agence
+
+|===
+
+==== Modifier un employé (Anton)
+
+|===
+|nom Test |Nom cas utilisation |Condition de satisfaction |Pré-condition
+
+|TestModifierEmployéOK
+|Modifier un employé
+|L'employé est modifié avec toutes les informations renseignées
+|- Être connecté en tant que chef d'agence +
+- Un employé est sélectionné
+
+|TestModifierEmployéNOK
+|Modifier un employé
+|Blocage : On ne peut pas modifier un employé lorsqu'il manque des informations à renseigner
+|- Être connecté en tant que chef d'agence +
+- Un employé est sélectionné
+
+|===
+
+==== Supprimer un employé (Anton)
+
+|===
+|nom Test |Nom cas utilisation |Condition de satisfaction |Pré-condition
+
+|TestSupprimerEmployé
+|Supprimer un employé
+|L'employé est supprimé
+|- Être connecté en tant que chef d'agence +
+- Un employé est sélectionné
+
+|===
+
+
+=== V2
+
+==== Créer un prélèvement (Matthieu)
+
+|===
+|nom Test |Nom cas utilisation |Condition de satisfaction |Pré-condition
+
+|TestCreerPrelevementOK
+|Créer un prélèvement
+|Le prélèvement est créé et enregistré dans la base de données
+|Toutes les informations du prélèvement sont renseignées
+
+|TestCreerPrelevementNOK
+|Créer un prélèvement
+|Blocage : Le montant du prélèvement est inférieur à 0
+|
+
+|TestCreerPrelevementNOK2
+|Créer un prélèvement
+|Blocage : Le date du prélèvement n'est pas comprise entre 1 et 31 (inclus)
+|
+
+|===
+
+==== Modifier un prélèvement (Matthieu)
+
+|===
+|nom Test |Nom cas utilisation |Condition de satisfaction |Pré-condition
+
+|TestModifierPrelevementOK
+|Modifier un prélèvement
+|Le prélèvement est modifié et enregistré dans la base de données
+|Un prélèvement est sélectionné
+
+|TestModifierPrelevementNOK
+|Modifier un prélèvement
+|Blocage : Le montant du prélèvement est inférieur à 0
+|
+
+|TestModifierPrelevementNOK2
+|Modifier un prélèvement
+|Blocage : Le date du prélèvement n'est pas comprise entre 1 et 31 (inclus)
+|
+
+|===
+
+==== Supprimer un prélèvement (Matthieu)
+
+|===
+|nom Test |Nom cas utilisation |Condition de satisfaction |Pré-condition
+
+|TestSupprimerPrelevementOK
+|Supprimer un prélèvement
+|Le prélèvement est supprimé de la base de données
+|Un prélèvement est sélectionné
+
+|===
+
+==== Générer un relevé de compte (Loan)
+
+|===
+|nom Test |Nom cas utilisation |Condition de satisfaction |Pré-condition
+
+|TestReleveCompteOK
+|Générer un relevé mensuel d'un compte en pdf
+|Le relevé de compte en .pdf est bien généré
+|Un chemin et un nom valide ont été donnés au fichier
+
+|TestReleveCompteCheminVide
+|Générer un relevé mensuel d'un compte en pdf
+|Le relevé de compte n'est pas généré et un message d'erreur apparait en indiquant à l'utilisateur qu'il doit entrer un chemin valide
+|Le chemin du fichier n'est pas précisé par l'utilisateur
+
+|TestReleveCompteNomVide
+|Générer un relevé mensuel d'un compte en pdf
+|Le relevé de compte n'est pas généré et un message d'erreur apparait en indiquant à l'utilisateur qu'il doit entrer un nom de fichier valide
+|Le nom du fichier n'est pas précisé par l'utilisateur
+
+|===
