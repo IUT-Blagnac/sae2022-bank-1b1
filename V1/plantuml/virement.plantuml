@@ -1,0 +1,14 @@
+@startuml Virement de compte à compte
+
+OperationsManagementController -> OperationManagement
+OperationManagement -> VirementEditorPane : doVirementEditorDialog()
+VirementEditorPane -> VirerEditorPaneController: diplayDialog()
+VirerEditorPaneController -> Stage : showAndWait()
+Stage -> VirerEditorPaneController
+VirerEditorPaneController -> VirementEditorPane
+VirementEditorPane -> OperationManagement
+OperationManagement -> AccessOperation : effectuerVirement()
+AccessOperation -> OperationManagement
+OperationManagement -> OperationsManagementController
+
+@enduml
