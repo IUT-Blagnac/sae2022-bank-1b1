@@ -29,7 +29,7 @@ Dans cette application, il existe différents rôles qui peuvent effectuer diff�
 
 == Utilisation de l'application
 
-=== Se connecter à l'application
+=== Se connecter à l'application (Loan)
 
 Se connecter à l'application est essentiel pour pouvoir utiliser l'application en tant que guichetier ou chef d'agence. Il permet de prouver à l'application que vous avez bien les droits nécessaires pour modifier les comptes des clients.
 
@@ -48,7 +48,7 @@ Vous voilà désormais connecté à l'application ! Vous pouvez vérifier que vo
 
 image::../assets/doc_User_V1/confirmation_connexion.png[confirmation connexion]
 
-=== Créer un client
+=== Créer un client (Matthieu)
 
 Pour créer un client, le guichetier ou le chef d'agence doit doit ouvrir le menu de gestion des clients, en allant dans le menu gestion et cliquer sur le bouton client.
 
@@ -62,7 +62,7 @@ Dès que l'utilisateur à cliqué sur le bouton "Nouveau client", un nouvelle fe
 
 image::../assets/doc_User_V1/fenetre_ajout_client.png[fenêtre ajout client]
 
-=== Modifier un client
+=== Modifier un client (Matthieu)
 
 Pour créer un client, le guichetier ou le chef d'agence doit doit ouvrir le menu de gestion des clients, en allant dans le menu gestion et cliquer sur le bouton client.
 
@@ -94,7 +94,7 @@ Et voilà ! Le compte est créé ! Il apparaît maintenant dans la liste des com
 
 image::../assets/doc_User_V1/compte_apparait.png[compte apparait]
 
-=== Consulter un compte
+=== Consulter un compte (Loan)
 
 Consulter un compte permet de consulter toutes les opérations du compte depuis sa création, de voir le solde actuel du compte et de voir le découvert autorisé du compte.
 
@@ -104,7 +104,7 @@ Vous voilà désormais sur la page du compte bancaire associée !
 
 image::../assets/doc_User_V1/fenetre_gestion_operations.png[menu gestion comptes]
 
-=== Débiter un compte
+=== Débiter un compte (Loan)
 
 Pour débiter un compte, le guichetier ou le chef d'agence doit ouvrir le menu de gestion des comptes, en allant dans le menu gestion et cliquer sur le bouton Comptes client.
 
@@ -124,7 +124,7 @@ Et voila ! Le débit est effectué ! Il apparaît maintenant dans la liste des o
 
 image::../assets/doc_User_V1/debit_apparait_sur_compte.png[débit sur compte]
 
-=== Créditer un compte
+=== Créditer un compte (Loan)
 
 De la même façon que débiter un compte, le guichetier ou le chef d'agence peut créditer un compte. Pour cela, il suffit de se rendre sur la page de gestion des opérations d'un compte xref:doc_User_V2.adoc#débiter-un-compte[voir débiter un compte] et de cliquer sur le bouton "Enregistrer Crédit" :
 
@@ -138,7 +138,7 @@ Et voila ! Le crédit est effectué ! Il apparaît maintenant dans la liste des 
 
 image::../assets/doc_User_V1/credit_apparait_sur_compte.png[crédit sur compte]
 
-=== Clôturer un compte
+=== Clôturer un compte (Matthieu)
 
 Pour clôturer un compte, il faut que le solde du compte soit égal à 0.
 
@@ -203,7 +203,7 @@ image::../assets/doc_User_V1/virement_apparait1.png[virement sur compte 1]
 
 image::../assets/doc_User_V1/virement_apparait1.png[virement sur compte 2]
 
-=== Générer un relevé de compte en pdf
+=== Générer un relevé de compte en pdf (Loan)
 
 Pour pouvoir générer le relevé d'un compte en pdf, il faut tout d'abord se rendre sur la page de gestion des opérations d'un compte xref:doc_User_V2.adoc#débiter-un-compte[voir débiter un compte] et cliquer sur le bouton "Générer relevé (.pdf)"
 
@@ -213,7 +213,7 @@ Une nouvelle fenêtre s'ouvre afin de sélectionner le dossier où le fichier se
 
 image::../assets/doc_User_V2/fenetre_generer.png[Fenêtre pour générer un fichier pdf]
 
-=== Gérer les prélèvements automatiques
+=== Gérer les prélèvements automatiques (Matthieu)
 
 Pour accéder à la gestion des prélèvements automatiques, il faut d'abord se rendre sur la page des gestion des comptes, puis sélectionnner un compte et cliquer sur le bouton "Voir prélèvments"
 
