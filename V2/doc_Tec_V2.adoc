@@ -129,6 +129,27 @@ AccesClient.java
 
 === V0
 
+==== Se connecter à l'application
+
+Se connecter à l'application est essentiel pour pouvoir utiliser l'application en tant que guichetier ou chef d'agence. Il permet de prouver à l'application que vous avez bien les droits nécessaires pour modifier les comptes des clients.
+
+Pour vous connecter à DailyBank, lancez tout d'abord le fichier .jar,
+vous arriverez sur la page suivante :
+
+image::../assets/doc_User_V1/fenetre_accueil.png[fenêtre d'accueil de l'application]
+
+Cliquez sur le bouton "Connexion", une nouvelle fenêtre va s'ouvrir :
+
+image::../assets/doc_User_V1/fenetre_login.png[fenêtre de connexion à l'application]
+
+Il ne vous reste plus qu'à entrer vos informations (identifiant et mot de passe) et de cliquer sur le bouton "valider"
+
+Vous voilà désormais connecté à l'application ! Vous pouvez vérifier que vous êtes bien connecté en regardant les informations encadrées dans l'image suivante :
+
+image::../assets/doc_User_V1/confirmation_connexion.png[confirmation connexion]
+
+
+
 ==== Créer un client
 
 Création d'un nouveau client dans la base de donnée.
