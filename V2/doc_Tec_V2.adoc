@@ -299,7 +299,7 @@ Les Classes impliquées dans chaque package pour le bon fonctionnement de cette 
         - OperationsManagementController.java
         - OperationEditorPaneController.java
 
-==== Débiter un compte
+==== Débiter un compte (Loan)
 
 Enregistrer un débit est une fonctionnalité essentielle à toute banque, par exemple lors d'un achat en ligne, il est essentiel de débiter le client de la somme qu’il a dépensé.
 Pour débiter un client il nous faut :
@@ -337,7 +337,7 @@ Les Classes impliquées dans les packages application pour le bon fonctionnement
 
 === V1
 
-==== Créditer un compte
+==== Créditer un compte (Loan)
 
 Créditer un compte est une fonctionnalité essentielle à toute banque, par exemple lors d'un dépôt de chèque où bien lors du jour de paye, il est essentiel de créditer le client de la somme qu’il a reçu.
 
@@ -527,7 +527,7 @@ image::../assets/doc_Tec_V1/Supprimer un employé.png[Diagramme de séquence sup
 
 === V2
 
-==== Générer un relevé de compte pdf
+==== Générer un relevé de compte pdf (Loan)
 
 Pour générer un relevé de compte pdf, la librairie itextpdf a été importée dans le projet. Une nouvelle fenêtre nécessaire au fonctionnement du relevé de compte a aussi été créée en fxml grâce à SceneBuilder et modifiée grâce au controller de cette fenêtre.
 
