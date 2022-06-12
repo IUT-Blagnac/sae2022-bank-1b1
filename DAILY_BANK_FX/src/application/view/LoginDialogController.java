@@ -10,6 +10,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import model.data.Employe;
@@ -35,6 +37,7 @@ public class LoginDialogController implements Initializable {
 
 	private void configure() {
 		this.primaryStage.setOnCloseRequest(e -> this.closeWindow(e));
+		this.txtPassword.setOnKeyPressed(e -> this.enterHandler(e));
 	}
 
 	public void displayDialog() {
@@ -46,6 +49,13 @@ public class LoginDialogController implements Initializable {
 		this.doCancel();
 		e.consume();
 		return null;
+	}
+	
+	// Gestion de la touche entrée
+	private void enterHandler(KeyEvent e) {
+		if (e.getCode() == KeyCode.ENTER) {
+			this.doOK();
+		}
 	}
 
 	// Attributs de la scene + actions
