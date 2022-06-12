@@ -57,7 +57,27 @@ Le chef d’agence possède les même fonctionnalité que le guichetier avec que
 
 
 
-==== Débiter un compte
+==== Débiter un compte (Loan)
+
+|===
+|nom Test |Nom cas utilisation |Condition de satisfaction |Pré-condition
+
+|TestDebiterCompteOK
+|Débiter un compte
+|Le compte est débité
+|Une valeur (positive) est rentrée dans le champ de saisie
+
+|TestDebiterCompteChampVide
+|Débiter un compte
+|Blocage : Le champ de saisie est vide, l'interface change de style pour avertir l'utilisateur que le champ est vide
+|Le champ de saisie est vide
+
+|TestDebiterCompteValeurNulle
+|Débiter un compte
+|Blocage : La valeur rentrée dans le champ de saisie ne peut pas être négative, l'interface change de style pour avertir l'utilisateur que la valeur rentrée n'est pas valide
+|Le champ de saisie contient une valeur négative
+
+|===
 
 ==== Rendre inactif un client (Anton)
 
@@ -72,7 +92,27 @@ Le chef d’agence possède les même fonctionnalité que le guichetier avec que
 
 === V1
 
-==== Créditer un compte
+==== Créditer un compte (Loan)
+
+|===
+|nom Test |Nom cas utilisation |Condition de satisfaction |Pré-condition
+
+|TestCrediterCompteOK
+|Créditer un compte
+|Le compte est crédité
+|Une valeur (positive) est rentrée dans le champ de saisie
+
+|TestCrediterCompteChampVide
+|Créditer un compte
+|Blocage : Le champ de saisie est vide, l'interface change de style pour avertir l'utilisateur que le champ est vide
+|Le champ de saisie est vide
+
+|TestCrediterCompteValeurNulle
+|Créer un compte
+|Blocage : La valeur rentrée dans le champ de saisie ne peut pas être négative, l'interface change de style pour avertir l'utilisateur que la valeur rentrée n'est pas valide
+|Le champ de saisie contient une valeur négative
+
+|===
 
 ==== Créer un compte (Matthieu)
 
@@ -235,5 +275,27 @@ Le chef d’agence possède les même fonctionnalité que le guichetier avec que
 |Supprimer un prélèvement
 |Le prélèvement est supprimé de la base de données
 |Un prélèvement est sélectionné
+
+|===
+
+==== Générer un relevé de compte (Loan)
+
+|===
+|nom Test |Nom cas utilisation |Condition de satisfaction |Pré-condition
+
+|TestReleveCompteOK
+|Générer un relevé mensuel d'un compte en pdf
+|Le relevé de compte en .pdf est bien généré
+|Un chemin et un nom valide ont été donnés au fichier
+
+|TestReleveCompteCheminVide
+|Générer un relevé mensuel d'un compte en pdf
+|Le relevé de compte n'est pas généré et un message d'erreur apparait en indiquant à l'utilisateur qu'il doit entrer un chemin valide
+|Le chemin du fichier n'est pas précisé par l'utilisateur
+
+|TestReleveCompteNomVide
+|Générer un relevé mensuel d'un compte en pdf
+|Le relevé de compte n'est pas généré et un message d'erreur apparait en indiquant à l'utilisateur qu'il doit entrer un nom de fichier valide
+|Le nom du fichier n'est pas précisé par l'utilisateur
 
 |===
