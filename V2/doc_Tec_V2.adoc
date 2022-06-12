@@ -239,7 +239,7 @@ Voici un diagramme de séquence permettant d'observer le passage entre les diff�
 
 image::../assets/doc_Tec_V1/Editer client.png[Diagramme de séquence]
 
-==== Rendre inactif un client
+==== Rendre inactif un client (Anton)
 
 Rendre inactif un client est une spécificité de la modification d'un client.
 
@@ -470,7 +470,7 @@ Les classes impliquées dans le package model pour effectuer un virement sont :
     model.orm:
         - AccessOperation.java
 
-==== Créer un employé
+==== Créer un employé (Anton)
 
 Seulement les chefs d'agence ont accès à la gestion des employés.
 
@@ -497,7 +497,7 @@ Voici le diagramme de séquence synthétisant les appels de méthodes dans les d
 
 image::../assets/doc_Tec_V1/Créer un employé.png[Diagramme de séquence créer un employé]
 
-==== Modifier un employé
+==== Modifier un employé (Anton)
 
 Seulement les chefs d'agence ont accès à la gestion des employés.
 
@@ -527,7 +527,7 @@ Voici le diagramme de séquence synthétisant les appels de méthodes dans les d
 
 image::../assets/doc_Tec_V1/Modifier un employé.png[Diagramme de séquence modifier un employé]
 
-==== Supprimer un employé
+==== Supprimer un employé (Anton)
 
 Seulement les chefs d'agence ont accès à la gestion des employés.
 
