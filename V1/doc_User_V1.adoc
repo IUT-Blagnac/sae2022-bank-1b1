@@ -58,6 +58,7 @@ Dès que l'utilisateur à cliqué sur le bouton "Modifier client", un nouvelle f
 
 image::../assets/doc_User_V1/fenetre_modif_client.png[fenêtre modif client]
 
+
 === Consulter un compte
 
 
@@ -112,6 +113,14 @@ Lorsque l'utilisateur clique sur le bouton clôturer compte, si le solde du comp
 image::../assets/doc_User_V1/confirmation_cloturer_compte.png[confirmation cloture compte]
 
 === Rendre inactif un client
+
+Afin de rendre inactif un client, se rendre sur la fenêtre de gestion des clients afin de xref:doc_User_V1.adoc#modifier-un-client[modifier le client] :
+
+image::../assets/doc_User_V1/menu_modif_client.png[menu modification client]
+
+Ensuite, il suffit de cocher le bouton "Inactif" puis de valider la modification en cliquant sur "Modifier" comme indiqué dans l'image ci-dessous :
+
+image::../assets/doc_User_V1/fenetre_modif_client_inactif.png[fenêtre modif client inactif]
 
 === Gérer les employés
 

@@ -61,6 +61,15 @@ Le chef d’agence possède les même fonctionnalité que le guichetier avec que
 
 ==== Rendre inactif un client
 
+|===
+|nom Test |Nom cas utilisation |Condition de satisfaction |Pré-condition
+
+|TestInactifClientOK
+|Rendre inactif un client
+|Le client est rendu inactif
+|Un client est sélectionné
+|===
+
 === V1
 
 ==== Créditer un compte
@@ -122,8 +131,49 @@ Le chef d’agence possède les même fonctionnalité que le guichetier avec que
 
 ==== Créer un employé
 
+|===
+|nom Test |Nom cas utilisation |Condition de satisfaction |Pré-condition
+
+|TestCréerEmployéOK
+|Créer un employé
+|L'employé est créé avec toutes les informations renseignées
+|Être connecté en tant que chef d'agence
+
+|TestCréerEmployéNOK
+|Créer un employé
+|Blocage : On ne peut pas créer un employé lorsqu'il manque des informations à renseigner
+|Être connecté en tant que chef d'agence
+
+|===
+
 ==== Modifier un employé
+
+|===
+|nom Test |Nom cas utilisation |Condition de satisfaction |Pré-condition
+
+|TestModifierEmployéOK
+|Modifier un employé
+|L'employé est modifié avec toutes les informations renseignées
+|- Être connecté en tant que chef d'agence +
+- Un employé est sélectionné
+
+|TestModifierEmployéNOK
+|Modifier un employé
+|Blocage : On ne peut pas modifier un employé lorsqu'il manque des informations à renseigner
+|- Être connecté en tant que chef d'agence +
+- Un employé est sélectionné
+
+|===
 
 ==== Supprimer un employé
 
+|===
+|nom Test |Nom cas utilisation |Condition de satisfaction |Pré-condition
 
+|TestSupprimerEmployé
+|Supprimer un employé
+|L'employé est supprimé
+|- Être connecté en tant que chef d'agence +
+- Un employé est sélectionné
+
+|===
