@@ -375,6 +375,16 @@ Les classes impliquées dans les packages application pour créer un compte sont
         - ComptesManagementController.java
         - CompteEditorPaneController.java
 
+==== Effectuer un virement de compte à compte
+
+==== Créer un employé
+
+==== Modifier un employé
+
+==== Supprimer un employé
+
+=== V2
+
 ==== Générer un relevé de compte pdf
 
 Pour générer un relevé de compte pdf, la librairie itextpdf a été importée dans le projet. Une nouvelle fenêtre nécessaire au fonctionnement du relevé de compte a aussi été créée en fxml grâce à SceneBuilder et modifiée grâce au controller de cette fenêtre.
@@ -406,10 +416,96 @@ Voici le diagramme de séquence depuis l'écran d'accueil pour générer un rele
 
 image::../assets/doc_Tec_V2/diagramme_sequence_generer_pdf.png[Diagramme de séquence générer un relevé de compte]
 
-==== Effectuer un virement de compte à compte
+==== Créer un prélèvement automatique
 
-==== Créer un employé
+Pour créer un prélèvement automatique, il faut fournir les informations suivantes :
 
-==== Modifier un employé
+    - Le nom du bénéficiaire
+    - Le jour du prélèvement
+    - Le montant du prélèvement
 
-==== Supprimer un employé
+Voici le diagramme de séquence depuis l'écran de gestion des comptes :
+
+image::../assets/doc_Tec_V2/Creer un prelevement.png[Diagramme de séquence créer un prélèvement]
+
+Les classes impliquée dans les packages application pour créer un prélèvement sont :
+
+    application.control :
+        - ComptesManagement.java
+        - PrelevementEditorPane.java
+        - PrelevementsManagement.java
+
+    application.view :
+        - ComptesManagementController.java
+        - PrelevementEditorPaneController.java
+        - PrelevementsManagementController.java
+
+Les classes impliquée dans les packages model pour créer un prélèvement sont :
+
+    model.data :
+        - Prelevement.java
+
+    model.orm : 
+        - AccessPrelevement.java
+    
+==== Modifier un prélèvement automatique
+
+La modification d'un prélèvement est similaire à la création d'un prélèvement et mobilise les même classes.
+
+Lors de la modification d'un prélèvement, les informations suivantes peuvent être modifier :
+
+    - Le nom du bénéficiaire
+    - Le jour du prélèvement
+    - Le montant du prélèvement
+
+Voici le diagramme de séquence depuis l'écran de gestion des comptes :
+
+image::../assets/doc_Tec_V2/Modifier un prelevement.png[Diagramme de séquence modifier un prélèvement]
+
+Les classes impliquée dans les packages application pour créer un prélèvement sont :
+
+    application.control :
+        - ComptesManagement.java
+        - PrelevementEditorPane.java
+        - PrelevementsManagement.java
+
+    application.view :
+        - ComptesManagementController.java
+        - PrelevementEditorPaneController.java
+        - PrelevementsManagementController.java
+
+Les classes impliquée dans les packages model pour créer un prélèvement sont :
+
+    model.data :
+        - Prelevement.java
+
+    model.orm : 
+        - AccessPrelevement.java
+
+==== Supprimer un prélèvement automatique
+
+La suppression d'un prélèvement automatique mobilise les mêmes classe que la création et la modification d'un prélèvement.
+
+Voici le diagramme de séquence depuis l'écran de gestion des comptes :
+
+image::../assets/doc_Tec_V2/Supprimer un prelevement.png[Diagramme de séquence supprimer un prélèvement]
+
+Les classes impliquée dans les packages application pour créer un prélèvement sont :
+
+    application.control :
+        - ComptesManagement.java
+        - PrelevementEditorPane.java
+        - PrelevementsManagement.java
+
+    application.view :
+        - ComptesManagementController.java
+        - PrelevementEditorPaneController.java
+        - PrelevementsManagementController.java
+
+Les classes impliquée dans les packages model pour créer un prélèvement sont :
+
+    model.data :
+        - Prelevement.java
+
+    model.orm : 
+        - AccessPrelevement.java
