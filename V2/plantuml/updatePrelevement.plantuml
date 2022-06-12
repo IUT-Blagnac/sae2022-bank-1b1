@@ -1,0 +1,22 @@
+@startuml Modifier un prelevement
+
+ComptesManagementController -> ComptesManagement : gererPrelevements()
+ComptesManagement -> PrelevementsManagement : doPrelevementsManagementDialog()
+PrelevementsManagement -> PrelevementsManagementController : displayDialog()
+PrelevementsManagementController -> Stage : showAndWait()
+Stage -> PrelevementsManagementController : doModifierPrelev()
+PrelevementsManagementController -> PrelevementsManagement : modifierPrelev() 
+PrelevementsManagement -> PrelevementEditorPane : doPrelevementEditorDialog()
+PrelevementEditorPane -> PrelevementEditorPaneController : displayDialog()
+PrelevementEditorPaneController -> Stage : showAndWait()
+Stage -> PrelevementEditorPaneController
+PrelevementEditorPaneController -> PrelevementEditorPane
+PrelevementEditorPane -> PrelevementsManagement
+PrelevementsManagement -> AccessPrelevement : updatePrelevement()
+AccessPrelevement -> PrelevementsManagement
+PrelevementsManagement -> PrelevementsManagementController
+PrelevementsManagementController -> PrelevementsManagement
+PrelevementsManagement -> ComptesManagement
+ComptesManagement -> ComptesManagementController
+
+@enduml
