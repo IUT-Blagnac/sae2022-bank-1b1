@@ -61,6 +61,13 @@ image::../assets/doc_User_V1/fenetre_modif_client.png[fenêtre modif client]
 
 === Consulter un compte
 
+Consulter un compte permet de consulter toutes les opérations du compte depuis sa création, de voir le solde actuel du compte et de voir le découvert autorisé du compte.
+
+Pour consulter un compte, il faut d'abord sélectionner un client puis un compte et cliquer sur le bouton "Voir opérations" xref:doc_User_V1.adoc#débiter-un-compte[(voir débiter un compte)]
+
+Vous voilà désormais sur la page du compte bancaire associée !
+
+image::../assets/doc_User_V1/fenetre_gestion_operations.png[menu gestion comptes]
 
 === Débiter un compte
 
@@ -84,7 +91,7 @@ image::../assets/doc_User_V1/debit_apparait_sur_compte.png[débit sur compte]
 
 === Créditer un compte
 
-De la même façon que débiter un compte, le guichetier ou le chef d'agence peut créditer un compte. Pour cela, il suffit de se rendre sur la page de gestion des opérations d'un compte xref:doc_User_V1.adoc#débiter-un-compte[voir débiter un compte] et de cliquer sur le bouton "Enregistrer Crédit" :
+De la même façon que débiter un compte, le guichetier ou le chef d'agence peut créditer un compte. Pour cela, il suffit de se rendre sur la page de gestion des opérations d'un compte xref:doc_User_V1.adoc#débiter-un-compte[(voir débiter un compte)] et de cliquer sur le bouton "Enregistrer Crédit" :
 
 image::../assets/doc_User_V1/bouton_enregistrer_credit.png[bouton enregistrer credit]
 

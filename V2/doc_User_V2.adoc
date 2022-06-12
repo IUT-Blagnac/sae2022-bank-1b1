@@ -94,6 +94,16 @@ Et voilà ! Le compte est créé ! Il apparaît maintenant dans la liste des com
 
 image::../assets/doc_User_V1/compte_apparait.png[compte apparait]
 
+=== Consulter un compte
+
+Consulter un compte permet de consulter toutes les opérations du compte depuis sa création, de voir le solde actuel du compte et de voir le découvert autorisé du compte.
+
+Pour consulter un compte, il faut d'abord sélectionner un client puis un compte et cliquer sur le bouton "Voir opérations" xref:doc_User_V1.adoc#débiter-un-compte[(voir débiter un compte)]
+
+Vous voilà désormais sur la page du compte bancaire associée !
+
+image::../assets/doc_User_V1/fenetre_gestion_operations.png[menu gestion comptes]
+
 === Débiter un compte
 
 Pour débiter un compte, le guichetier ou le chef d'agence doit ouvrir le menu de gestion des comptes, en allant dans le menu gestion et cliquer sur le bouton Comptes client.
