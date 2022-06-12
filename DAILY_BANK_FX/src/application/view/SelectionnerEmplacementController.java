@@ -91,7 +91,7 @@ public class SelectionnerEmplacementController implements Initializable {
 		private void choisirCheminFichier() {
 			
 			DirectoryChooser directoryChooser = new DirectoryChooser();
-	        directoryChooser.setInitialDirectory(new File("src"));
+	        directoryChooser.setInitialDirectory(new File("/"));
 			
 			File selectedDirectory = directoryChooser.showDialog(primaryStage);
 			
