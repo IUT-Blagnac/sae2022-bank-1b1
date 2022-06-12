@@ -61,6 +61,15 @@ Le chef d’agence possède les même fonctionnalité que le guichetier avec que
 
 ==== Rendre inactif un client
 
+|===
+|nom Test |Nom cas utilisation |Condition de satisfaction |Pré-condition
+
+|TestInactifClientOK
+|Rendre inactif un client
+|Le client est rendu inactif
+|Un client est sélectionné
+|===
+
 === V1
 
 ==== Créditer un compte
