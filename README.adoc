@@ -62,15 +62,15 @@ __Membres du groupe :__
 |1|Guichetier| Compte| Créer         | I     |      |
 |1|Guichetier|Compte|Créditer/Débiter|      |      |I
 |1|Guichetier|Compte|Effectuer un virement|I |      |
-|1|Guichetier|Compte|Clôturer        |      |      |
+|1|Guichetier|Compte|Clôturer        | I     |      |
 |2|Chef d’Agence|Compte|Débit exceptionnel| |      |
 |2|Chef d’Agence|Emprunt|Simuler emprunt|   |      |
 |2|Chef d’Agence|Emprunt| Simuler assurance||      |
 |2|Guichetier| Compte | Relevé PDF|| |I
-|2|Guichetier| CRUD Prélèvement | C|| |
-|2|Guichetier| CRUD Prélèvement | R|| |
-|2|Guichetier| CRUD Prélèvement | U|| |
-|2|Guichetier| CRUD Prélèvement | D|| |
+|2|Guichetier| CRUD Prélèvement | C| I| |
+|2|Guichetier| CRUD Prélèvement | R| I| |
+|2|Guichetier| CRUD Prélèvement | U| I| |
+|2|Guichetier| CRUD Prélèvement | D| I| |
 |2|Batch| Prélèvements automatiques | || |
 |2|Batch| Reléves mensuels | || |
 
