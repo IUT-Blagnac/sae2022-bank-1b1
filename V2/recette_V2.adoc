@@ -1,4 +1,4 @@
-= Cahier de recette V1
+= Cahier de recette V2
 XU Anton - GAYRARD Loan - ROBERT Matthieu
 v1.0, 18/05/2022 - Equipe 1b1
 :toc: preamble
@@ -127,3 +127,60 @@ Le chef d’agence possède les même fonctionnalité que le guichetier avec que
 ==== Supprimer un employé
 
 
+=== V2
+
+==== Créer un prélèvement
+
+|===
+|nom Test |Nom cas utilisation |Condition de satisfaction |Pré-condition
+
+|TestCreerPrelevementOK
+|Créer un prélèvement
+|Le prélèvement est créé et enregistré dans la base de données
+|Toutes les informations du prélèvement sont renseignées
+
+|TestCreerPrelevementNOK
+|Créer un prélèvement
+|Blocage : Le montant du prélèvement est inférieur à 0
+|
+
+|TestCreerPrelevementNOK2
+|Créer un prélèvement
+|Blocage : Le date du prélèvement n'est pas comprise entre 1 et 31 (inclus)
+|
+
+|===
+
+==== Modifier un prélèvement
+
+|===
+|nom Test |Nom cas utilisation |Condition de satisfaction |Pré-condition
+
+|TestModifierPrelevementOK
+|Modifier un prélèvement
+|Le prélèvement est modifié et enregistré dans la base de données
+|Un prélèvement est sélectionné
+
+|TestModifierPrelevementNOK
+|Modifier un prélèvement
+|Blocage : Le montant du prélèvement est inférieur à 0
+|
+
+|TestModifierPrelevementNOK2
+|Modifier un prélèvement
+|Blocage : Le date du prélèvement n'est pas comprise entre 1 et 31 (inclus)
+|
+
+|===
+
+==== Supprimer un prélèvement
+
+|===
+|nom Test |Nom cas utilisation |Condition de satisfaction |Pré-condition
+
+|TestSupprimerPrelevementOK
+|Supprimer un prélèvement
+|Le prélèvement est supprimé de la base de données
+|Un prélèvement est sélectionné
+
+|===
