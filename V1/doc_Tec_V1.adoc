@@ -350,6 +350,30 @@ Les classes impliquées dans les packages application pour créditer un compte s
 
 ==== Clôturer un compte
 
+Clôturer un compte signifie que le client n'a plus accès au compte et ne peut plus faire d'opérations avec ce compte.
+
+Pour pouvoir clôturer un compte, il faut que le solde du compte soit à 0
+
+Voici le diagramme de séquence depuis l'écran de gestion des comptes afin de clôturer un compte :
+
+image::../assets/doc_Tec_V1/Cloturer un compte.png[Diagramme de séquence clôturer un compte]
+
+Les classes impliquées dans les packages packages application pour clôturer un compte sont :
+
+    application.control :
+        - ComptesManagement.java
+
+    application.view :
+        - ComptesManagementController.java
+
+Les classes impliquées dans les packages model pour clôturer un compte sont :
+
+    model.data :
+        - CompteCourant.java
+
+    model.orm :
+        - AccessCompteCourant.java
+
 ==== Créer un compte
 
 Créer un compte est une fonctionnalité essentielle pour un banque, car chaque mouvement d'argent (débit ou crédit) passe par un compte.

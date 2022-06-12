@@ -1,0 +1,8 @@
+@startuml Cloturer un compte
+
+ComptesManagementController -> ComptesManagement : cloturerCompte()
+ComptesManagement -> AccessCompteCourant : updateCompteCourant()
+AccessCompteCourant -> ComptesManagement
+ComptesManagement -> ComptesManagementController
+
+@enduml
