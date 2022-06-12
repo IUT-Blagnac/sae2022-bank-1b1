@@ -77,6 +77,15 @@ public class ComptesManagement {
 	}
 
 	/**
+	 * Active la vu de gestion des prelevement d'un compte
+	 * @param cpt Compte dont on veut afficher les prelevements
+	 */
+	public void gererPrelevements(CompteCourant cpt) {
+		PrelevementsManagement pm = new PrelevementsManagement(this.primaryStage, this.dbs, this.clientDesComptes, cpt);
+		pm.doPrelevementsManagementDialog();
+	}
+
+	/**
 	 * Active la vu d'ajout d'un nouveau compte
 	 * @return Le nouveau compte créé
 	 */
