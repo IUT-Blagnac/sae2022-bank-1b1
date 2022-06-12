@@ -23,7 +23,7 @@ Le chef d’agence possède les même fonctionnalité que le guichetier avec que
 
 === V0
 
-==== Créer un client
+==== Créer un client (Matthieu)
 
 |===
 |nom Test |Nom cas utilisation |Condition de satisfaction |Pré-condition
@@ -39,7 +39,7 @@ Le chef d’agence possède les même fonctionnalité que le guichetier avec que
 |
 |===
 
-==== Modifier un client
+==== Modifier un client (Matthieu)
 
 |===
 |nom Test |Nom cas utilisation |Condition de satisfaction |Pré-condition
@@ -55,7 +55,7 @@ Le chef d’agence possède les même fonctionnalité que le guichetier avec que
 |Un client est sélectionné
 |===
 
-==== Consulter un compte
+
 
 ==== Débiter un compte
 
@@ -65,9 +65,60 @@ Le chef d’agence possède les même fonctionnalité que le guichetier avec que
 
 ==== Créditer un compte
 
-==== Clôturer un compte
+==== Créer un compte (Matthieu)
 
-==== Effectuer un virement de compte à compte
+|===
+|nom Test |Nom cas utilisation |Condition de satisfaction |Pré-condition
+
+|TestCreerCompteOK
+|Créer un compte
+|Le compte est créé
+|Toutes les informations du nouveau compte sont renseignées
+
+|TestCreerCompteNOK
+|Créer un compte
+|Blocage : Il manque un information sur le compte à renseigner
+|
+
+|TestCreerCompteNOK2
+|Créer un compte
+|Blocage : Le montant de dépot initial est inférieur à 50
+|
+
+|===
+
+==== Clôturer un compte (Matthieu)
+
+|===
+|nom Test |Nom cas utilisation |Condition de satisfaction |Pré-condition
+
+|TestCloturerCompteOK
+|Clôturer un compte
+|Le compte est clôturé et on ne peut plus faire d'opération avec ce compte
+|Le solde du compte est égal à 0
+
+|TestCloturerCompteNOK
+|Clôturer un compte
+|Blocage : Le solde du comptes n'est pas égal à 0
+|
+|===
+
+==== Effectuer un virement de compte à compte (Matthieu)
+
+|===
+|nom Test |Nom cas utilisation |Condition de satisfaction |Pré-condition
+
+|TestVirementCompteOK
+|Effectuer un virement de compte à compte
+|Le virement est effectué, le compte débiteur à bien été débité et le compte créditeur à bien été crédité
+|Le client possède deux comptes dans l'agence bancaire
+
+|TestVirementCompteNOK
+|Effectuer un virement de compte à compte
+|Blocage : Le montant du virement est inférieur à 50
+|Le client possède deux comptes dans l'agence bancaire
+
+|===
 
 ==== Créer un employé
 
