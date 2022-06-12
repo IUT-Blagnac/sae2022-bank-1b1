@@ -180,6 +180,18 @@ public class OperationEditorPaneController implements Initializable {
 			break;
 		case CREDIT:
 			//Création d'un débit :
+			// - Le montant ne doit pas être nul
+			// - Le montant ne peut pas être négatif
+			try {
+				montant = Double.parseDouble(this.txtMontant.getText().trim());
+				if (montant <= 0)
+					throw new NumberFormatException();
+			} catch (NumberFormatException nfe) {
+				this.txtMontant.getStyleClass().add("borderred");
+				this.lblMontant.getStyleClass().add("borderred");
+				this.txtMontant.requestFocus();
+				return;
+			}
 			montant = Double.parseDouble(this.txtMontant.getText().trim());
 			typeOp = this.cbTypeOpe.getValue();
 			this.operationResultat = new Operation(-1, montant, null, null, this.compteEdite.idNumCli, typeOp);
