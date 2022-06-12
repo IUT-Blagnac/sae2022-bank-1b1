@@ -45,7 +45,7 @@ public class PrelevementsManagement {
         this.dbs = _dbs;
         try {
             FXMLLoader loader = new FXMLLoader(
-                    PrelevementsManagementController.class.getResource("prelevementsManagement.fxml"));
+                    PrelevementsManagementController.class.getResource("prelevementsmanagement.fxml"));
             BorderPane root = loader.load();
 
             Scene scene = new Scene(root, 900 + 20, 350 + 10);

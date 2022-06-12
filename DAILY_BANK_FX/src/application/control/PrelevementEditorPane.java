@@ -30,7 +30,7 @@ public class PrelevementEditorPane {
 
 		try {
 			FXMLLoader loader = new FXMLLoader(
-					OperationEditorPaneController.class.getResource("prelevementeditorpane.fxml"));
+					PrelevementEditorPaneController.class.getResource("prelevementeditorpane.fxml"));
 			BorderPane root = loader.load();
 
 			Scene scene = new Scene(root, root.getPrefWidth() + 20, root.getPrefHeight() + 10);
