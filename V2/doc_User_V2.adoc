@@ -58,8 +58,23 @@ Dès que l'utilisateur à cliqué sur le bouton "Modifier client", un nouvelle f
 
 image::../assets/doc_User_V1/fenetre_modif_client.png[fenêtre modif client]
 
-=== Consulter un compte
+=== Créer un compte (Matthieu)
 
+Pour créer un compte, le guichetier ou le chef d'agence doit sélectionner un client et ouvrir le menu de gestion des comptes, en cliquant sur le bouton "Comptes client" sur le menu de gestion des clients :
+
+image::../assets/doc_User_V1/bouton_comptes_client.png[bouton compte]
+
+Une fois sur la fenêtre de gestion des comptes, l'utilisateur doit cliquer sur le bouton "Nouveau compte"
+
+image::../assets/doc_User_V1/bouton_nouveau_compte.png[bouton nouveau compte]
+
+Dès que l'utilisateur à cliqué sur le bouton "Nouveau compte", un nouvelle fenêtre s'ouvre afin de pouvoir rentrer les informations du compte (découvert autorisé et montant de dépôt initial qui doit être supérieur à 50€) et cliquer sur le bouton ajouter, pour créer le compte. 
+
+image::../assets/doc_User_V1/fenetre_ajout_compte.png[fenêtre ajout compte]
+
+Et voilà ! Le compte est créé ! Il apparaît maintenant dans la liste des comptes du client.
+
+image::../assets/doc_User_V1/compte_apparait.png[compte apparait]
 
 === Débiter un compte
 
