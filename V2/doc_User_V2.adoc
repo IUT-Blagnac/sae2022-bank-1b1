@@ -138,5 +138,24 @@ Une nouvelle fenêtre s'ouvre afin de sélectionner le dossier où le fichier se
 
 image::../assets/doc_User_V2/fenetre_generer.png[Fenêtre pour générer un fichier pdf]
 
-=== Rendre inactif un client
+=== Gérer les prélèvements automatiques
 
+Pour accéder à la gestion des prélèvements automatiques, il faut d'abord se rendre sur la page des gestion des comptes, puis sélectionnner un compte et cliquer sur le bouton "Voir prélèvments"
+
+image::../assets/doc_User_V2/bouton_prelevements.png[bouton prélèvements]
+
+Une fois sur la page de gestion des prélèvements, vous pouvez ajouter, modifier ou supprimer un prélèvement.
+
+image::../assets/doc_User_V2/fenetre_prelevements.png[gestion prélèvements]
+
+Pour créer un prélèvement, il suffit de cliquer sur le bouton "Créer un prélèvement" et la fenêtre d'édition d'un prélèvement apparaît.
+
+image::../assets/doc_User_V2/ajout_prelevement.png[ajout prélèvement]
+
+Pour modifier un prélèvement, il suffit de sélectionner un prélèvement et de cliquer sur le bouton "Modifier Prélèvement" et la fenêtre d'édition d'un prélèvement apparaît.
+
+image::../assets/doc_User_V2/ajout_prelevement.png[modifier prélèvement]
+
+Pour supprimer un prélèvement, il suffit de sélectionner un prélèvement et de cliquer sur le bouton "Supprimer Prélèvement" et la fenêtre de confirmation apparaît.
+
+image::../assets/doc_User_V2/suppression_prelevement.png[supprimer prélèvement]
